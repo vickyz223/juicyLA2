@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import NavBar from './NavBar';
+import Homepage from './Homepage';
 
 function JuicyLa() {
     return (
         <div>
-            <h1>Title</h1>
+            <NavBar/>
+            <Homepage/>
+
         </div>
     );
 }

@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+}
+
+.topDivider{
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+    background-image: url("../5056430.jpeg");
+}
+
+.podium{
+    display: flex;
+}
