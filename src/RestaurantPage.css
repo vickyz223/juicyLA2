@@ -1,3 +1,12 @@
+#all {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+}
+
 #header {
     display: flex; 
     justify-content: flex-end;
@@ -5,8 +14,19 @@
     padding: 5vh 5vh 5vh 5vh; 
     background-image: linear-gradient(to bottom, rgba(256, 256, 256, 0), rgba(0, 0, 0, 50)), url("./images/bqmfbsn2fpw51.jpeg");
     background-size: cover;
-    position: absolute;
+    position: absolute; 
+    height: 60vh; 
     right: 0; top: 0; left: 0;
+    margin-bottom: 100px;
+}
+
+#bruh {
+    padding: 5vh 5vh 5vh 5vh;
+    position: relative;
+    height: 60vh;
+    right: 0;
+    top: 0;
+    left: 0;
 }
 
 #headerInfo {
@@ -54,12 +74,13 @@
     margin-bottom: 10px; 
 }
 
-#photoAdd {
+button {
     width: 200px; 
     height: 45px; 
     font-size: 18px;
     margin: 0;
     color: Red;
+    border-color: white; 
     border-radius: 10px; 
     justify-self: center; 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -68,7 +89,8 @@
 h1 {
     font-size: 4em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white; 
+    color: white;
+    margin: 0;  
 }
 
 p {
@@ -78,3 +100,55 @@ p {
     color: white; 
 }
 
+#bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    width: 80vw; 
+    height: 1500px; 
+    background-color: #C4C4C4;
+    padding: 7vh; 
+}
+
+#menuName {
+    padding: 10px; 
+    padding-bottom: 40px; 
+}
+
+#menuCols {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.col {
+    background-color: #A3A3A3;
+    padding-right: 5vh;
+    height: 70em;
+    width: 25vw; 
+    border-radius: 15px; 
+}
+
+#reviews {
+    width: 35vw; 
+    background-color: #A3A3A3;
+    padding: 3vh 7vh 3vh 7vh;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+}

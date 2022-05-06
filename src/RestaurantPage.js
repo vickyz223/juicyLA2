@@ -3,7 +3,7 @@ import "./RestaurantPage.css";
 
 export default function Restaurant() {
     return (
-      <div>
+      <div id="all">
         <div id="header">
           <div id="headerInfo">
             <h1 id="name">NAME OF HALL</h1>
@@ -32,9 +32,24 @@ export default function Restaurant() {
             <b>ADD PHOTOS</b>
           </button>
         </div>
+        <div id="bruh">a</div>
 
-        <div id="menu">
-          <h1>Menu</h1>
+        <div id="bottom">
+          <div id="menu">
+            <h1 id="menuName">MENU</h1>
+            <div id="menuCols">
+              <div className="col"></div>
+              <div className="col"></div>
+            </div>
+          </div>
+          <div id="reviews">
+            <button>
+              <b>ADD REVIEW</b>
+            </button>
+            <h1>
+              <b>REVIEWS</b>
+            </h1>
+          </div>
         </div>
       </div>
     );
