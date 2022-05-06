@@ -43,17 +43,271 @@ export default function Restaurant() {
                 <div className="col"></div>
               </div>
             </div>
+
             <div id="reviews">
-              <button>
-                <b>ADD REVIEW</b>
-              </button>
-              <h1>
-                <b>REVIEWS</b>
-              </h1>
+              <div id="reviewTop">
+                <button>
+                  <b>ADD REVIEW</b>
+                </button>
+                <h1>
+                  <b>REVIEWS</b>
+                </h1>
+              </div>
+              <div className="review">
+                <div id="reviewHeader">
+                  <img
+                    src={require("./images/bqmfbsn2fpw51.jpeg")}
+                    alt="profilePicture"
+                    class="pp"
+                  ></img>
+                  <div className="reviewName">
+                    <p>Username </p>
+                    <div id="stars2">
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+              </div>
+              <div className="review">
+                <div id="reviewHeader">
+                  <img
+                    src={require("./images/bqmfbsn2fpw51.jpeg")}
+                    alt="profilePicture"
+                    class="pp"
+                  ></img>
+                  <div className="reviewName">
+                    <p>Username </p>
+                    <div id="stars2">
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+              </div>
+              <div className="review">
+                <div id="reviewHeader">
+                  <img
+                    src={require("./images/bqmfbsn2fpw51.jpeg")}
+                    alt="profilePicture"
+                    class="pp"
+                  ></img>
+                  <div className="reviewName">
+                    <p>Username </p>
+                    <div id="stars2">
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+              </div>
+              <div className="review">
+                <div id="reviewHeader">
+                  <img
+                    src={require("./images/bqmfbsn2fpw51.jpeg")}
+                    alt="profilePicture"
+                    class="pp"
+                  ></img>
+                  <div className="reviewName">
+                    <p>Username </p>
+                    <div id="stars2">
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+              </div>
+              <div className="review">
+                <div id="reviewHeader">
+                  <img
+                    src={require("./images/bqmfbsn2fpw51.jpeg")}
+                    alt="profilePicture"
+                    class="pp"
+                  ></img>
+                  <div className="reviewName">
+                    <p>Username </p>
+                    <div id="stars2">
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+              </div>
+              <div className="review">
+                <div id="reviewHeader">
+                  <img
+                    src={require("./images/bqmfbsn2fpw51.jpeg")}
+                    alt="profilePicture"
+                    class="pp"
+                  ></img>
+                  <div className="reviewName">
+                    <p>Username </p>
+                    <div id="stars2">
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                      <img
+                        src={require("./images/star.png")}
+                        className="star2"
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                </p>
+              </div>
+
+
+              
             </div>
           </div>
           <div id="footer">
-            <button id="backButt"><b>Back to ratings</b></button>
+            <button id="backButt">
+              <b>Back to ratings</b>
+            </button>
           </div>
         </div>
       </div>
