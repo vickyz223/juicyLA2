@@ -34,21 +34,26 @@ export default function Restaurant() {
         </div>
         <div id="bruh">a</div>
 
-        <div id="bottom">
-          <div id="menu">
-            <h1 id="menuName">MENU</h1>
-            <div id="menuCols">
-              <div className="col"></div>
-              <div className="col"></div>
+        <div id="lower">
+          <div id="bottom">
+            <div id="menu">
+              <h1 id="menuName">MENU</h1>
+              <div id="menuCols">
+                <div className="col"></div>
+                <div className="col"></div>
+              </div>
+            </div>
+            <div id="reviews">
+              <button>
+                <b>ADD REVIEW</b>
+              </button>
+              <h1>
+                <b>REVIEWS</b>
+              </h1>
             </div>
           </div>
-          <div id="reviews">
-            <button>
-              <b>ADD REVIEW</b>
-            </button>
-            <h1>
-              <b>REVIEWS</b>
-            </h1>
+          <div id="footer">
+            <button id="backButt"><b>Back to ratings</b></button>
           </div>
         </div>
       </div>
