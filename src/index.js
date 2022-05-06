@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Restaurant from "./RestaurantPage";
 
 function JuicyLa() {
     return (
         <div>
-            <h1>Title</h1>
+            <Restaurant />
         </div>
     );
 }
