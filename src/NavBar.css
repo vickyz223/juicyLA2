@@ -14,7 +14,7 @@
 .topBar{
     display: flex;
     justify-content: space-between;
-    background-color: var(--bgcolor);
+    background-color: transparent;
     padding: 20px;
     align-items: center;
     
@@ -46,7 +46,8 @@ button{
     padding: 10px;
     border-style: groove;
     border-radius: 10px ;
-    border-color:  #F2F2F0;
+    border-color:  #EA4033;
+    border-width: 1px;
     
 
 }

@@ -13,7 +13,8 @@ const Homepage  = () =>{
                 Current Rankings
             </div>
             <div className='podium'>
-                <div className='first'>
+                
+                <div className='second' id ="podiumBoxes">
                     <h1>Name</h1>
                     <div className='stars'>
 
@@ -25,7 +26,7 @@ const Homepage  = () =>{
 
                     </div>
                 </div>
-                <div className='second'>
+                <div className='first' id = 'podiumBoxes'>
                     <h1>Name</h1>
                     <div className='stars'>
 
@@ -37,7 +38,7 @@ const Homepage  = () =>{
 
                     </div>
                 </div>
-                <div className='third'>
+                <div className='third' id ="podiumBoxes">
                     <h1>Name</h1>
                     <div className='stars'>
 
