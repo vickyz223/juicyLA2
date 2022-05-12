@@ -1,6 +1,10 @@
 import React from 'react';
 import "./RestaurantPage.css";
 
+let showMenu = true; 
+
+
+
 class Review extends React.Component {
   render() {
     return (
@@ -126,7 +130,6 @@ export default function Restaurant() {
 
         <div id="lower">
           <div id="bottom">
-
             <div id="menu">
               <WriteReview />
             </div>
