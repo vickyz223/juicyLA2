@@ -11,6 +11,10 @@
   width: 100%; /* Full width */
   height: 8vh;
 }
+.nav.active{
+    background: linear-gradient(90deg, #490F0D 0%, #B22F25 0% );
+}
+
 .topBar{
     display: flex;
     justify-content: space-between;
