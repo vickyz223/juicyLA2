@@ -1,17 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './NavBar.css';
+import { useNavigate, Link } from "react-router-dom";
+import Button from '@mui/material/Button';
+
+
 
 const NavBar = () => {
+    let navigate = useNavigate()
     return (
         <div className='nav'>
             <div className = 'topBar'>
                 <div className = 'title'> 
-                JUICYLA
+                    <Link to='/' style={{textDecoration: 'none'}}>
+                        JUICYLA
+
+                    </Link>
                 </div>
                 <div className='ButtonGroup'> 
-                    <button className='register'>register</button>
-                    <button>sign in </button>
+                    <Button className='register' variant = "contained"
+                        onClick={
+                            ()=> {navigate('/register')}
+                        }
+                        sx={{
+                            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                            fontWeight: 'bold',
+                            color: '#F2F2F0',
+                            backgroundColor: "#EA4033",
+                            '&:hover': {
+                                backgroundColor: '#EA4033',}
+                        }}
+                        
+                        >
+                        register
+                    </Button>
+
+                    <Button
+                        onClick={
+                            ()=> {navigate('/login')}
+                        }
+                        sx={{
+                            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                            fontWeight: 'bold',
+                            color: '#F2F2F0',
+                        }}
+                    >
+                        sign in 
+                    </Button>
                 </div>
                 
 
