@@ -31,7 +31,7 @@ const NavBar = () => {
                 <div className='ButtonGroup'> 
                     <Button className='register' variant = "contained"
                         onClick={
-                            ()=> {navigate('/register')}
+                            ()=> {navigate('/Register')}
                         }
                         sx={{
                             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
@@ -49,7 +49,7 @@ const NavBar = () => {
 
                     <Button
                         onClick={
-                            ()=> {navigate('/login')}
+                            ()=> {navigate('/Login')}
                         }
                         sx={{
                             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',

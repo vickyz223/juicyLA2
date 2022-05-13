@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useNavigate, Link } from "react-router-dom";
+
 import './Homepage.css';
 
 const Homepage  = () =>{
+    let navigate = useNavigate();
+
     return(
         <>
         <div className='topDivider'>
@@ -14,7 +18,12 @@ const Homepage  = () =>{
             </div>
             <div className='podium'>
                 
-                <div className='second' id ="podiumBoxes">
+                <div className='second' 
+                    id ="podiumBoxes"
+                    onClick={
+                            ()=> {navigate('/RestaurantPage')}
+                        }
+                >
                     <h1>Name</h1>
                     <div className='stars'>
 
@@ -26,7 +35,12 @@ const Homepage  = () =>{
 
                     </div>
                 </div>
-                <div className='first' id = 'podiumBoxes'>
+                <div className='first' 
+                    id = 'podiumBoxes'
+                    onClick={
+                                ()=> {navigate('/RestaurantPage')}
+                            }
+                >
                     <h1>Name</h1>
                     <div className='stars'>
 
@@ -38,7 +52,12 @@ const Homepage  = () =>{
 
                     </div>
                 </div>
-                <div className='third' id ="podiumBoxes">
+                <div className='third' 
+                    id ="podiumBoxes"
+                    onClick={
+                            ()=> {navigate('/RestaurantPage')}
+                        }
+                >
                     <h1>Name</h1>
                     <div className='stars'>
 
