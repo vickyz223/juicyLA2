@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
 import './WriteReviews.css';
 
 // Import the functions you need from the SDKs you need
@@ -43,6 +44,7 @@ function WriteReview() {
     const [value, setValue] = React.useState('');
     const [name, setName] = React.useState('');
     const [count, setCount] = React.useState(0);
+    const [rating, setRating] = React.useState(0);
 
     const handleName = (event) => {
         setName(event.target.value);
@@ -73,6 +75,9 @@ function WriteReview() {
         <div>
             <div className='review-box'>
                 <div>
+                    <h2 className="review-header">Write Review</h2>
+                </div>
+                <div>
                     <Box
                         component="form"
                         sx={{
@@ -94,7 +99,7 @@ function WriteReview() {
                     <Box
                         component="form"
                         sx={{
-                            '& .MuiTextField-root': { m: 1, width: '50 ch' },
+                            '& .MuiTextField-root': { m: 1, width: '50ch' },
                         }}
                         noValidate
                         autoComplete="off"
@@ -108,12 +113,32 @@ function WriteReview() {
                                 rows={7}
                                 value={value}
                                 onChange={handleChange}
+                                className='review-field'
                             />
                         </div>
                     </Box>
                 </div>
-                <div>
-                    <Button variant="outlined" onClick={() => handleClick()}>Post</Button>
+                <div className='bottom-row'>
+                    <div>
+                        <Rating
+                            name="simple-controlled"
+                            value={rating}
+                            onChange={(event, ratingValue) => {
+                                setRating(ratingValue);
+                            }}
+                        />
+                    </div>
+                    <div className='review-post-btn'>
+                        <Button
+                            sx={{
+                                color: 'white',
+                                width: 50,
+                            }}
+                            variant="outlined"
+                            onClick={() => handleClick()}
+                        >
+                            Post</Button>
+                    </div>
                 </div>
             </div>
         </div>

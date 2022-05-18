@@ -1,7 +1,26 @@
 .review-box {
-    width: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background-color: #C4C4C4;
+}
+
+.review-header {
+    color: #fff;
+    font-family: inter;
+}
+
+.review-field {
+    background-color: #A3A3A3;
+}
+
+.review-post-btn {
+    background-color: #8D8D8D;
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
