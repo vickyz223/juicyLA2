@@ -1,10 +1,6 @@
 import React from 'react';
 import "./RestaurantPage.css";
 
-let showMenu = true; 
-
-
-
 class Review extends React.Component {
   render() {
     return (
