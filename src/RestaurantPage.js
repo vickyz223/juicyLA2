@@ -1,5 +1,7 @@
 import React from 'react';
 import "./RestaurantPage.css";
+import Button from '@mui/material/Button';
+
 
 class Review extends React.Component {
   render() {
@@ -79,12 +81,19 @@ class WriteReview extends React.Component {
             <img src={require("./images/star.png")} className="star3"></img>
             <img src={require("./images/star.png")} className="star3"></img>
           </div>
-          <button>
+          <Button
+              sx={{
+                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    color: '#F2F2F0',
+                }}
+            >
             <b>DELETE REVIEW</b>
-          </button>
-          <button>
+          </Button>
+          <Button>
             <b>POST REVIEW</b>
-          </button>
+          </Button>
         </div>
       </div>
     ); 
@@ -118,41 +127,83 @@ export default function Restaurant() {
             <p>HOURS: 7:00 - 10:00</p>
           </div>
 
-          <button id="photoAdd">
-            <b>ADD PHOTOS</b>
-          </button>
+          <Button id="photoAdd" variant = "contained"
+             sx={{
+                      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                      fontWeight: 'bold',
+                      fontSize: 15,
+                      width: 150,
+                      color: '#F2F2F0',
+                      backgroundColor: "transparent",
+                      border: 1,
+                      borderColor: "white",
+
+                      '&:hover': {
+                          backgroundColor: '#868686',}
+                    }}
+                >
+              
+            ADD PHOTOS
+          </Button>
         </div>
-        <div id="bruh">a</div>
+        {/* <div id="bruh">a</div> */}
 
         <div id="lower">
           <div id="bottom">
             <div id="menu">
-              <WriteReview />
+              <Menu />
             </div>
 
             <div id="reviews">
               <div id="reviewTop">
-                <button>
+                <Button
+                sx={{
+                      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                      fontWeight: 'bold',
+                      fontSize: 15,
+                      color: '#F2F2F0',
+                      backgroundColor: "transparent",
+                      border: 1,
+                      borderColor: "white",
+
+                      '&:hover': {
+                          backgroundColor: '#868686',}
+                    }}
+                >
                   <b>ADD REVIEW</b>
-                </button>
+                </Button>
                 <h1>
                   <b>REVIEWS</b>
                 </h1>
               </div>
-              <Review />
-              <Review />
-              <Review />
-              <Review />
-              <Review />
-              <Review />
-              <Review />
+              <div id="reviewHolder">
+                <Review />
+                <Review />
+                <Review />
+                <Review />
+                <Review />
+                <Review />
+                <Review />
+              </div>
+              <div id="reviewFooter"></div>
             </div>
           </div>
 
           <div id="footer">
-            <button id="backButt">
-              <b>Back to ratings</b>
-            </button>
+            <Button id="backButton"
+            variant = "contained"
+              sx={{
+                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    color: '#F2F2F0',
+                    backgroundColor: "#EA4033",
+                    '&:hover': {
+                        backgroundColor: '#EA4033',}
+                }}
+              >
+              Back to ratings
+            </Button>
           </div>
         </div>
       </div>
