@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import WriteReviews from './Components/WriteReviews';
+import WriteReviewButton from './Components/WriteReviewButton';
 
 import './Homepage.css';
 
@@ -79,7 +79,7 @@ const Homepage = () => {
                 <h1>fyghj</h1>
                 <h1>fyghj</h1>
             </div>
-            <WriteReviews />
+            <WriteReviewButton />
         </>
     )
 }

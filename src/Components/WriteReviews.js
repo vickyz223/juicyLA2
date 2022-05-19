@@ -27,18 +27,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 console.log(app);
-function writeUserData(diningId, username, review) {
+function writeUserData(diningId, username, review, stars) {
     const db = getDatabase();
-    const reference = ref(db, diningId + '/' + username);
+    const reference = ref(db, 'written reviews' + '/' + diningId + '/' + username);
 
     set(reference, {
         // could add an optional username in here, in case we index the reviews in firebase
         review: review,
+        rating: stars,
     });
 }
 
-writeUserData("Bplate", "jack", "Bplate be bussin");
-writeUserData("Epicuria", "jen", "L coveL");
+writeUserData("Bplate", "jack", "Bplate be bussin", 5);
+writeUserData("Epicuria", "jen", "L coveL", 2);
 
 function WriteReview() {
     const [value, setValue] = React.useState('');
@@ -54,21 +55,27 @@ function WriteReview() {
         setValue(event.target.value);
     };
 
-    const handleClick = () => {
+    const handleDelete = () => {
         setName('');
         setValue('');
+        setRating(0);
+    }
+
+    const handleClick = () => {
         // diningId should be taken from the page
         if (value !== '') {
             if (name === '') {
                 const newName = 'Anonymous' + count;
-                console.log(newName);
-                writeUserData("Feast", newName, value);
+                writeUserData("Feast", newName, value, rating);
                 setCount(count + 1);
             }
             else {
-                writeUserData("Feast", name, value);
+                writeUserData("Feast", name, value, rating);
             }
         }
+        setName('');
+        setValue('');
+        setRating(0);
     }
 
     return (
@@ -129,6 +136,16 @@ function WriteReview() {
                         />
                     </div>
                     <div className='review-post-btn'>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                color: 'white',
+                                width: 50,
+                            }}
+                            onClick={() => handleDelete()}
+                        >
+                            Delete
+                        </Button>
                         <Button
                             sx={{
                                 color: 'white',
