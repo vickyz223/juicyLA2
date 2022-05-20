@@ -154,19 +154,20 @@ textarea:focus{
     min-width: none;
     background-color: #C4C4C4;
     padding: 50px 0 50px 20vw;  
-    margin-right: 5vw;
+    margin-right: 2vw;
     /* min-width: 50vw; */
-}
+}ƒ
 
 #menuName {
     /* padding: 10px 10px 10px 0vw;  */
-    padding-bottom: 40px; 
+    margin-bottom: 20; 
 }
 
 #menuCols {
     display: flex; 
     justify-content: space-between;
     width: 48vw;
+    padding-top: 3vh;
 }
 
 .star3 {
@@ -205,7 +206,7 @@ textarea:focus{
     border-radius: 15px;
     /* overflow-y: auto; */
     min-width: 29vw; 
-    margin-right: 10vw;
+    margin-right: 13vw;
     margin-top: 5vh;
 
 }

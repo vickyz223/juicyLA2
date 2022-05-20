@@ -1,5 +1,6 @@
 import React from 'react';
 import "./RestaurantPage.css";
+import { useNavigate, Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 
 
@@ -101,6 +102,8 @@ class WriteReview extends React.Component {
 }
 
 export default function Restaurant() {
+  let navigate = useNavigate();
+
     return (
       <div id="all">
         <div id="header">
@@ -192,6 +195,10 @@ export default function Restaurant() {
           <div id="footer">
             <Button id="backButton"
             variant = "contained"
+            onClick= {
+              ()=> {navigate('/')}
+            }
+             
               sx={{
                     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                     fontWeight: 'bold',

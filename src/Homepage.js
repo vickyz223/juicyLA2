@@ -24,7 +24,7 @@ const Homepage  = () =>{
                             ()=> {navigate('/RestaurantPage')}
                         }
                 >
-                    <h1>Name</h1>
+                    <div className='podiumName'>Name</div>
                     <div className='stars'>
 
                     </div>
@@ -41,7 +41,7 @@ const Homepage  = () =>{
                                 ()=> {navigate('/RestaurantPage')}
                             }
                 >
-                    <h1>Name</h1>
+                    <div className='podiumName'>Name</div>
                     <div className='stars'>
 
                     </div>
@@ -58,7 +58,7 @@ const Homepage  = () =>{
                             ()=> {navigate('/RestaurantPage')}
                         }
                 >
-                    <h1>Name</h1>
+                    <div className='podiumName'>Name</div>
                     <div className='stars'>
 
                     </div>
