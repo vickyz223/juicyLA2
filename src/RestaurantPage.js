@@ -58,7 +58,7 @@ class Review extends React.Component {
 class Menu extends React.Component {
   render() {
     return (
-      <div>
+      <div id="MenuHolder">
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
           <div className="col"><MenuComponent restaurant="DeNeve" /></div>
