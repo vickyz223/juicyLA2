@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import WriteReviewButton from './Components/WriteReviewButton';
-import StarRating from './Components/StarRating';
 
 import './Homepage.css';
 
@@ -37,42 +35,42 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div className='first'
-                    id='podiumBoxes'
-                    onClick={
-                        () => { navigate('/RestaurantPage') }
-                    }
-                >
-                    <div className='podiumName'>Name</div>
-                    <div className='stars'>
+                        id='podiumBoxes'
+                        onClick={
+                            () => { navigate('/RestaurantPage') }
+                        }
+                    >
+                        <div className='podiumName'>Name</div>
+                        <div className='stars'>
 
-                    </div>
-                    <div className='activity'>
-                        <h2> Activity</h2>
-                    </div>
-                    <div className='summary'>
+                        </div>
+                        <div className='activity'>
+                            <h2> Activity</h2>
+                        </div>
+                        <div className='summary'>
 
+                        </div>
+                    </div>
+                    <div className='third'
+                        id="podiumBoxes"
+                        onClick={
+                            () => { navigate('/RestaurantPage') }
+                        }
+                    >
+                        <div className='podiumName'>Name</div>
+                        <div className='stars'>
+
+                        </div>
+                        <div className='activity'>
+                            <h2> Activity</h2>
+                        </div>
+                        <div className='summary'>
+
+                        </div>
                     </div>
                 </div>
-                <div className='third'
-                    id="podiumBoxes"
-                    onClick={
-                        () => { navigate('/RestaurantPage') }
-                    }
-                >
-                    <div className='podiumName'>Name</div>
-                    <div className='stars'>
 
-                    </div>
-                    <div className='activity'>
-                        <h2> Activity</h2>
-                    </div>
-                    <div className='summary'>
 
-                    </div>
-                </div>
-                </div>
-                
-            
             </div>
 
             <div className='leaderBoard'>
@@ -82,8 +80,6 @@ const Homepage = () => {
                 <h1>fyghj</h1>
                 <h1>fyghj</h1>
             </div>
-            <WriteReviewButton />
-            <StarRating />
         </>
     );
 }

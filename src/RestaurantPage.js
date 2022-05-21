@@ -2,7 +2,8 @@ import React from 'react';
 import "./RestaurantPage.css";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
-
+import StarRating from './Components/StarRating';
+import WriteReviews from './Components/WriteReviews';
 
 class Review extends React.Component {
   render() {
@@ -104,6 +105,12 @@ class Menu extends React.Component {
 export default function Restaurant() {
   let navigate = useNavigate();
 
+
+  const [show, setShow] = React.useState(false)
+  const handleShow = () => {
+    setShow(!show);
+  }
+
   return (
     <div id="all">
       <div id="header">
@@ -155,28 +162,31 @@ export default function Restaurant() {
       <div id="lower">
         <div id="bottom">
           <div id="menu">
-            <Menu />
+            {show ? <WriteReviews /> : <Menu />}
           </div>
 
           <div id="reviews">
             <div id="reviewTop">
-              <Button
-                sx={{
-                  fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                  fontWeight: 'bold',
-                  fontSize: 15,
-                  color: '#F2F2F0',
-                  backgroundColor: "transparent",
-                  border: 1,
-                  borderColor: "white",
+              <div>
+                <Button
+                  variant="contained"
+                  onClick={() => handleShow()}
+                  sx={{
+                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    color: '#F2F2F0',
+                    backgroundColor: "transparent",
+                    border: 1,
+                    borderColor: "white",
 
-                  '&:hover': {
-                    backgroundColor: '#868686',
-                  }
-                }}
-              >
-                <b>ADD REVIEW</b>
-              </Button>
+                    '&:hover': {
+                      backgroundColor: '#868686',
+                    }
+                  }}
+                >{show ? "Back to Menu" : "Add Review"}</Button>
+              </div>
+              <StarRating />
               <h1>
                 <b>REVIEWS</b>
               </h1>
