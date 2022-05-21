@@ -58,7 +58,7 @@ class Menu extends React.Component {
       <div>
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
-          <div className="col"><MenuComponent restaurant="Epicuria"/></div>
+          <div className="col"><MenuComponent restaurant="BruinPlate"/></div>
           <div className="col"></div>
         </div>
       </div>

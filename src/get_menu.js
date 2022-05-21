@@ -21,18 +21,20 @@ const d = now.toString();
 let date_string = d.slice(0,15) + '\n';
 date_string = date_string.replace(/\s+/g, '');
 
-async function request() {
-  const request = await axios.get('http://menu.dining.ucla.edu/Menus');
+async function request(r) {
+  var url = 'http://menu.dining.ucla.edu/Menus/' + r;
+  const request = await axios.get(url);
+  console.log(request.data);
   return request.data;
 }
 
-function writeMenu(date_string) {
+function writeMenu(r, date_string) {
   const db = getDatabase();
-  const reference = ref(db, 'menu/' + date_string);
+  const reference = ref(db, 'menu/' + r + '/' + date_string);
 
-  get(child(ref(db), 'menu/' + date_string)).then((snapshot) => {
+  get(child(ref(db), 'menu/' + r + '/' + date_string)).then((snapshot) => {
     if (!snapshot.exists()) {
-      request().then(re => {
+      request(r).then(re => {
         set(reference, {
           date: date_string,
           menu_html: re
@@ -44,7 +46,7 @@ function writeMenu(date_string) {
   });
 }
 
-export default function GetMenu(){
-  writeMenu(date_string);
+export default function GetMenu(r){
+  writeMenu(r, date_string);
   return(date_string);
 }

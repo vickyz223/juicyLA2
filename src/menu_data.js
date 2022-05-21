@@ -1,7 +1,7 @@
 import GetMenu from './get_menu.js';
 import { get, getDatabase, child, ref, set } from "firebase/database";
 
-function generateData(data,period,restaurant) {
+function generateData(data,period) {
 
     var table = [period];
 
@@ -9,13 +9,13 @@ function generateData(data,period,restaurant) {
 
     switch(period) {
         case 'Breakfast':
-            p_pattern = /<h2 id="page-header">Breakfast Menu(.*?)<h2/s;
+            p_pattern = /<h3 class="col-header">Breakfast(.*?)<h3/s;
             break;
         case 'Lunch':
-            p_pattern = /<h2 id="page-header">Lunch Menu(.*?)<h2/s;
+            p_pattern = /<h3 class="col-header">Lunch(.*?)<h3/s;
             break;
         case 'Dinner':
-            p_pattern = /<h2 id="page-header">Dinner Menu(.*?)<hr class/s;
+            p_pattern = /<h3 class="col-header">Dinner(.*?)<hr class/s;
             break;
     }
 
@@ -27,29 +27,7 @@ function generateData(data,period,restaurant) {
 
     let period_data = data.match(reg_period)[1]; // pd is now specifically the period you are in
 
-    var r_pattern = null;
-
-    switch(restaurant) {
-        case 'Epicuria':
-            r_pattern = /<h3 class="col-header">Epicuria(.*?)<h3/s;
-            break;
-        case 'De Neve':
-            r_pattern = /<h3 class="col-header">De Neve(.*?)<h3/s;
-            break;
-        case 'Bruin Plate':
-            r_pattern = /<h3 class="col-header">Bruin Plate(.*)/s;
-            break;
-    }
-
-    console.log(restaurant);
-
-    if(r_pattern==null) {
-        return 'inv_r';
-    }
-
-    const reg_rest = r_pattern;
-
-    let restaurant_data = period_data.match(reg_rest)[1];
+    let restaurant_data = period_data;
     
     const r_sectGet = /<li class="sect-item">([A-za-z\s]*)</gs; // Get section names
 
@@ -135,11 +113,13 @@ export default function MenuData(rest) {
             period = periods[3];
         }
 
-        const ds = GetMenu();
+        const ds = GetMenu(rest);
+        console.log(ds);
         const menu_table_ref = ref(getDatabase(), 'menu_table/' + ds +'/'+ period + '/' + rest);
 
-        get(child(ref(getDatabase()), 'menu/' + ds)).then((snapshot) => {
-            const d = generateData(snapshot.val().menu_html,period,rest);
+        get(child(ref(getDatabase()), 'menu/' + rest + '/' + ds)).then((snapshot) => {
+            console.log(snapshot.val());
+            const d = generateData(snapshot.val().menu_html,period);
             set(menu_table_ref, {
                 table: d
             })
