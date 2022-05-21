@@ -2,8 +2,12 @@ import React from 'react';
 import "./RestaurantPage.css";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
+<<<<<<< HEAD
 import StarRating from './Components/StarRating';
 import WriteReviews from './Components/WriteReviews';
+=======
+import MenuComponent from './menu_component.js';
+>>>>>>> dbcb9b2e2356cff3284a6caaf7c86fb0467b8344
 
 class Review extends React.Component {
   render() {
@@ -59,7 +63,7 @@ class Menu extends React.Component {
       <div>
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
-          <div className="col"></div>
+          <div className="col"><MenuComponent restaurant="BruinPlate"/></div>
           <div className="col"></div>
         </div>
       </div>
