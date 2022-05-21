@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import Homepage from './Homepage';
 import WriteReviews from './Components/WriteReviews';
 // import Register from './Register';
-// import Login from './Login';
+import Login from './LoginPage';
 import RestaurantPage from './RestaurantPage';
 
 function JuicyLa() {
@@ -20,6 +20,7 @@ function JuicyLa() {
                     <Route path="/RestaurantPage" element={<RestaurantPage />} />
                     <Route path="/" element={<Homepage />} />
                     <Route path="/" element={<WriteReviews />} />
+					<Route path="/" element={<Login />} />
                 </Routes>
 
             </Router>

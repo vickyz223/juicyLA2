@@ -57,7 +57,7 @@ const NavBar = () => {
                             fontSize: 15,
                             width: 120,
                             color: '#F2F2F0',
-                            
+
                         }}
                     >
                         sign in
