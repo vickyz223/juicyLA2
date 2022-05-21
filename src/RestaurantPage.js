@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import StarRating from './Components/StarRating';
 import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './menu_component.js';
+import ActivityLevel from './activity_level.js';
 
 class Review extends React.Component {
   render() {
@@ -62,10 +63,12 @@ class Menu extends React.Component {
           <p>Rate Your Meal:</p>
           <StarRating />
         </div>
-        <h1 id="menuName">MENU</h1>
-        <div id="menuCols">
-          <div className="col"><MenuComponent restaurant="BruinPlate" /></div>
-          <div className="col"></div>
+        <div id="MenuHolder">
+          <h1 id="menuName">MENU</h1>
+          <div id="menuCols">
+            <div className="col"><MenuComponent restaurant="DeNeve" /></div>
+            <div className="col"></div>
+          </div>
         </div>
       </div>
     );
@@ -123,10 +126,7 @@ export default function Restaurant() {
           <div id="header2">
             <div id="activity">
               <p>ACTIVITY:</p>
-              <img
-                src={require("./images/bar.jpg")}
-                className="statusBar"
-              ></img>
+              <ActivityLevel restaurant="DeNeve" />
             </div>
           </div>
 
