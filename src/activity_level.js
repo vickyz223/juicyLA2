@@ -18,12 +18,12 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
-const now = new Date().toString.slice(16,18);
+const date_rn = new Date();
+const now = date_rn.toString().slice(16,18);
 
 async function request(r) {
   var url = 'http://menu.dining.ucla.edu/Menus/' + r;
   const request = await axios.get(url);
-  console.log(request.data);
   return request.data;
 }
 
@@ -32,14 +32,10 @@ function getLevel(r) {
   const reference = ref(db, 'activity/' + r + "_raw");
 
   request(r).then(re => {
-      if(snapshot.exists()) {
-        if(snapshot.val().date != now) {
-            set(reference, {
+      set(reference, {
                 date: now,
                 level: re
             })
-        }
-      }
   })
 }
 
@@ -51,14 +47,15 @@ function generateLevel(data) {
 
 function levelData(rest) {
     try {
-        getLevel(rest);
         const reference = ref(getDatabase(), 'activity/' + rest);
-
         get(child(ref(getDatabase()), 'activity/' + rest + '_raw')).then((snapshot) => {
-            const l = generateLevel(snapshot.val().level);
-            set(reference, {
-                level: l
-            })
+            if(!snapshot.exists() || snapshot.val().date != now) {
+                getLevel(rest);
+                const l = generateLevel(snapshot.val().level);
+                set(reference, {
+                    level: l
+                })
+            }
         }).catch((error) => {
             console.error(error);
         });
