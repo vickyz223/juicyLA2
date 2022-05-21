@@ -4,24 +4,24 @@ import axios from 'axios';
 import { get, getDatabase, child, ref, set } from "firebase/database";
 
 const date_rn = new Date();
-const now = date_rn.toString().slice(16,18);
+const now = date_rn.toString().slice(16, 18);
 
 async function request(r) {
-  var url = 'http://menu.dining.ucla.edu/Menus/' + r;
-  const request = await axios.get(url);
-  return request.data;
+    var url = 'http://menu.dining.ucla.edu/Menus/' + r;
+    const request = await axios.get(url);
+    return request.data;
 }
 
 function getLevel(r) {
-  const db = getDatabase();
-  const reference = ref(db, 'activity/' + r + "_raw");
+    const db = getDatabase();
+    const reference = ref(db, 'activity/' + r + "_raw");
 
-  request(r).then(re => {
-      set(reference, {
-                date: now,
-                level: re
-            })
-  })
+    request(r).then(re => {
+        set(reference, {
+            date: now,
+            level: re
+        })
+    })
 }
 
 function generateLevel(data) {
@@ -34,7 +34,7 @@ function levelData(rest) {
     try {
         const reference = ref(getDatabase(), 'activity/' + rest);
         get(child(ref(getDatabase()), 'activity/' + rest + '_raw')).then((snapshot) => {
-            if(!snapshot.exists() || snapshot.val().date != now) {
+            if (!snapshot.exists() || snapshot.val().date != now) {
                 getLevel(rest);
                 const l = generateLevel(snapshot.val().level);
                 set(reference, {
@@ -73,7 +73,7 @@ export default class ActivityLevel extends React.Component {
             console.error(error);
         });
         return (
-            <progress value={this.state.activity} max="100"/>
+            <progress value={this.state.activity} max="100" />
         );
     }
 
