@@ -1,22 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { initializeApp } from "firebase/app";
 import { get, getDatabase, child, ref, set } from "firebase/database";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyABvCRnBiC8FAlfOOY4WLGoEvtAQM4Jzsw",
-    authDomain: "juicyla-2022.firebaseapp.com",
-    databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com",
-    projectId: "juicyla-2022",
-    storageBucket: "juicyla-2022.appspot.com",
-    messagingSenderId: "132540762702",
-    appId: "1:132540762702:web:77cbc2746dcdee081bd11f",
-    measurementId: "G-32ZW6T1JQR"
-};
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
 
 const now = new Date();
 const d = now.toString();
