@@ -36,8 +36,7 @@ const Homepage = () => {
 
                         </div>
                     </div>
-                </div>
-                <div className='first'
+                    <div className='first'
                     id='podiumBoxes'
                     onClick={
                         () => { navigate('/RestaurantPage') }
@@ -71,24 +70,9 @@ const Homepage = () => {
 
                     </div>
                 </div>
-                <div className='third'
-                    id="podiumBoxes"
-                    onClick={
-                        () => { navigate('/RestaurantPage') }
-                    }
-                >
-                    <h1>Name</h1>
-                    <div className='stars'>
-
-                    </div>
-                    <div className='activity'>
-                        <h2> Activity</h2>
-                    </div>
-                    <div className='summary'>
-
-                    </div>
                 </div>
-
+                
+            
             </div>
 
             <div className='leaderBoard'>
