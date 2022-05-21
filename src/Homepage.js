@@ -115,7 +115,7 @@ const Homepage = () => {
                         () => { navigate('/RestaurantPage') }
                     }
                 >
-                    <PodiumBox/>
+                    <PodiumBox name = {restaurants[1].name}/>
                 </div>
                 <div className='third'
                     id="podiumBoxes"
@@ -123,7 +123,7 @@ const Homepage = () => {
                         () => { navigate('/RestaurantPage') }
                     }
                 >
-                    <PodiumBox/>
+                    <PodiumBox name = {restaurants[2].name}/>
                 </div>
                 </div>
                 

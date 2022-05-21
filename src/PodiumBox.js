@@ -30,4 +30,5 @@ const PodiumBox = (props) => {
 PodiumBox.propTypes ={
     name: PropTypes.string.isRequired,
 }
+
 export default PodiumBox;
