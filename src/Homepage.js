@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import WriteReviewButton from './Components/WriteReviewButton';
 import StarRating from './Components/StarRating';
+import PodiumBox from './PodiumBox';
 
 import './Homepage.css';
 
@@ -25,16 +26,7 @@ const Homepage = () => {
                             () => { navigate('/RestaurantPage') }
                         }
                     >
-                        <div className='podiumName'>Name</div>
-                        <div className='stars'>
-
-                        </div>
-                        <div className='activity'>
-                            <h2> Activity</h2>
-                        </div>
-                        <div className='summary'>
-
-                        </div>
+                        <PodiumBox/>
                     </div>
                     <div className='first'
                     id='podiumBoxes'
@@ -42,16 +34,7 @@ const Homepage = () => {
                         () => { navigate('/RestaurantPage') }
                     }
                 >
-                    <div className='podiumName'>Name</div>
-                    <div className='stars'>
-
-                    </div>
-                    <div className='activity'>
-                        <h2> Activity</h2>
-                    </div>
-                    <div className='summary'>
-
-                    </div>
+                    <PodiumBox/>
                 </div>
                 <div className='third'
                     id="podiumBoxes"
@@ -59,16 +42,7 @@ const Homepage = () => {
                         () => { navigate('/RestaurantPage') }
                     }
                 >
-                    <div className='podiumName'>Name</div>
-                    <div className='stars'>
-
-                    </div>
-                    <div className='activity'>
-                        <h2> Activity</h2>
-                    </div>
-                    <div className='summary'>
-
-                    </div>
+                    <PodiumBox/>
                 </div>
                 </div>
                 

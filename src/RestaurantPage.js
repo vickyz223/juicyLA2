@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 
 
-class Review extends React.Component {
-  render() {
+function Review() {
     return (
       <div className="review">
         <div id="reviewHeader">
@@ -49,11 +48,10 @@ class Review extends React.Component {
         </p>
       </div>
     )
-  }
 }
 
-class Menu extends React.Component {
-  render() {
+
+function Menu() {
     return (
       <div>
         <h1 id="menuName">MENU</h1>
@@ -64,7 +62,7 @@ class Menu extends React.Component {
       </div>
     );
   }
-}
+
 
 // class WriteReview extends React.Component {
 //   render() {
@@ -100,9 +98,9 @@ class Menu extends React.Component {
 //     );
 //   }
 // }
-
 export default function Restaurant() {
   let navigate = useNavigate();
+  
 
   return (
     <div id="all">
@@ -154,7 +152,7 @@ export default function Restaurant() {
 
       <div id="lower">
         <div id="bottom">
-          <div id="menu">
+          <div id="leftCol">
             <Menu />
           </div>
 

@@ -147,7 +147,7 @@ textarea:focus{
     outline: none; 
 }
 
-#menu {
+#leftCol {
     display: flex;
     flex-direction: column;
     flex-grow: 1; 

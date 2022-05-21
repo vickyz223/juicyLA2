@@ -25,6 +25,10 @@
     background-size: cover;
     
 }
+.info{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 .podiumName{
