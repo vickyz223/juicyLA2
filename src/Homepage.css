@@ -27,6 +27,11 @@
 }
 
 
+.podiumName{
+    color: black;
+    font-weight: bolder;
+    font-size: 300%;
+}
 .brand{
     margin: -20px;
     font-weight: bolder;
@@ -73,6 +78,7 @@
 
 
 }
+
 .first{
     height: 475px;
     

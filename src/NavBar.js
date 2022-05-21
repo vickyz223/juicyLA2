@@ -55,7 +55,9 @@ const NavBar = () => {
                             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                             fontWeight: 'bold',
                             fontSize: 15,
+                            width: 120,
                             color: '#F2F2F0',
+                            
                         }}
                     >
                         sign in

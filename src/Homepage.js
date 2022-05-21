@@ -25,7 +25,7 @@ const Homepage = () => {
                             () => { navigate('/RestaurantPage') }
                         }
                     >
-                        <h1>Name</h1>
+                        <div className='podiumName'>Name</div>
                         <div className='stars'>
 
                         </div>
@@ -36,43 +36,61 @@ const Homepage = () => {
 
                         </div>
                     </div>
-                    <div className='first'
-                        id='podiumBoxes'
-                        onClick={
-                            () => { navigate('/RestaurantPage') }
-                        }
-                    >
-                        <h1>Name</h1>
-                        <div className='stars'>
-
-                        </div>
-                        <div className='activity'>
-                            <h2> Activity</h2>
-                        </div>
-                        <div className='summary'>
-
-                        </div>
-                    </div>
-                    <div className='third'
-                        id="podiumBoxes"
-                        onClick={
-                            () => { navigate('/RestaurantPage') }
-                        }
-                    >
-                        <h1>Name</h1>
-                        <div className='stars'>
-
-                        </div>
-                        <div className='activity'>
-                            <h2> Activity</h2>
-                        </div>
-                        <div className='summary'>
-
-                        </div>
-                    </div>
-
                 </div>
+                <div className='first'
+                    id='podiumBoxes'
+                    onClick={
+                        () => { navigate('/RestaurantPage') }
+                    }
+                >
+                    <div className='podiumName'>Name</div>
+                    <div className='stars'>
+
+                    </div>
+                    <div className='activity'>
+                        <h2> Activity</h2>
+                    </div>
+                    <div className='summary'>
+
+                    </div>
+                </div>
+                <div className='third'
+                    id="podiumBoxes"
+                    onClick={
+                        () => { navigate('/RestaurantPage') }
+                    }
+                >
+                    <div className='podiumName'>Name</div>
+                    <div className='stars'>
+
+                    </div>
+                    <div className='activity'>
+                        <h2> Activity</h2>
+                    </div>
+                    <div className='summary'>
+
+                    </div>
+                </div>
+                <div className='third'
+                    id="podiumBoxes"
+                    onClick={
+                        () => { navigate('/RestaurantPage') }
+                    }
+                >
+                    <h1>Name</h1>
+                    <div className='stars'>
+
+                    </div>
+                    <div className='activity'>
+                        <h2> Activity</h2>
+                    </div>
+                    <div className='summary'>
+
+                    </div>
+                </div>
+
             </div>
+
             <div className='leaderBoard'>
                 hsvgjbckjndssdcv
                 <h1>fyghj</h1>
@@ -83,7 +101,7 @@ const Homepage = () => {
             <WriteReviewButton />
             <StarRating />
         </>
-    )
+    );
 }
 
 export default Homepage;
