@@ -58,6 +58,10 @@ class Menu extends React.Component {
   render() {
     return (
       <div>
+        <div id="stars" className="star-rating">
+          <p>Rate Your Meal:</p>
+          <StarRating />
+        </div>
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
           <div className="col"><MenuComponent restaurant="BruinPlate" /></div>
@@ -106,7 +110,6 @@ class Menu extends React.Component {
 export default function Restaurant() {
   let navigate = useNavigate();
 
-
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
@@ -118,14 +121,6 @@ export default function Restaurant() {
         <div id="headerInfo">
           <h1 id="name">NAME OF HALL</h1>
           <div id="header2">
-            <div id="stars">
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-            </div>
-
             <div id="activity">
               <p>ACTIVITY:</p>
               <img
@@ -187,7 +182,6 @@ export default function Restaurant() {
                   }}
                 >{show ? "Back to Menu" : "Add Review"}</Button>
               </div>
-              <StarRating />
               <h1>
                 <b>REVIEWS</b>
               </h1>

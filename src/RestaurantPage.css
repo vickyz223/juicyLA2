@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 0; 
-    padding: 0; 
-    width: 100%; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
     /* margin-left: 20vw; */
     /* margin-right: 20vw; */
     background-color: #C4C4C4;
@@ -13,20 +13,21 @@
 
 #header {
     margin-top: -8vh;
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 5vh 5vh 5vh 5vh; 
+    padding: 5vh 5vh 5vh 5vh;
     background-image: linear-gradient(to bottom, rgba(256, 256, 256, 0), rgba(0, 0, 0, 50)), url("./images/bqmfbsn2fpw51.jpeg");
     background-size: cover;
     /* position: absolute;  */
-    height: 60vh; 
+    height: 60vh;
     padding-left: 15vw;
     padding-right: 15vw;
 
     /* right: 0; top: 0; left: 0; */
     /* margin-bottom: 100px; */
 }
+
 /* 
 #bruh {
     padding: 5vh 5vh 5vh 5vh;
@@ -38,19 +39,19 @@
 } */
 
 #headerInfo {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     height: 70vh;
     width: 100%;
     padding: 0;
     justify-content: flex-end;
-    margin: -2vh; 
+    margin: -2vh;
 }
 
 #header2 {
-    display: flex; 
-    height: 30px; 
-    width: 40vw; 
+    display: flex;
+    height: 30px;
+    width: 40vw;
     justify-content: space-between;
     align-items: center;
     align-self: top;
@@ -59,35 +60,35 @@
 
 #activity {
     display: flex;
-    width: 500px; 
+    width: 500px;
     justify-content: flex-end;
-    align-items: flex-start; 
+    align-items: flex-start;
 }
 
 .statusBar {
-    background: black; 
-    width: 200px; 
-    height: 25px; 
+    background: black;
+    width: 200px;
+    height: 25px;
     border-radius: 3px;
-    padding-left: 15px; 
+    padding-left: 15px;
 }
 
 #stars {
-    display: flex; 
+    display: flex;
 }
 
 .star {
-    width: 30px; 
-    height: 30px; 
+    width: 30px;
+    height: 30px;
 }
 
 .star2 {
-    width: 25px; 
-    height: 25px; 
+    width: 25px;
+    height: 25px;
 }
 
 #name {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 /* button {
@@ -106,14 +107,14 @@ h1 {
     font-size: 3em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
-    margin: 0;  
+    margin: 0;
 }
 
 p {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 18px ;
-    margin: 0; 
-    color: white; 
+    font-size: 18px;
+    margin: 0;
+    color: white;
 }
 
 #lower {
@@ -126,60 +127,60 @@ p {
     overflow-x: hidden;
     display: flex;
     justify-content: center;
-    width: 100%; 
+    width: 100%;
     height: 1500px;
 }
 
 textarea {
     box-sizing: border-box;
     font-size: 20px;
-    resize: none; 
-    width: 95%; 
+    resize: none;
+    width: 95%;
     background-color: #A3A3A3;
-    color: white; 
+    color: white;
     min-height: 50vh;
-    padding: 40px; 
-    border-radius: 10px; 
+    padding: 40px;
+    border-radius: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-textarea:focus{
-    outline: none; 
+textarea:focus {
+    outline: none;
 }
 
 #menu {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; 
+    flex-grow: 1;
     min-width: none;
     background-color: #C4C4C4;
-    padding: 50px 0 50px 20vw;  
+    padding: 50px 0 50px 20vw;
     margin-right: 2vw;
     /* min-width: 50vw; */
-}ƒ
+}
 
-#menuName {
+ƒ #menuName {
     /* padding: 10px 10px 10px 0vw;  */
-    margin-bottom: 20; 
+    margin-bottom: 20;
 }
 
 #menuCols {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     width: 48vw;
     padding-top: 3vh;
 }
 
 .star3 {
-    height: 50px; 
+    height: 50px;
     width: 50px;
 }
 
 .col {
     background-color: #A3A3A3;
     height: 70em;
-    width: 23vw; 
-    border-radius: 15px; 
+    width: 23vw;
+    border-radius: 15px;
     /* margin-right: 2vh;   */
     /* margin-left: 2vh;  */
 }
@@ -189,13 +190,13 @@ textarea:focus{
     align-items: center;
     padding-left: 20px;
     background-color: white;
-    width: auto; 
-    height: 70px; 
+    width: auto;
+    height: 70px;
 }
 
 #reviewTop {
     /* position: sticky; */
-    padding: 30px 20px 20px 30px; 
+    padding: 30px 20px 20px 30px;
 }
 
 #reviews {
@@ -205,7 +206,7 @@ textarea:focus{
     height: 145vh;
     border-radius: 15px;
     /* overflow-y: auto; */
-    min-width: 29vw; 
+    min-width: 29vw;
     margin-right: 13vw;
     margin-top: 5vh;
 
@@ -214,7 +215,7 @@ textarea:focus{
 #reviewText {
     width: 200px;
     height: 100px;
-     
+
 }
 
 #reviewFooter {
@@ -225,7 +226,7 @@ textarea:focus{
 }
 
 .reviewName {
-    padding-left: 10px; 
+    padding-left: 10px;
 }
 
 #reviewHeader {
@@ -234,38 +235,39 @@ textarea:focus{
 }
 
 .review {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    background-color: #8D8D8D; 
-    padding: 20px; 
+    background-color: #8D8D8D;
+    padding: 20px;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 1vh;
-    
-        /* padding-right: 10vw; */
 
-    font-size: 2px; 
+    /* padding-right: 10vw; */
+
+    font-size: 2px;
 }
 
 #reviewHolder {
     overflow-y: auto;
-    
+
 }
 
 #submitRev {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     padding: 20px 0px 20px 0px;
-    align-items: center; 
-    width: 95%; 
+    align-items: center;
+    width: 95%;
 }
 
 .pp {
-    height: 50px; 
-    width: 50px; 
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 
 }
+
 /* 
 #backButton {
     background-color: #A3A3A3;
