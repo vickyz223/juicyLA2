@@ -1,6 +1,9 @@
 import React from 'react';
 import StarRating from './Components/StarRating';
+import PropTypes from "prop-types";
+
 import './Homepage.css';
+
 
 const PodiumBox = () => {
     return(
@@ -17,10 +20,13 @@ const PodiumBox = () => {
                 </div>
                         
                         <div className='summary'>
-
                         </div>
         </>
     )
 
 }
+PodiumBox.propTypes ={
+    name: PropTypes.string,
+}
+
 export default PodiumBox;
