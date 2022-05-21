@@ -18,6 +18,8 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
+const now = new Date().toString.slice(16,18);
+
 async function request(r) {
   var url = 'http://menu.dining.ucla.edu/Menus/' + r;
   const request = await axios.get(url);
@@ -30,9 +32,14 @@ function getLevel(r) {
   const reference = ref(db, 'activity/' + r + "_raw");
 
   request(r).then(re => {
-      set(reference, {
-          level: re
-      })
+      if(snapshot.exists()) {
+        if(snapshot.val().date != now) {
+            set(reference, {
+                date: now,
+                level: re
+            })
+        }
+      }
   })
 }
 
