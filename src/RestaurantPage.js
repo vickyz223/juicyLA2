@@ -2,7 +2,7 @@ import React from 'react';
 import "./RestaurantPage.css";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
-
+import MenuComponent from './menu_component.js';
 
 class Review extends React.Component {
   render() {
@@ -58,7 +58,7 @@ class Menu extends React.Component {
       <div>
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
-          <div className="col"></div>
+          <div className="col"><MenuComponent restaurant="BruinPlate"/></div>
           <div className="col"></div>
         </div>
       </div>
