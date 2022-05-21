@@ -7,7 +7,7 @@ import { get, getDatabase, child, ref, set } from "firebase/database";
 const firebaseConfig = {
     apiKey: "AIzaSyABvCRnBiC8FAlfOOY4WLGoEvtAQM4Jzsw",
     authDomain: "juicyla-2022.firebaseapp.com",
-    databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com/",
+    databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com",
     projectId: "juicyla-2022",
     storageBucket: "juicyla-2022.appspot.com",
     messagingSenderId: "132540762702",
@@ -26,7 +26,6 @@ date_string = date_string.replace(/\s+/g, '');
 async function request(r) {
   var url = 'http://menu.dining.ucla.edu/Menus/' + r;
   const request = await axios.get(url);
-  console.log(request.data);
   return request.data;
 }
 
