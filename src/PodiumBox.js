@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 import './Homepage.css';
 
 
-const PodiumBox = () => {
+const PodiumBox = (props) => {
     return(
         <>
-            <div className='podiumName'>Name</div>
+            <div className='podiumName'>
+            {props.name} 
+            </div>
                 <div className="info">
                         <div className='stars'>
                         <StarRating />
@@ -26,7 +28,6 @@ const PodiumBox = () => {
 
 }
 PodiumBox.propTypes ={
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
 }
-
 export default PodiumBox;

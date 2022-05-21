@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useEffect,} from 'react';
 import { useNavigate } from "react-router-dom";
 import WriteReviewButton from './Components/WriteReviewButton';
 import PodiumBox from './PodiumBox';
 import './Homepage.css';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
+// import { act } from 'react-dom/test-utils';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -13,27 +15,78 @@ import { getDatabase, ref, set } from "firebase/database";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCHXTuxVK57ApJppliMgrtK5GlcZ7sWJmg",
-    authDomain: "juicyla-7d596.firebaseapp.com",
-    databaseURL: "https://juicyla-7d596-default-rtdb.firebaseio.com",
-    projectId: "juicyla-7d596",
-    storageBucket: "juicyla-7d596.appspot.com",
-    messagingSenderId: "723240759802",
-    appId: "1:723240759802:web:6f8babc225fadfd250b443",
-    measurementId: "G-D3G6YJ6538"
-};
-
+    apiKey: "AIzaSyABvCRnBiC8FAlfOOY4WLGoEvtAQM4Jzsw",
+    authDomain: "juicyla-2022.firebaseapp.com",
+    databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com",
+    projectId: "juicyla-2022",
+    storageBucket: "juicyla-2022.appspot.com",
+    messagingSenderId: "132540762702",
+    appId: "1:132540762702:web:77cbc2746dcdee081bd11f",
+    measurementId: "G-32ZW6T1JQR"
+  };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 console.log(app);
-function getData() {
+
+function getActivity(diningId) {
+
     const db = getDatabase();
+    const reference = ref(db, 'activity' + '/' + diningId);
+
+    let activity;
+    onValue(reference, (snapshot) => {
+        activity = snapshot.val();
+    });
+    return (activity);
     
 }
 
+function getRating(diningId){
+    const db = getDatabase();
+    const reference = ref(db, 'written reviews' + '/' + diningId);
+
+    let rating;
+    onValue(reference, (snapshot) => {
+        rating = snapshot.val();
+        });
+    return (rating);
+}
+
+function getMenu(diningId){
+    const db = getDatabase();
+    const reference = ref(db, 'menu' + '/' + diningId);
+
+    let menu;
+    onValue(reference, (snapshot) => {
+        menu = snapshot.val();
+        });
+    return (menu);
+
+}
+
+function diningHall(name, rating, menu, activity){
+    this.name = name;
+    this.rating = rating;
+    this.menu = menu;
+    this.activity = activity;
+}
 const Homepage = () => {
     let navigate = useNavigate();
-    // const [restaurants, setRestaurants] = useState([]);
+    const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
+    let len = places.length;
+    const restaurants = [];
+    for (let i = 0; i < len; i++){
+        const name = places[i];
+        const item = new diningHall(name, getRating(name), getMenu(name), getActivity(name));
+        restaurants.push(item);
+    }
+
+    console.log(restaurants);
+
+    useEffect(()=>{
+
+    })
+
 
     // const [name, setName] = useState('Name');
     return (
@@ -54,8 +107,7 @@ const Homepage = () => {
                             () => { navigate('/RestaurantPage') }
                         }
                     >
-                        {/* setName =  */}
-                        <PodiumBox RestName={name}/>
+                        <PodiumBox name = {restaurants[0].name} />
                     </div>
                     <div className='first'
                     id='podiumBoxes'
