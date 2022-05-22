@@ -142,13 +142,7 @@ function MenuData(rest) {
         } else if(now.getHours() < 21 && now.getHours() > 15) {
             period = periods[2];
         } else {
-            if(now.getHours() < 7) {
-                period = periods[0];
-            } else if(now.getHours() < 11 && now.getHours() > 9) {
-                period = periods[1];
-            } else if(now.getHours() < 17 && now.getHours() > 14) {
-                period = periods[2];
-            }
+            period = "Invalid period!";
         }
 
         const ds = writeMenu(rest);

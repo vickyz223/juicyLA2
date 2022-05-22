@@ -13,41 +13,34 @@ async function request(r) {
 
 function getLevel(r) {
     const db = getDatabase();
-    const reference = ref(db, 'activity/' + r + "_raw");
+    const reference = ref(db, 'activity/' + r);
 
     request(r).then(re => {
+        const pattern = /<span class="activity-level activity-level-.*?><\/span><\/span> ([0-9]*)%/s;
+        let al = re.match(pattern)[1];
+
         set(reference, {
             date: now.getHours(),
-            level: re
+            level: al
         })
     })
-}
-
-function generateLevel(data) {
-    const pattern = /<span class="activity-level activity-level-.*?><\/span><\/span> ([0-9]*)%/s;
-    let al = data.match(pattern)[1];
-    return al;
 }
 
 function levelData(rest) {
     try {
         const reference = ref(getDatabase(), 'activity/' + rest);
-        get(child(ref(getDatabase()), 'activity/' + rest + '_raw')).then((snapshot) => {
-            get(child(ref(getDatabase()), 'activity/' + rest)).then((proc) => {
-                //nvm
-                /*
-if(!proc.exists() || snapshot.val().date != now.getHours()) {
-                    getLevel(rest);
-                    const l = generateLevel(snapshot.val().level);
-                    set(reference, {
-                        level: l
-                    })
-                }
-                */
+
+        get(child(ref(getDatabase()), 'activity/' + rest)).then((snapshot) => {
+            if(!snapshot.exists() || snapshot.val().date != now.getHours()) {
+                getLevel(rest);
+            }
+        })
+
+        get(child(ref(getDatabase()), 'activity/' + rest)).then((snapshot) => {
+            set(reference, {
+                level: snapshot.val().level
             })
-        }).catch((error) => {
-            console.error(error);
-        });
+        })
     } catch {
         console.log("Failed to get activity level.");
     }
@@ -67,6 +60,7 @@ export default class ActivityLevel extends React.Component {
     }
 
     render() {
+        console.log("hi");
         const restaurant = this.props.restaurant;
         levelData(restaurant);
         get(child(ref(getDatabase()), 'activity/' + restaurant)).then((snapshot) => {
@@ -82,4 +76,3 @@ export default class ActivityLevel extends React.Component {
     }
 
 }
-
