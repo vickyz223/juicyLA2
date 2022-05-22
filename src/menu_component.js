@@ -132,17 +132,23 @@ function generateData(data,period) {
 function MenuData(rest) {
     try {
         const now = new Date();
-        let periods = ['Breakfast','Lunch','Dinner','inv'];
+        let periods = ['Breakfast','Lunch','Dinner'];
         let period = "";
 
-        if(now.getHours() < 11 && now.getHours() > 6) {
+        if(now.getHours() < 10 && now.getHours() > 6) {
             period = periods[0];
         } else if(now.getHours() < 15 && now.getHours() > 10) {
             period = periods[1];
         } else if(now.getHours() < 21 && now.getHours() > 15) {
             period = periods[2];
         } else {
-            period = periods[3];
+            if(now.getHours() < 7) {
+                period = periods[0];
+            } else if(now.getHours() < 11 && now.getHours() > 9) {
+                period = periods[1];
+            } else if(now.getHours() < 17 && now.getHours() > 14) {
+                period = periods[2];
+            }
         }
 
         const ds = writeMenu(rest);

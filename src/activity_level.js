@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { get, getDatabase, child, ref, set } from "firebase/database";
 
-const date_rn = new Date();
-const now = date_rn.toString().slice(16, 18);
+const now = new Date();
 
 async function request(r) {
     var url = 'http://menu.dining.ucla.edu/Menus/' + r;
@@ -18,7 +17,7 @@ function getLevel(r) {
 
     request(r).then(re => {
         set(reference, {
-            date: now,
+            date: now.getHours(),
             level: re
         })
     })
@@ -34,7 +33,7 @@ function levelData(rest) {
     try {
         const reference = ref(getDatabase(), 'activity/' + rest);
         get(child(ref(getDatabase()), 'activity/' + rest + '_raw')).then((snapshot) => {
-            if (!snapshot.exists() || snapshot.val().date != now) {
+            if (!snapshot.exists() || snapshot.val().date != now.getHours()) {
                 getLevel(rest);
                 const l = generateLevel(snapshot.val().level);
                 set(reference, {
