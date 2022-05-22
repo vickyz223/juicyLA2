@@ -33,13 +33,15 @@ function levelData(rest) {
     try {
         const reference = ref(getDatabase(), 'activity/' + rest);
         get(child(ref(getDatabase()), 'activity/' + rest + '_raw')).then((snapshot) => {
-            if (!snapshot.exists() || snapshot.val().date != now.getHours()) {
-                getLevel(rest);
-                const l = generateLevel(snapshot.val().level);
-                set(reference, {
-                    level: l
-                })
-            }
+            get(child(ref(getDatabase()), 'activity/' + rest)).then((proc) => {
+                if(!proc.exists() || snapshot.val().date != now.getHours()) {
+                    getLevel(rest);
+                    const l = generateLevel(snapshot.val().level);
+                    set(reference, {
+                        level: l
+                    })
+                }
+            })
         }).catch((error) => {
             console.error(error);
         });
