@@ -2,7 +2,10 @@ import React from 'react';
 import "./RestaurantPage.css";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
-
+import StarRating from './Components/StarRating';
+import WriteReviews from './Components/WriteReviews';
+import MenuComponent from './menu_component.js';
+import ActivityLevel from './activity_level.js';
 
 function Review() {
     return (
@@ -53,10 +56,10 @@ function Review() {
 
 function Menu() {
     return (
-      <div>
+      <div id="MenuHolder">
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
-          <div className="col"></div>
+          <div className="col"><MenuComponent restaurant="DeNeve" /></div>
           <div className="col"></div>
         </div>
       </div>
@@ -102,6 +105,12 @@ export default function Restaurant() {
   let navigate = useNavigate();
   
 
+
+  const [show, setShow] = React.useState(false)
+  const handleShow = () => {
+    setShow(!show);
+  }
+
   return (
     <div id="all">
       <div id="header">
@@ -118,10 +127,7 @@ export default function Restaurant() {
 
             <div id="activity">
               <p>ACTIVITY:</p>
-              <img
-                src={require("./images/bar.jpg")}
-                className="statusBar"
-              ></img>
+              <ActivityLevel restaurant="DeNeve"/>
             </div>
           </div>
 
@@ -152,29 +158,37 @@ export default function Restaurant() {
 
       <div id="lower">
         <div id="bottom">
+<<<<<<< HEAD
           <div id="leftCol">
             <Menu />
+=======
+          <div id="menu">
+            {show ? <WriteReviews /> : <Menu />}
+>>>>>>> a4b1c19ecaf9161eba209608a00ad7382a6d905b
           </div>
 
           <div id="reviews">
             <div id="reviewTop">
-              <Button
-                sx={{
-                  fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                  fontWeight: 'bold',
-                  fontSize: 15,
-                  color: '#F2F2F0',
-                  backgroundColor: "transparent",
-                  border: 1,
-                  borderColor: "white",
+              <div>
+                <Button
+                  variant="contained"
+                  onClick={() => handleShow()}
+                  sx={{
+                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    color: '#F2F2F0',
+                    backgroundColor: "transparent",
+                    border: 1,
+                    borderColor: "white",
 
-                  '&:hover': {
-                    backgroundColor: '#868686',
-                  }
-                }}
-              >
-                <b>ADD REVIEW</b>
-              </Button>
+                    '&:hover': {
+                      backgroundColor: '#868686',
+                    }
+                  }}
+                >{show ? "Back to Menu" : "Add Review"}</Button>
+              </div>
+              <StarRating />
               <h1>
                 <b>REVIEWS</b>
               </h1>

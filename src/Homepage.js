@@ -1,8 +1,6 @@
 import React from 'react';
 import {useEffect,} from 'react';
 import { useNavigate } from "react-router-dom";
-import WriteReviewButton from './Components/WriteReviewButton';
-import PodiumBox from './PodiumBox';
 import './Homepage.css';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -137,7 +135,6 @@ const Homepage = () => {
                 <h1>fyghj</h1>
                 <h1>fyghj</h1>
             </div>
-            <WriteReviewButton />
         </>
     );
 }
