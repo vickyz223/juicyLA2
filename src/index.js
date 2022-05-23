@@ -8,6 +8,8 @@ import WriteReviews from './Components/WriteReviews';
 // import Register from './Register';
 import Login from './LoginPage';
 import Signup from './SignupPage'
+import Profile from './ProfilePage'
+
 import RestaurantPage from './RestaurantPage';
 import { UserAuthContextProvider } from './UserAuthContext'
 
@@ -25,6 +27,8 @@ function JuicyLa() {
 						<Route path="/" element={<WriteReviews />} />
 						<Route path="/Login" element={<Login />} />
 						<Route path="/Signup" element={<Signup />} />
+						<Route path="/Profile" element={<Profile />} />
+
 					</Routes>
 				</Router>
 			</div>
