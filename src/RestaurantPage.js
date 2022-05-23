@@ -158,13 +158,8 @@ export default function Restaurant() {
 
       <div id="lower">
         <div id="bottom">
-<<<<<<< HEAD
-          <div id="leftCol">
-            <Menu />
-=======
           <div id="menu">
             {show ? <WriteReviews /> : <Menu />}
->>>>>>> a4b1c19ecaf9161eba209608a00ad7382a6d905b
           </div>
 
           <div id="reviews">

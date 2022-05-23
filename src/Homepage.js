@@ -2,8 +2,9 @@ import React from 'react';
 import {useEffect,} from 'react';
 import { useNavigate } from "react-router-dom";
 import './Homepage.css';
+import PodiumBox from './PodiumBox';
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 // import { act } from 'react-dom/test-utils';
 
@@ -11,20 +12,20 @@ import { getDatabase, ref, onValue } from "firebase/database";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyABvCRnBiC8FAlfOOY4WLGoEvtAQM4Jzsw",
-    authDomain: "juicyla-2022.firebaseapp.com",
-    databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com",
-    projectId: "juicyla-2022",
-    storageBucket: "juicyla-2022.appspot.com",
-    messagingSenderId: "132540762702",
-    appId: "1:132540762702:web:77cbc2746dcdee081bd11f",
-    measurementId: "G-32ZW6T1JQR"
-  };
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-console.log(app);
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//     apiKey: "AIzaSyABvCRnBiC8FAlfOOY4WLGoEvtAQM4Jzsw",
+//     authDomain: "juicyla-2022.firebaseapp.com",
+//     databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com",
+//     projectId: "juicyla-2022",
+//     storageBucket: "juicyla-2022.appspot.com",
+//     messagingSenderId: "132540762702",
+//     appId: "1:132540762702:web:77cbc2746dcdee081bd11f",
+//     measurementId: "G-32ZW6T1JQR"
+//   };
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// console.log(app);
 
 function getActivity(diningId) {
 
