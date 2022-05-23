@@ -1,4 +1,14 @@
 import React from "react";
+<<<<<<< HEAD
+
+const Register = () =>{
+    return(
+        <div>regsiter here</div>
+    )
+}
+
+export default Register;
+=======
 import ReactDOM from "react-dom";
 import TextField from "@mui/material/TextField"; 
 import Button from "@mui/material/Button";
@@ -78,3 +88,4 @@ export default function Register() {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Register />);
+>>>>>>> a4b1c19ecaf9161eba209608a00ad7382a6d905b

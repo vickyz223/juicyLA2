@@ -127,6 +127,9 @@ p {
     justify-content: center;
     width: 100%; 
     height: 1500px;
+    padding-top: 5vh;
+    /* padding-left: 15vw; */
+    /* padding-right: 15vw; */
 }
 
 textarea {
@@ -146,7 +149,7 @@ textarea:focus{
     outline: none; 
 }
 
-#menu {
+#leftCol {
     display: flex;
     flex-direction: column;
     flex-grow: 1; 
@@ -159,7 +162,12 @@ textarea:focus{
 
 #menuName {
     /* padding: 10px 10px 10px 0vw;  */
-    margin-bottom: 20; 
+    margin-bottom: 20;
+}
+#menu{
+    margin-left: 20vw; 
+    margin-right: 2vw;
+
 }
 
 #menuCols {

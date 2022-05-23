@@ -7,8 +7,7 @@ import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './menu_component.js';
 import ActivityLevel from './activity_level.js';
 
-class Review extends React.Component {
-  render() {
+function Review() {
     return (
       <div className="review">
         <div id="reviewHeader">
@@ -52,11 +51,10 @@ class Review extends React.Component {
         </p>
       </div>
     )
-  }
 }
 
-class Menu extends React.Component {
-  render() {
+
+function Menu() {
     return (
       <div id="MenuHolder">
         <h1 id="menuName">MENU</h1>
@@ -67,7 +65,7 @@ class Menu extends React.Component {
       </div>
     );
   }
-}
+
 
 // class WriteReview extends React.Component {
 //   render() {
@@ -103,9 +101,9 @@ class Menu extends React.Component {
 //     );
 //   }
 // }
-
 export default function Restaurant() {
   let navigate = useNavigate();
+  
 
 
   const [show, setShow] = React.useState(false)
