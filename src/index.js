@@ -7,24 +7,28 @@ import Homepage from './Homepage';
 import WriteReviews from './Components/WriteReviews';
 // import Register from './Register';
 import Login from './LoginPage';
+import Signup from './SignupPage'
 import RestaurantPage from './RestaurantPage';
+import { UserAuthContextProvider } from './UserAuthContext'
 
 function JuicyLa() {
     return (
-        <div>
-            <Router>
-                <NavBar />
-                <Routes>
-                    {/* <Route path="/Register" element={<Register/>}/>
-                <Route path="/Login" element={<Login/>}/> */}
-                    <Route path="/RestaurantPage" element={<RestaurantPage />} />
-                    <Route path="/" element={<Homepage />} />
-                    <Route path="/" element={<WriteReviews />} />
-					<Route path="/" element={<Login />} />
-                </Routes>
-
-            </Router>
-        </div>
+		<UserAuthContextProvider>
+			<div>
+				<Router>
+					<NavBar />
+					<Routes>
+						{/* <Route path="/Register" element={<Register/>}/>
+					<Route path="/Login" element={<Login/>}/> */}
+						<Route path="/RestaurantPage" element={<RestaurantPage />} />
+						<Route path="/" element={<Homepage />} />
+						<Route path="/" element={<WriteReviews />} />
+						<Route path="/Login" element={<Login />} />
+						<Route path="/Signup" element={<Signup />} />
+					</Routes>
+				</Router>
+			</div>
+		</UserAuthContextProvider>
     );
 }
 

@@ -2,7 +2,9 @@ import React from 'react';
 import "./RestaurantPage.css";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
-
+import profilePic from './images/bqmfbsn2fpw51.jpeg'
+import starPic from './images/star.png'
+import barPic from './images/bar.jpg'
 
 class Review extends React.Component {
   render() {
@@ -10,7 +12,7 @@ class Review extends React.Component {
       <div className="review">
         <div id="reviewHeader">
           <img
-            src={require("./images/bqmfbsn2fpw51.jpeg")}
+            src={profilePic}
             alt="profilePicture"
             className="pp"
           ></img>
@@ -18,23 +20,23 @@ class Review extends React.Component {
             <p>Username </p>
             <div id="stars2">
               <img
-                src={require("./images/star.png")}
+                src={starPic}
                 className="star2"
               ></img>
               <img
-                src={require("./images/star.png")}
+                src={starPic}
                 className="star2"
               ></img>
               <img
-                src={require("./images/star.png")}
+                src={starPic}
                 className="star2"
               ></img>
               <img
-                src={require("./images/star.png")}
+                src={starPic}
                 className="star2"
               ></img>
               <img
-                src={require("./images/star.png")}
+                src={starPic}
                 className="star2"
               ></img>
             </div>
@@ -111,17 +113,17 @@ export default function Restaurant() {
           <h1 id="name">NAME OF HALL</h1>
           <div id="header2">
             <div id="stars">
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
-              <img src={require("./images/star.png")} className="star"></img>
+              <img src={starPic} className="star"></img>
+              <img src={starPic} className="star"></img>
+              <img src={starPic} className="star"></img>
+              <img src={starPic} className="star"></img>
+              <img src={starPic} className="star"></img>
             </div>
 
             <div id="activity">
               <p>ACTIVITY:</p>
               <img
-                src={require("./images/bar.jpg")}
+                src={barPic}
                 className="statusBar"
               ></img>
             </div>

@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -7,9 +9,13 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "./firebase";
 
 const userAuthContext = createContext();
+
+export function useUserAuth() {
+  return useContext(userAuthContext);
+}
 
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
@@ -39,8 +45,7 @@ export function UserAuthContextProvider({ children }) {
     };
   }, []);
 
-  return (
-    <userAuthContext.Provider
+  return (<userAuthContext.Provider
       value={{ user, logIn, signUp, logOut, googleSignIn }}
     >
       {children}
@@ -48,6 +53,6 @@ export function UserAuthContextProvider({ children }) {
   );
 }
 
-export function useUserAuth() {
-  return useContext(userAuthContext);
+UserAuthContextProvider.propTypes = {
+  children: PropTypes.node,
 }

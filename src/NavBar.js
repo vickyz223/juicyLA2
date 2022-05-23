@@ -30,7 +30,7 @@ const NavBar = () => {
                 <div className='ButtonGroup'>
                     <Button className='register' variant="contained"
                         onClick={
-                            () => { navigate('/Register') }
+                            () => { navigate('/Signup') }
                         }
                         sx={{
                             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
@@ -57,7 +57,6 @@ const NavBar = () => {
                             fontSize: 15,
                             width: 120,
                             color: '#F2F2F0',
-
                         }}
                     >
                         sign in
