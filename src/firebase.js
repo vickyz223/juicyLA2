@@ -15,15 +15,15 @@ import { getAuth } from "firebase/auth"
 // };
 
 const firebaseConfig = {
-	apiKey: "AIzaSyCHXTuxVK57ApJppliMgrtK5GlcZ7sWJmg",
-	authDomain: "juicyla-7d596.firebaseapp.com",
-	databaseURL: "https://juicyla-7d596-default-rtdb.firebaseio.com",
-	projectId: "juicyla-7d596",
-	storageBucket: "juicyla-7d596.appspot.com",
-	messagingSenderId: "723240759802",
-	appId: "1:723240759802:web:6f8babc225fadfd250b443",
-	measurementId: "G-D3G6YJ6538"
-}
+  apiKey: "AIzaSyABvCRnBiC8FAlfOOY4WLGoEvtAQM4Jzsw",
+  authDomain: "juicyla-2022.firebaseapp.com",
+  databaseURL: "https://juicyla-2022-default-rtdb.firebaseio.com",
+  projectId: "juicyla-2022",
+  storageBucket: "juicyla-2022.appspot.com",
+  messagingSenderId: "132540762702",
+  appId: "1:132540762702:web:77cbc2746dcdee081bd11f",
+  measurementId: "G-32ZW6T1JQR"
+};
 
 const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app);
