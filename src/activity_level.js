@@ -1,78 +1,55 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { get, getDatabase, child, ref, set } from "firebase/database";
+import { useState, useEffect } from 'react';
 
-const now = new Date();
+const between = 60000; // in ms
 
-async function request(r) {
-    var url = 'http://menu.dining.ucla.edu/Menus/' + r;
+async function request() {
+    var url = 'http://menu.dining.ucla.edu/Menus/DeNeve';
     const request = await axios.get(url);
     return request.data;
 }
 
-function getLevel(r) {
+function getLevel() {
     const db = getDatabase();
-    const reference = ref(db, 'activity/' + r);
+    const reference = ref(db, 'activity/DeNeve');
 
-    request(r).then(re => {
+    request().then(re => {
         const pattern = /<span class="activity-level activity-level-.*?><\/span><\/span> ([0-9]*)%/s;
         let al = re.match(pattern)[1];
 
         set(reference, {
-            date: now.getHours(),
             level: al
         })
     })
 }
 
-function levelData(rest) {
-    try {
-        const reference = ref(getDatabase(), 'activity/' + rest);
+const ActivityLevel = () => {
 
-        get(child(ref(getDatabase()), 'activity/' + rest)).then((snapshot) => {
-            if(!snapshot.exists() || snapshot.val().date != now.getHours()) {
-                getLevel(rest);
-            }
-        })
+    const [activity_level, set_level] = useState(0);
 
-        get(child(ref(getDatabase()), 'activity/' + rest)).then((snapshot) => {
-            set(reference, {
-                level: snapshot.val().level
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log("10 minutes have passed.");
+            
+            getLevel();
+
+            const reference = ref(getDatabase(), 'activity/');
+
+            get(child(reference,'DeNeve')).then((snapshot) => {
+                set_level(activity_level => activity_level - activity_level + snapshot.val().level);
             })
-        })
-    } catch {
-        console.log("Failed to get activity level.");
-    }
-}
 
-export default class ActivityLevel extends React.Component {
+            console.log(activity_level);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            activity: '',
-        }
-    }
+        }, between); // every ten minutes
+        return () => clearInterval(interval);
+    }, [activity_level]);
 
-    propTypes = {
-        restaurant: PropTypes.string,
-    }
+    return (
+        <progress value={activity_level} max="100" />
+    );
+};
 
-    render() {
-        console.log("hi");
-        const restaurant = this.props.restaurant;
-        levelData(restaurant);
-        get(child(ref(getDatabase()), 'activity/' + restaurant)).then((snapshot) => {
-            this.setState({
-                activity: snapshot.val().level
-            })
-        }).catch((error) => {
-            console.error(error);
-        });
-        return (
-            <progress value={this.state.activity} max="100" />
-        );
-    }
-
-}
+export default ActivityLevel;
