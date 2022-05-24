@@ -12,7 +12,7 @@
     margin: 0px;
 }
 .topDivider{
-    margin-top: -8vh;
+    margin-top: -80px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
