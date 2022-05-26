@@ -27,7 +27,7 @@ function getLevel() {
 
 const ActivityLevel = () => {
 
-    const [activity_level, set_level] = useState(0);
+    const [activity_level, set_level] = useState(20);
     useEffect(() => {
         const interval = setInterval(() => {
             console.log("10 minutes have passed.");
