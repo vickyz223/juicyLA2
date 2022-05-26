@@ -7,8 +7,12 @@ import Homepage from './Homepage';
 import WriteReviews from './Components/WriteReviews';
 import { initializeApp } from "firebase/app";
 // import Register from './Register';
-// import Login from './Login';
+import Login from './LoginPage';
+import Signup from './SignupPage'
+import Profile from './ProfilePage'
+
 import RestaurantPage from './RestaurantPage';
+import { UserAuthContextProvider } from './UserAuthContext'
 
 function JuicyLa() {
     const firebaseConfig = {
@@ -24,19 +28,24 @@ function JuicyLa() {
     // Initialize Firebase
     initializeApp(firebaseConfig);
     return (
-        <div>
-            <Router>
-                <NavBar />
-                <Routes>
-                    {/* <Route path="/Register" element={<Register/>}/>
-                <Route path="/Login" element={<Login/>}/> */}
-                    <Route path="/RestaurantPage" element={<RestaurantPage />} />
-                    <Route path="/" element={<Homepage />} />
-                    <Route path="/" element={<WriteReviews />} />
-                </Routes>
+		<UserAuthContextProvider>
+			<div>
+				<Router>
+					<NavBar />
+					<Routes>
+						{/* <Route path="/Register" element={<Register/>}/>
+					<Route path="/Login" element={<Login/>}/> */}
+						<Route path="/RestaurantPage" element={<RestaurantPage />} />
+						<Route path="/" element={<Homepage />} />
+						<Route path="/" element={<WriteReviews />} />
+						<Route path="/Login" element={<Login />} />
+						<Route path="/Signup" element={<Signup />} />
+						<Route path="/Profile" element={<Profile />} />
 
-            </Router>
-        </div>
+					</Routes>
+				</Router>
+			</div>
+		</UserAuthContextProvider>
     );
 }
 
