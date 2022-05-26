@@ -10,6 +10,10 @@
     background-color: #C4C4C4;
 
 }
+.info{
+    display: flex;
+    align-items: center;
+}
 
 #header {
     margin-top: -80px;

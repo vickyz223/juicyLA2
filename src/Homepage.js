@@ -5,6 +5,7 @@ import './Homepage.css';
 import PodiumBox from './PodiumBox';
 import { getDatabase, ref, onValue } from "firebase/database";
 
+
 function getActivity(diningId) {
 
     const db = getDatabase();

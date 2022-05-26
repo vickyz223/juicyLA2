@@ -1,6 +1,8 @@
 import React from 'react';
 import StarRating from './Components/StarRating';
 import PropTypes from "prop-types";
+import ActivityLevel from './activity_level.js';
+
 
 import './Homepage.css';
 
@@ -17,10 +19,11 @@ const PodiumBox = (props) => {
 
                         </div>
                         <div className='activity'>
-                            <h2> Activity</h2>
+                            <div> Activity</div>
                         </div>
-                </div>
-                        
+                        <ActivityLevel restaurant={props.name}/>
+
+                </div>  
                         <div className='summary'>
                         </div>
         </>
