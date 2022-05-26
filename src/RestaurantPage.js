@@ -12,7 +12,7 @@ function Review() {
       <div className="review">
         <div id="reviewHeader">
           <img
-            src={profilePic}
+            src={require("./images/bqmfbsn2fpw51.jpeg")}
             alt="profilePicture"
             className="pp"
           ></img>
@@ -20,23 +20,23 @@ function Review() {
             <p>Username </p>
             <div id="stars2">
               <img
-                src={starPic}
+                src={require("./images/star.png")}
                 className="star2"
               ></img>
               <img
-                src={starPic}
+                src={require("./images/star.png")}
                 className="star2"
               ></img>
               <img
-                src={starPic}
+                src={require("./images/star.png")}
                 className="star2"
               ></img>
               <img
-                src={starPic}
+                src={require("./images/star.png")}
                 className="star2"
               ></img>
               <img
-                src={starPic}
+                src={require("./images/star.png")}
                 className="star2"
               ></img>
             </div>
@@ -103,7 +103,7 @@ function Menu() {
 // }
 export default function Restaurant() {
   let navigate = useNavigate();
-
+  
 
 
   const [show, setShow] = React.useState(false)
@@ -118,11 +118,11 @@ export default function Restaurant() {
           <h1 id="name">NAME OF HALL</h1>
           <div id="header2">
             <div id="stars">
-              <img src={starPic} className="star"></img>
-              <img src={starPic} className="star"></img>
-              <img src={starPic} className="star"></img>
-              <img src={starPic} className="star"></img>
-              <img src={starPic} className="star"></img>
+              <img src={require("./images/star.png")} className="star"></img>
+              <img src={require("./images/star.png")} className="star"></img>
+              <img src={require("./images/star.png")} className="star"></img>
+              <img src={require("./images/star.png")} className="star"></img>
+              <img src={require("./images/star.png")} className="star"></img>
             </div>
 
             <div id="activity">
