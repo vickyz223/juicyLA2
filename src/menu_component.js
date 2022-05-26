@@ -135,14 +135,12 @@ function MenuData(rest) {
         let periods = ['Breakfast','Lunch','Dinner'];
         let period = "";
 
-        if(now.getHours() < 10 && now.getHours() > 6) {
+        if(now.getHours() < 9) {
             period = periods[0];
-        } else if(now.getHours() < 15 && now.getHours() > 10) {
+        } else if(now.getHours() < 15 && now.getHours() >= 9) {
             period = periods[1];
-        } else if(now.getHours() < 21 && now.getHours() > 15) {
+        } else if(now.getHours() >= 15) {
             period = periods[2];
-        } else {
-            period = "Invalid period!";
         }
 
         const ds = writeMenu(rest);
