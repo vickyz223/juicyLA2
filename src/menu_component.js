@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { get, getDatabase, child, ref, set } from "firebase/database";
+import "./menu_component.css"
 
 const now = new Date();
 const d = now.toString();
