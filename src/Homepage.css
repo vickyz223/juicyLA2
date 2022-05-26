@@ -101,8 +101,8 @@
 .summary{
     justify-self: flex-end;
     font-size: 70%;
-    /* background-color: var(--bgcolor) ;
-    color: var(--white); */
+    background-color: #dccecc ;
+    /*color: var(--white); */
     border-radius: 2%;
     overflow-y: scroll;
 
