@@ -112,8 +112,6 @@ function generateData(data,period) {
     
     var finTable = "";
 
-    finTable += '<h1>' + table[0] + '</h1>';
-
     var numItem = 0;
 
     for(let i = 0; i < table[1].length; i++) {
