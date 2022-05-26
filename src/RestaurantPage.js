@@ -7,73 +7,71 @@ import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './menu_component.js';
 import ActivityLevel from './activity_level.js';
 
-class Review extends React.Component {
-  render() {
-    return (
-      <div className="review">
-        <div id="reviewHeader">
-          <img
-            src={require("./images/bqmfbsn2fpw51.jpeg")}
-            alt="profilePicture"
-            className="pp"
-          ></img>
-          <div className="reviewName">
-            <p>Username </p>
-            <div id="stars2">
-              <img
-                src={require("./images/star.png")}
-                className="star2"
-              ></img>
-              <img
-                src={require("./images/star.png")}
-                className="star2"
-              ></img>
-              <img
-                src={require("./images/star.png")}
-                className="star2"
-              ></img>
-              <img
-                src={require("./images/star.png")}
-                className="star2"
-              ></img>
-              <img
-                src={require("./images/star.png")}
-                className="star2"
-              ></img>
-            </div>
+function Review() {
+  return (
+    <div className="review">
+      <div id="reviewHeader">
+        <img
+          src={require("./images/bqmfbsn2fpw51.jpeg")}
+          alt="profilePicture"
+          className="pp"
+        ></img>
+        <div className="reviewName">
+          <p>Username </p>
+          <div id="stars2">
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
           </div>
         </div>
-        <p>
-          Lorem ipsum dolor si gt amet, consectetur adipiscing elit, sed
-          do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum
-        </p>
       </div>
-    )
-  }
+      <p>
+        Lorem ipsum dolor si gt amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum
+      </p>
+    </div>
+  )
 }
 
-class Menu extends React.Component {
-  render() {
-    return (
-      <div>
-        <div id="stars" className="star-rating">
-          <p>Rate Your Meal:</p>
-          <StarRating />
-        </div>
-        <div id="MenuHolder">
-          <h1 id="menuName">MENU</h1>
-          <div id="menuCols">
-            <div className="col"><MenuComponent restaurant="DeNeve" /></div>
-            <div className="col"></div>
-          </div>
+
+function Menu() {
+  return (
+    <div>
+      <div id="stars" className="star-rating">
+        <p>Rate Your Meal:</p>
+        <StarRating />
+      </div>
+      <div id="MenuHolder">
+        <h1 id="menuName">MENU</h1>
+        <div id="menuCols">
+          <div className="col"><MenuComponent restaurant="DeNeve" /></div>
+          <div className="col"></div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
 
 // class WriteReview extends React.Component {
 //   render() {
@@ -109,9 +107,9 @@ class Menu extends React.Component {
 //     );
 //   }
 // }
-
 export default function Restaurant() {
   let navigate = useNavigate();
+
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
