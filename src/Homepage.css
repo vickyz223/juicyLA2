@@ -100,7 +100,12 @@
 
 .summary{
     justify-self: flex-end;
-    background-color: #490F0D;
-    height: 60%;
+    font-size: 70%;
+    /* background-color: var(--bgcolor) ;
+    color: var(--white); */
+    border-radius: 2%;
+    overflow-y: scroll;
+
+    height: 80%;
     width: 100%;
 }
