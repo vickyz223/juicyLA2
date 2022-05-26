@@ -59,8 +59,9 @@ function Menu() {
       <div id="MenuHolder">
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
-          <div className="col"><MenuComponent restaurant="DeNeve" /></div>
-          <div className="col"></div>
+          <div className="col">
+            <MenuComponent restaurant="DeNeve" />
+          </div>
         </div>
       </div>
     );

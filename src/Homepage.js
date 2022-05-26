@@ -5,6 +5,7 @@ import './Homepage.css';
 import PodiumBox from './PodiumBox';
 import { getDatabase, ref, onValue } from "firebase/database";
 
+
 function getActivity(diningId) {
 
     const db = getDatabase();
@@ -107,13 +108,13 @@ const Homepage = () => {
             
             </div>
 
-            <div className='leaderBoard'>
+            {/* <div className='leaderBoard'>
                 hsvgjbckjndssdcv
                 <h1>fyghj</h1>
                 <h1>fyghj</h1>
                 <h1>fyghj</h1>
                 <h1>fyghj</h1>
-            </div>
+            </div> */}
         </>
     );
 }

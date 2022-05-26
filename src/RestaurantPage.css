@@ -10,6 +10,10 @@
     background-color: #C4C4C4;
 
 }
+.info{
+    display: flex;
+    align-items: center;
+}
 
 #header {
     margin-top: -80px;
@@ -184,11 +188,17 @@ textarea:focus{
 
 .col {
     background-color: #A3A3A3;
-    height: 70em;
-    width: 23vw; 
+    width: 46vw; 
     border-radius: 15px; 
-    /* margin-right: 2vh;   */
-    /* margin-left: 2vh;  */
+    column-count: 2;
+    column-gap: 5vw;
+    padding: 3vw; 
+    color: white; 
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
 }
 
 #footer {
