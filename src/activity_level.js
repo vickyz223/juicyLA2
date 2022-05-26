@@ -17,8 +17,14 @@ function getLevel() {
 
     request().then(re => {
         const pattern = /<span class="activity-level activity-level-.*?><\/span><\/span> ([0-9]*)%/s;
-        let al = re.match(pattern)[1];
-
+        let al;
+        
+        try{
+            al = re.match(pattern)[1];
+        } catch {
+            al = 0;
+        }
+        
         set(reference, {
             level: al
         })
@@ -27,20 +33,25 @@ function getLevel() {
 
 const ActivityLevel = () => {
 
-    const [activity_level, set_level] = useState(20);
+    const [activity_level, set_level] = useState(0);
+
+    useEffect(() => {
+        const reference = ref(getDatabase(), 'activity/');
+
+        getLevel();
+        get(child(reference,'DeNeve')).then((snapshot) => {
+            set_level(activity_level => activity_level - activity_level + snapshot.val().level);
+        })
+    }, []);
+    
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log("10 minutes have passed.");
-            
-            getLevel();
-
             const reference = ref(getDatabase(), 'activity/');
 
+            getLevel();
             get(child(reference,'DeNeve')).then((snapshot) => {
                 set_level(activity_level => activity_level - activity_level + snapshot.val().level);
             })
-
-            console.log(activity_level);
 
         }, between); // every ten minutes
         return () => clearInterval(interval);
