@@ -10,7 +10,7 @@
     position: sticky;
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  height: 8vh;
+  height: 80px;
   z-index: 100000;
 }
 .nav.active{
