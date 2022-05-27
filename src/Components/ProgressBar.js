@@ -3,8 +3,8 @@ import useStorage from "../hooks/useStorage";
 import PropTypes from "prop-types";
 import "./ProgressBar.css"
 
-const ProgressBar = ({file, setFile}) =>{
-    const {url, progress} = useStorage(file);
+const ProgressBar = ({file, setFile, restName}) =>{
+    const {url, progress} = useStorage(file, restName);
     console.log(progress)
     useEffect(()=>{
         if (url){
@@ -20,6 +20,7 @@ const ProgressBar = ({file, setFile}) =>{
 
 ProgressBar.propTypes ={
     file: PropTypes.object,
-    setFile: PropTypes.func
+    setFile: PropTypes.func,
+    restName: PropTypes.string
 }
 export default ProgressBar;

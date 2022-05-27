@@ -153,7 +153,7 @@ export default function Restaurant() {
             }
           }}
           onClick={
-              () => { navigate('/PhotoGallery ') }
+              () => { navigate('/PhotoGallery ')}
           }
         >
 

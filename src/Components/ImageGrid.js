@@ -3,8 +3,8 @@ import "./ImageGrid.css"
 
 import useFirestore from "../hooks/useFirestore";
 import PropTypes from "prop-types";
-const ImageGrid = ({setSelectedImage}) =>{
-    const {docs} = useFirestore('images');
+const ImageGrid = ({setSelectedImage, RestName}) =>{
+    const {docs} = useFirestore('images'+RestName);
     return(
         <div className="img_grid">
             {docs && docs.map(doc => (
@@ -23,6 +23,7 @@ const ImageGrid = ({setSelectedImage}) =>{
 }
 
 ImageGrid.propTypes = {
-    setSelectedImage: PropTypes.func
+    setSelectedImage: PropTypes.func,
+    RestName: PropTypes.string
 }
 export default ImageGrid;

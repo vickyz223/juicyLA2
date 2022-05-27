@@ -3,7 +3,7 @@ import {projectStorage, projectFirestore, timestamp} from '../firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc } from "firebase/firestore";
 
-const useStorage = (file) =>{
+const useStorage = ({file, restName}) =>{
     const [progress, setProgess] = useState(0);
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
@@ -12,7 +12,7 @@ const useStorage = (file) =>{
         //references
         const storageRef =ref(projectStorage,file.name);
         const uploadTask = uploadBytesResumable(storageRef, file);
-        const collectionRef = collection(projectFirestore,'images');
+        const collectionRef = collection(projectFirestore,'images'+restName);
 
         uploadTask.on('state_changed', 
         (snapshot)=>{

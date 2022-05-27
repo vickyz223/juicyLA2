@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import ProgressBar from "./ProgressBar"; 
 
 const types = ['image/png', 'image/jpeg'];
-const UploadImages = () =>{
+const UploadImages = (restName) =>{
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
     const fileInputRef=useRef();
@@ -43,7 +43,6 @@ const UploadImages = () =>{
           onClick={
               () => { 
                 fileInputRef.current.click()
-              console.log('clicked') 
               }
           }
         >
@@ -56,10 +55,12 @@ const UploadImages = () =>{
             <div className="output">
                 {error && <div className="error">{error}</div>}
                 {file && <div>{file.name}</div>}
-                { file && <ProgressBar file={file} setFile = {setFile}/>}
+                { file && <ProgressBar file={file} setFile = {setFile} restName={restName}/>}
             </div>
         </form>
     )
 }
+
+
 
 export default UploadImages;
