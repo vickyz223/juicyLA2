@@ -1,14 +1,12 @@
 .img_grid{
-    /* margin-left: 15%; */
-    /* margin-right: 15%; */
+    
     margin-top: 2vh;
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-auto-rows: 30%;
+    grid-template-columns: 23vw 23vw 23vw;
+    grid-auto-rows: 20vw;
 
     column-gap: 2vh;
     row-gap: 2vh;
-    height: calc(100vh - 10px);
 
 }
 
