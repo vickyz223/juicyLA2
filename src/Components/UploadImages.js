@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import Button from '@mui/material/Button';
 import ProgressBar from "./ProgressBar"; 
+import { PropTypes } from "prop-types";
 
 const types = ['image/png', 'image/jpeg'];
-const UploadImages = (restName) =>{
+const UploadImages = ({restName}) =>{
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
     const fileInputRef=useRef();
@@ -13,12 +14,14 @@ const UploadImages = (restName) =>{
         const selected = e.target.files[0];
         if (selected && types.includes(selected.type)){ //checks that an images is selected and is a valid type
             setFile(selected);
+            console.log(selected);
+
         }
         else{
             setFile(null);
             setError('Please upload a png or jpeg');
+
         }
-        console.log(file);
     }
     return(
         <form>
@@ -61,6 +64,9 @@ const UploadImages = (restName) =>{
     )
 }
 
+UploadImages.propTypes={
+  restName: PropTypes.string
+}
 
 
 export default UploadImages;

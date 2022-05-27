@@ -4,7 +4,9 @@ import "./ImageGrid.css"
 import useFirestore from "../hooks/useFirestore";
 import PropTypes from "prop-types";
 const ImageGrid = ({setSelectedImage, RestName}) =>{
-    const {docs} = useFirestore('images'+RestName);
+    const collName = 'images'+RestName;
+    console.log(collName)
+    const {docs} = useFirestore(collName);
     return(
         <div className="img_grid">
             {docs && docs.map(doc => (
