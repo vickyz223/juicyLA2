@@ -11,6 +11,9 @@ import Profile from './ProfilePage'
 import app from './firebase';
 import RestaurantPage from './RestaurantPage';
 import { UserAuthContextProvider } from './UserAuthContext'
+import PhotoGallery from './PhotoGallery';
+// import UploadImages from './Components/UploadImages';
+
 
 function JuicyLa() {
 
@@ -24,11 +27,14 @@ function JuicyLa() {
 						{/* <Route path="/Register" element={<Register/>}/>
 					<Route path="/Login" element={<Login/>}/> */}
 						<Route path="/RestaurantPage" element={<RestaurantPage />} />
-						<Route path="/" element={<Homepage />} />
-						<Route path="/" element={<WriteReviews />} />
+                        <Route path="/PhotoGallery" element={<PhotoGallery />}/>
+						
+                        {/* <Route path="/UploadImages" element={<UploadImages/>}/> */}
 						<Route path="/Login" element={<Login />} />
 						<Route path="/Signup" element={<Signup />} />
 						<Route path="/Profile" element={<Profile />} />
+                        <Route path="/" element={<Homepage />} />
+						<Route path="/" element={<WriteReviews />} />
 
 					</Routes>
 				</Router>

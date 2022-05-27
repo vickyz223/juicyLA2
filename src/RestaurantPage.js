@@ -135,6 +135,7 @@ export default function Restaurant() {
           <p>HOURS: 7:00 - 10:00</p>
         </div>
 
+       
         <Button id="photoAdd" variant="contained"
           sx={{
             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
@@ -145,14 +146,18 @@ export default function Restaurant() {
             backgroundColor: "transparent",
             border: 1,
             borderColor: "white",
+            marginLeft: '2%',
 
             '&:hover': {
               backgroundColor: '#868686',
             }
           }}
+          onClick={
+              () => { navigate('/PhotoGallery ') }
+          }
         >
 
-          ADD PHOTOS
+          PHOTOS
         </Button>
       </div>
       {/* <div id="bruh">a</div> */}
