@@ -3,7 +3,7 @@ import React from "react";
 import "./PhotoGallery.css";
 import app from './firebase';
 import UploadImages from "./Components/UploadImages";
-
+import ImageGrid from "./Components/ImageGrid";
 const PhotoGallery = () =>{
     console.log(app);
     return(
@@ -12,7 +12,9 @@ const PhotoGallery = () =>{
                 <div className = "GalleryTitle">
                     Dining Hall
                 </div>
-                <UploadImages/>
+                <UploadImages/>             
+                <ImageGrid/>
+
             </div>
             
         </div>

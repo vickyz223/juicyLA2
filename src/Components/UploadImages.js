@@ -35,7 +35,6 @@ const UploadImages = () =>{
             backgroundColor: "transparent",
             border: 1,
             borderColor: "white",
-            marginLeft: '2%',
 
             '&:hover': {
               backgroundColor: '#F8C27C',
@@ -49,7 +48,7 @@ const UploadImages = () =>{
           }
         >
 
-          PHOTOS
+          ADD PHOTOS
         </Button>
             
         </label>

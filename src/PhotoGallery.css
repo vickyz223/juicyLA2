@@ -4,12 +4,18 @@
     --darkestRed: #490F0D;
     
 }
+.Gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 body{
     background-color: #F8C27C;
 }
 .GalleryHeader{
     margin-top: 3%;
     display: flex;
+    width: 70%;
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
