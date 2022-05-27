@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import {projectStorage} from '../firebase';
+import { ref, uploadBytesResumable } from "firebase/storage";
 
 const useStorage = (file) =>{
     const [progress, setProgess] = useState(0);
@@ -8,19 +9,23 @@ const useStorage = (file) =>{
 
     useEffect(()=>{
         //references
-        const storageRef = projectStorage.ref(file.name);
-        storageRef.put(file).on('state_changed', (snap)=>{
-            let percentage = (snap.bytesTransferred / snap.totalBytes)*100;
+        const storageRef =ref(projectStorage,file.name);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+
+        uploadTask.on('state_changed', 
+        (snapshot)=>{
+            let percentage = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
             setProgess(percentage);
 
         }, (err) =>{
             setError(err);
         }, async ()=>{
-            const url = await storageRef.getDownloadURL() //different from url above
+            const url = await uploadTask.getDownloadURL() //different from url above
             setUrl(url);
-        }
-        )
+        })
     }, [file])
     return { progress, url, error}
 
 }
+
+export default useStorage;

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Button from '@mui/material/Button';
+import ProgressBar from "./ProgressBar"; 
 
 const types = ['image/png', 'image/jpeg'];
 const UploadImages = () =>{
@@ -56,6 +57,7 @@ const UploadImages = () =>{
             <div className="output">
                 {error && <div className="error">{error}</div>}
                 {file && <div>{file.name}</div>}
+                { file && <ProgressBar file={file} setFile = {setFile}/>}
             </div>
         </form>
     )
