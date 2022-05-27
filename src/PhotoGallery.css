@@ -1,0 +1,26 @@
+:root{
+    --bgcolor: #B22F25;
+    --textcolor: #F2F2F0;
+    --darkestRed: #490F0D;
+    
+}
+body{
+    background-color: #F8C27C;
+}
+.GalleryHeader{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 20%;
+    margin-right: 20%;
+
+
+}
+.GalleryTitle{
+    color: var(--textcolor);
+    font-size: 400%;
+    font-weight: bolder;
+    align-self: center;
+}
