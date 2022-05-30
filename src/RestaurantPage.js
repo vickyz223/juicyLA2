@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 import StarRating from './Components/StarRating';
 import ReviewRating from "./Components/ReviewRating";
 import WriteReviews from './Components/WriteReviews';
-import MenuComponent from './menu_component.js';
-import ActivityLevel from './activity_level.js';
+import MenuComponent from './Components/MenuComponent.js';
+import ActivityLevel from './Components/ActivityLevel.js';
 import DisplayReviews from './Components/DisplayReviews';
 import "./RestaurantPage.css";
 
@@ -29,7 +29,7 @@ export default function Restaurant() {
             </div>
             <div id="activity">
               <p>ACTIVITY:</p>
-              <ActivityLevel restaurant="DeNeve" />
+              <ActivityLevel restaurant={ location.state.name } />
             </div>
           </div>
           <p>HOURS: 7:00 - 10:00</p>
@@ -53,7 +53,7 @@ export default function Restaurant() {
             }
           }}
           onClick={
-            () => { navigate('/PhotoGallery ', { state: { name: 'Epicuria' } }) }
+            () => { navigate('/PhotoGallery ', { state: { name: location.state.name } }) }
           }
         >
 
@@ -137,7 +137,7 @@ function Menu() {
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
           <div className="col"><MenuComponent restaurant="DeNeve" /></div>
-          <div className="col"></div>
+          {/* <div className="col"></div> */}
         </div>
       </div>
     </div>

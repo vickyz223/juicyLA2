@@ -1,8 +1,8 @@
 import React from 'react';
 import Rating from '@mui/material/Rating';
 import PropTypes from "prop-types";
-import ActivityLevel from './activity_level.js';
-import MenuComponent from './menu_component';
+import ActivityLevel from './Components/ActivityLevel';
+import MenuComponent from './Components/MenuComponent';
 import './Homepage.css';
 
 
