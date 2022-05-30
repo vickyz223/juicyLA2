@@ -100,7 +100,7 @@ const Homepage = () => {
                     <div className='second'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { diningHallName: "food" }) }
+                            () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
                         }
                     >
                         <PodiumBox name={restaurants[0].name} />
@@ -108,7 +108,7 @@ const Homepage = () => {
                     <div className='first'
                         id='podiumBoxes'
                         onClick={
-                            () => { navigate('/RestaurantPage', { diningHallName: "food" }) }
+                            () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
                         }
                     >
                         <PodiumBox name={restaurants[1].name} />
@@ -116,7 +116,7 @@ const Homepage = () => {
                     <div className='third'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { diningHallName: "food" }) }
+                            () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
                         }
                     >
                         <PodiumBox name={restaurants[2].name} />

@@ -1,128 +1,26 @@
 import React from 'react';
 import "./RestaurantPage.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Button from '@mui/material/Button';
 import StarRating from './Components/StarRating';
 import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './menu_component.js';
 import ActivityLevel from './activity_level.js';
-import PropTypes from 'prop-types';
 
-function Review() {
-  return (
-    <div className="review">
-      <div id="reviewHeader">
-        <img
-          src={require("./images/bqmfbsn2fpw51.jpeg")}
-          alt="profilePicture"
-          className="pp"
-        ></img>
-        <div className="reviewName">
-          <p>Username </p>
-          <div id="stars2">
-            <img
-              src={require("./images/star.png")}
-              className="star2"
-            ></img>
-            <img
-              src={require("./images/star.png")}
-              className="star2"
-            ></img>
-            <img
-              src={require("./images/star.png")}
-              className="star2"
-            ></img>
-            <img
-              src={require("./images/star.png")}
-              className="star2"
-            ></img>
-            <img
-              src={require("./images/star.png")}
-              className="star2"
-            ></img>
-          </div>
-        </div>
-      </div>
-      <p>
-        Lorem ipsum dolor si gt amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum
-      </p>
-    </div>
-  )
-}
-
-
-function Menu() {
-  return (
-    <div>
-      <div id="stars" className="star-rating">
-        <p>Rate Your Meal:</p>
-        <StarRating />
-      </div>
-      <div id="MenuHolder">
-        <h1 id="menuName">MENU</h1>
-        <div id="menuCols">
-          <div className="col"><MenuComponent restaurant="DeNeve" /></div>
-          <div className="col"></div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
-// class WriteReview extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1 id="menuName">WRITE REVIEW</h1>
-//         <form>
-//           <textarea rows="5" cols="50" id="TITLE"></textarea>
-//         </form>
-//         <div id="submitRev">
-//           <div>
-//             <img src={require("./images/star.png")} className="star3"></img>
-//             <img src={require("./images/star.png")} className="star3"></img>
-//             <img src={require("./images/star.png")} className="star3"></img>
-//             <img src={require("./images/star.png")} className="star3"></img>
-//             <img src={require("./images/star.png")} className="star3"></img>
-//           </div>
-//           <Button
-//             sx={{
-//               fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-//               fontWeight: 'bold',
-//               fontSize: 15,
-//               color: '#F2F2F0',
-//             }}
-//           >
-//             <b>DELETE REVIEW</b>
-//           </Button>
-//           <Button>
-//             <b>POST REVIEW</b>
-//           </Button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-export default function Restaurant({ diningHallName }) {
-  let navigate = useNavigate();
+export default function Restaurant() {
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
   }
 
-  console.log({ diningHallName });
-
   return (
     <div id="all">
       <div id="header">
         <div id="headerInfo">
-          <h1 id="name">{diningHallName}</h1>
+          <h1 id="name">{location.state.name}</h1>
           <div id="header2">
             <div id="activity">
               <p>ACTIVITY:</p>
@@ -225,6 +123,67 @@ export default function Restaurant({ diningHallName }) {
   );
 }
 
-Restaurant.propTypes = {
-  diningHallName: PropTypes.string.isRequired,
-};
+function Review() {
+  return (
+    <div className="review">
+      <div id="reviewHeader">
+        <img
+          src={require("./images/bqmfbsn2fpw51.jpeg")}
+          alt="profilePicture"
+          className="pp"
+        ></img>
+        <div className="reviewName">
+          <p>Username </p>
+          <div id="stars2">
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+            <img
+              src={require("./images/star.png")}
+              className="star2"
+            ></img>
+          </div>
+        </div>
+      </div>
+      <p>
+        Lorem ipsum dolor si gt amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum
+      </p>
+    </div>
+  )
+}
+
+
+function Menu() {
+  return (
+    <div>
+      <div id="stars" className="star-rating">
+        <p>Rate Your Meal:</p>
+        <StarRating />
+      </div>
+      <div id="MenuHolder">
+        <h1 id="menuName">MENU</h1>
+        <div id="menuCols">
+          <div className="col"><MenuComponent restaurant="DeNeve" /></div>
+          <div className="col"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
