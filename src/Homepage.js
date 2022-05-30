@@ -16,19 +16,18 @@ function getActivity(diningId) {
         activity = snapshot.val();
     });
     return (activity);
-
 }
 
-function getRating(diningId) {
+const getRating = (diningId) => {
     const db = getDatabase();
-    const reference = ref(db, 'written reviews' + '/' + diningId);
+    const reference = ref(db, 'ratings' + '/' + diningId);
 
-    let rating;
+    let num;
     onValue(reference, (snapshot) => {
-        rating = snapshot.val();
+        num = snapshot.val().rating;
     });
-    return (rating);
-}
+    return (num);
+};
 
 function getMenu(diningId) {
     const db = getDatabase();
@@ -82,7 +81,7 @@ const Homepage = () => {
                             () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
                         }
                     >
-                        <PodiumBox name={restaurants[0].name} />
+                        <PodiumBox name={restaurants[0].name} rating={restaurants[0].rating} />
                     </div>
                     <div className='first'
                         id='podiumBoxes'
@@ -90,15 +89,15 @@ const Homepage = () => {
                             () => { navigate('/RestaurantPage', { state: { name: 'BruinPlate' } }) }
                         }
                     >
-                        <PodiumBox name={restaurants[1].name} />
+                        <PodiumBox name={restaurants[1].name} rating={restaurants[1].rating} />
                     </div>
                     <div className='third'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: 'DeNeve' } }) }
                         }
                     >
-                        <PodiumBox name={restaurants[2].name} />
+                        <PodiumBox name={restaurants[2].name} rating={restaurants[2].rating} />
                     </div>
                 </div>
 

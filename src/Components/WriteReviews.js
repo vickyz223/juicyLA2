@@ -20,9 +20,6 @@ function writeUserData(diningId, username, review, stars) {
     });
 }
 
-writeUserData("Bplate", "jack", "Bplate be bussin", 5);
-writeUserData("Epicuria", "jen", "L coveL", 2);
-
 function WriteReview({ hallName }) {
     const [value, setValue] = React.useState('');
     const [name, setName] = React.useState('');

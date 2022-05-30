@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from '@mui/material/Button';
 import StarRating from './Components/StarRating';
+import ReviewRating from "./Components/ReviewRating";
 import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './menu_component.js';
 import ActivityLevel from './activity_level.js';
@@ -23,12 +24,14 @@ export default function Restaurant() {
         <div id="headerInfo">
           <h1 id="name">{location.state.name}</h1>
           <div id="header2">
+            <div>
+              <ReviewRating hallName={location.state.name} />
+            </div>
             <div id="activity">
               <p>ACTIVITY:</p>
               <ActivityLevel restaurant="DeNeve" />
             </div>
           </div>
-
           <p>HOURS: 7:00 - 10:00</p>
         </div>
 

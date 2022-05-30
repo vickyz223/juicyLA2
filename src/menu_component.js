@@ -169,10 +169,6 @@ export default class MenuComponent extends React.Component {
         }
     }
 
-    propTypes = {
-        restaurant: PropTypes.string,
-    }
-
     render() {
         const restaurant = this.props.restaurant;
         const menu_path = MenuData(restaurant);
@@ -189,4 +185,8 @@ export default class MenuComponent extends React.Component {
             <div dangerouslySetInnerHTML={{ __html: this.state.menu }} />
         );
     }
+}
+
+MenuComponent.propTypes = {
+    restaurant: PropTypes.string,
 }
