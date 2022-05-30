@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Button from '@mui/material/Button';
 import StarRating from './Components/StarRating';
 import WriteReviews from './Components/WriteReviews';
-import MenuComponent from './menu_component.js';
-import ActivityLevel from './activity_level.js';
+import MenuComponent from './Components/MenuComponent.js';
+import ActivityLevel from './Components/ActivityLevel.js';
 import DisplayReviews from './Components/DisplayReviews';
 import "./RestaurantPage.css";
 

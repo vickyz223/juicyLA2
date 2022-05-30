@@ -1,8 +1,8 @@
 import React from 'react';
 import StarRating from './Components/StarRating';
 import PropTypes from "prop-types";
-import ActivityLevel from './activity_level.js';
-import MenuComponent from './menu_component';
+import ActivityLevel from './Components/ActivityLevel';
+import MenuComponent from './Components/MenuComponent';
 import './Homepage.css';
 
 
