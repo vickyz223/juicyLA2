@@ -6,6 +6,7 @@ import StarRating from './Components/StarRating';
 import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './menu_component.js';
 import ActivityLevel from './activity_level.js';
+import PropTypes from 'prop-types';
 
 function Review() {
   return (
@@ -107,20 +108,21 @@ function Menu() {
 //     );
 //   }
 // }
-export default function Restaurant() {
+export default function Restaurant({ diningHallName }) {
   let navigate = useNavigate();
-
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
   }
 
+  console.log({ diningHallName });
+
   return (
     <div id="all">
       <div id="header">
         <div id="headerInfo">
-          <h1 id="name">NAME OF HALL</h1>
+          <h1 id="name">{diningHallName}</h1>
           <div id="header2">
             <div id="activity">
               <p>ACTIVITY:</p>
@@ -222,3 +224,7 @@ export default function Restaurant() {
     </div>
   );
 }
+
+Restaurant.propTypes = {
+  diningHallName: PropTypes.string.isRequired,
+};

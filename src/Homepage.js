@@ -1,5 +1,5 @@
 import React from 'react';
-import {useEffect,} from 'react';
+import { useEffect, } from 'react';
 import { useNavigate } from "react-router-dom";
 import './Homepage.css';
 import PodiumBox from './PodiumBox';
@@ -37,33 +37,33 @@ function getActivity(diningId) {
         activity = snapshot.val();
     });
     return (activity);
-    
+
 }
 
-function getRating(diningId){
+function getRating(diningId) {
     const db = getDatabase();
     const reference = ref(db, 'written reviews' + '/' + diningId);
 
     let rating;
     onValue(reference, (snapshot) => {
         rating = snapshot.val();
-        });
+    });
     return (rating);
 }
 
-function getMenu(diningId){
+function getMenu(diningId) {
     const db = getDatabase();
     const reference = ref(db, 'menu' + '/' + diningId);
 
     let menu;
     onValue(reference, (snapshot) => {
         menu = snapshot.val();
-        });
+    });
     return (menu);
 
 }
 
-function diningHall(name, rating, menu, activity){
+function diningHall(name, rating, menu, activity) {
     this.name = name;
     this.rating = rating;
     this.menu = menu;
@@ -74,7 +74,7 @@ const Homepage = () => {
     const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
     let len = places.length;
     const restaurants = [];
-    for (let i = 0; i < len; i++){
+    for (let i = 0; i < len; i++) {
         const name = places[i];
         const item = new diningHall(name, getRating(name), getMenu(name), getActivity(name));
         restaurants.push(item);
@@ -82,10 +82,9 @@ const Homepage = () => {
 
     console.log(restaurants);
 
-    useEffect(()=>{
+    useEffect(() => {
 
     })
-
 
     // const [name, setName] = useState('Name');
     return (
@@ -98,35 +97,33 @@ const Homepage = () => {
                     Current Rankings
                 </div>
                 <div className='podium'>
-                    
-
                     <div className='second'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage') }
+                            () => { navigate('/RestaurantPage', { diningHallName: "food" }) }
                         }
                     >
-                        <PodiumBox name = {restaurants[0].name} />
+                        <PodiumBox name={restaurants[0].name} />
                     </div>
                     <div className='first'
-                    id='podiumBoxes'
-                    onClick={
-                        () => { navigate('/RestaurantPage') }
-                    }
-                >
-                    <PodiumBox name = {restaurants[1].name}/>
+                        id='podiumBoxes'
+                        onClick={
+                            () => { navigate('/RestaurantPage', { diningHallName: "food" }) }
+                        }
+                    >
+                        <PodiumBox name={restaurants[1].name} />
+                    </div>
+                    <div className='third'
+                        id="podiumBoxes"
+                        onClick={
+                            () => { navigate('/RestaurantPage', { diningHallName: "food" }) }
+                        }
+                    >
+                        <PodiumBox name={restaurants[2].name} />
+                    </div>
                 </div>
-                <div className='third'
-                    id="podiumBoxes"
-                    onClick={
-                        () => { navigate('/RestaurantPage') }
-                    }
-                >
-                    <PodiumBox name = {restaurants[2].name}/>
-                </div>
-                </div>
-                
-            
+
+
             </div>
 
             <div className='leaderBoard'>
