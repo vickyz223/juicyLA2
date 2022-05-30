@@ -25,7 +25,7 @@ export default function Restaurant() {
           <div id="header2">
             <div id="activity">
               <p>ACTIVITY:</p>
-              <ActivityLevel restaurant="DeNeve" />
+              <ActivityLevel restaurant={ location.state.name } />
             </div>
           </div>
 
