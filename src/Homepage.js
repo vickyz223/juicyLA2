@@ -87,7 +87,7 @@ const Homepage = () => {
                     <div className='first'
                         id='podiumBoxes'
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: 'BruinPlate' } }) }
                         }
                     >
                         <PodiumBox name={restaurants[1].name} />
