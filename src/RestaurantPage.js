@@ -50,7 +50,7 @@ export default function Restaurant() {
             }
           }}
           onClick={
-            () => { navigate('/PhotoGallery ', { state: { name: 'Epicuria' } }) }
+            () => { navigate('/PhotoGallery ', { state: { name: location.state.name } }) }
           }
         >
 
@@ -134,7 +134,7 @@ function Menu() {
         <h1 id="menuName">MENU</h1>
         <div id="menuCols">
           <div className="col"><MenuComponent restaurant="DeNeve" /></div>
-          <div className="col"></div>
+          {/* <div className="col"></div> */}
         </div>
       </div>
     </div>

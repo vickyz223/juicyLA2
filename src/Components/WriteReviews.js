@@ -80,6 +80,7 @@ function WriteReview({ hallName }) {
                             variant="standard"
                             value={name}
                             onChange={handleName}
+        
                         />
                     </Box>
                 </div>
@@ -87,7 +88,7 @@ function WriteReview({ hallName }) {
                     <Box
                         component="form"
                         sx={{
-                            '& .MuiTextField-root': { m: 1, width: '50ch' },
+                            '& .MuiTextField-root': { m: 1, width: '40vw' },
                         }}
                         noValidate
                         autoComplete="off"
@@ -98,7 +99,7 @@ function WriteReview({ hallName }) {
                                 id="outlined-multiline-static"
                                 label="Leave a Review"
                                 multiline
-                                rows={7}
+                                rows={-3}
                                 value={value}
                                 onChange={handleChange}
                                 className='review-field'
@@ -116,26 +117,28 @@ function WriteReview({ hallName }) {
                             }}
                         />
                     </div>
-                    <div className='review-post-btn'>
-                        <Button
-                            variant="outlined"
-                            sx={{
-                                color: 'white',
-                                width: 50,
-                            }}
-                            onClick={() => handleDelete()}
-                        >
-                            Delete
-                        </Button>
-                        <Button
-                            sx={{
-                                color: 'white',
-                                width: 50,
-                            }}
-                            variant="outlined"
-                            onClick={() => handleClick()}
-                        >
-                            Post</Button>
+                    <div id="buttonHolder">
+                        <div className='review-post-btn'>
+                            <Button
+                                variant="outlined"
+                                sx={{
+                                    color: 'white',
+                                    width: 50,
+                                }}
+                                onClick={() => handleDelete()}
+                            >
+                                Delete
+                            </Button>
+                            <Button
+                                sx={{
+                                    color: 'white',
+                                    width: 50,
+                                }}
+                                variant="outlined"
+                                onClick={() => handleClick()}
+                            >
+                                Post</Button>
+                    </div>
                     </div>
                 </div>
             </div>
