@@ -12,24 +12,43 @@ import "./RestaurantPage.css";
 export default function Restaurant() {
   const navigate = useNavigate();
   const location = useLocation();
+  const diningHallName = location.state.name;
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
   }
 
+  function Menu() {
+    return (
+      <div>
+        <div id="stars" className="star-rating">
+          <p>Rate Your Meal:</p>
+          <StarRating hallName={diningHallName} />
+        </div>
+        <div id="MenuHolder">
+          <h1 id="menuName">MENU</h1>
+          <div id="menuCols">
+            <div className="col"><MenuComponent restaurant={diningHallName} /></div>
+            {/* <div className="col"></div> */}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="all">
       <div id="header">
         <div id="headerInfo">
-          <h1 id="name">{location.state.name}</h1>
+          <h1 id="name">{diningHallName}</h1>
           <div id="header2">
             <div>
-              <ReviewRating hallName={location.state.name} />
+              <ReviewRating hallName={diningHallName} />
             </div>
             <div id="activity">
               <p>ACTIVITY:</p>
-              <ActivityLevel restaurant={ location.state.name } />
+              <ActivityLevel restaurant={diningHallName} />
             </div>
           </div>
           <p>HOURS: 7:00 - 10:00</p>
@@ -65,7 +84,7 @@ export default function Restaurant() {
       <div id="lower">
         <div id="bottom">
           <div id="menu">
-            {show ? <WriteReviews hallName={location.state.name} /> : <Menu />}
+            {show ? <WriteReviews hallName={diningHallName} /> : <Menu />}
           </div>
 
           <div id="reviews">
@@ -94,7 +113,7 @@ export default function Restaurant() {
               </h1>
             </div>
             <div id="reviewHolder">
-              <DisplayReviews hallName={location.state.name} />
+              <DisplayReviews hallName={diningHallName} />
             </div>
             <div id="reviewFooter"></div>
           </div>
@@ -120,24 +139,6 @@ export default function Restaurant() {
           >
             Back to ratings
           </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Menu() {
-  return (
-    <div>
-      <div id="stars" className="star-rating">
-        <p>Rate Your Meal:</p>
-        <StarRating />
-      </div>
-      <div id="MenuHolder">
-        <h1 id="menuName">MENU</h1>
-        <div id="menuCols">
-          <div className="col"><MenuComponent restaurant="DeNeve" /></div>
-          {/* <div className="col"></div> */}
         </div>
       </div>
     </div>
