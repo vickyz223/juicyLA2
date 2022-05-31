@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import './Homepage.css';
 import PodiumBox from './PodiumBox';
 import { getDatabase, ref, onValue } from "firebase/database";
-import RestaurantCheck from './Components/RestaurantRanking'
 
 
 function getActivity(diningId) {
