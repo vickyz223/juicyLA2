@@ -23,6 +23,7 @@ function ReviewRating({ hallName }) {
         <div>
             <Rating
                 value={total}
+                defaultValue='3'
                 readOnly
             />
         </div>

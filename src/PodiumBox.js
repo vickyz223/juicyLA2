@@ -15,6 +15,7 @@ const PodiumBox = (props) => {
             <div className="info">
                 <div className='stars'>
                     <Rating
+                        defaultValue='3'
                         value={props.rating}
                         readOnly
                     />
