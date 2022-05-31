@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# JUICYLA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+JuicyLA was created with React, NodeJS, and Firebase. Our aim is to create a page where students can quickly access information and reviews about dining halls at any given meal period. On the main page, we have the realtime menus, activity levels, and star reviews for each meal period. Once the user clicks on the podium box, they will be navigate to the more detailed restaurant page which features written reviews by fellow students and the historical star ratings of the dining hall. Restaurant pages also contain a photo gallery where users can add photos and view photos uploaded by others.
+
+
+
 
 ## Available Scripts
 
