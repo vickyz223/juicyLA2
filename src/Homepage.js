@@ -52,8 +52,6 @@ const Homepage = () => {
     let navigate = useNavigate();
     const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
     let len = places.length;
-
-    RestaurantCheck();
     
     const restaurants = [];
 
