@@ -33,6 +33,7 @@
 	justify-content: space-between;
 	width: 100%;
 	align-content: center;
+	margin-top: -4px;
 }
 
 .buttonLeft {
