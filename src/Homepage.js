@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect, } from 'react';
 import { useNavigate } from "react-router-dom";
 import './Homepage.css';
 import PodiumBox from './PodiumBox';
@@ -62,23 +61,35 @@ function diningHall(name, rating, menu, activity) {
     this.activity = activity;
 }
 
-
 const Homepage = () => {
     let navigate = useNavigate();
     const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
     let len = places.length;
+
     const restaurants = [];
+
     for (let i = 0; i < len; i++) {
         const name = places[i];
         const item = new diningHall(name, getRating(name), getMenu(name), getActivity(name));
-        restaurants.push(item);
+        if(i == 0) {
+            restaurants.push(item);
+        } else if(i == 1) {
+            if(restaurants[0].rating > getRating(name)) {
+                restaurants.push(item);
+            }
+            else {
+                restaurants.unshift(item);
+            }
+        } else {
+            if(restaurants[0].rating < getRating(name)) {
+                restaurants.unshift(item);
+            } else if(restaurants[1].rating < getRating(name)) {
+                restaurants.splice(1,0,item);
+            } else {
+                restaurants.push(item);
+            }
+        }
     }
-
-    console.log(restaurants);
-
-    useEffect(() => {
-
-    })
 
     // const [name, setName] = useState('Name');
     return (
@@ -94,23 +105,23 @@ const Homepage = () => {
                     <div className='second'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: 'Epicuria' } }) }
-                        }
-                    >
-                        <PodiumBox name={restaurants[0].name} rating={restaurants[0].rating} />
-                    </div>
-                    <div className='first'
-                        id='podiumBoxes'
-                        onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: 'BruinPlate' } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[1].name } }) }
                         }
                     >
                         <PodiumBox name={restaurants[1].name} rating={restaurants[1].rating} />
                     </div>
+                    <div className='first'
+                        id='podiumBoxes'
+                        onClick={
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[0].name } }) }
+                        }
+                    >
+                        <PodiumBox name={restaurants[0].name} rating={restaurants[0].rating} />
+                    </div>
                     <div className='third'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: 'DeNeve' } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[2].name } }) }
                         }
                     >
                         <PodiumBox name={restaurants[2].name} rating={restaurants[2].rating} />
