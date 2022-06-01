@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
 import StarRating from './Components/StarRating';
 import ReviewRating from "./Components/ReviewRating";
 import WriteReviews from './Components/WriteReviews';
@@ -16,6 +17,8 @@ export default function Restaurant() {
   const navigate = useNavigate();
   const location = useLocation();
   const diningHallName = location.state.name;
+  const isMealPeriod = location.state.isMealPeriod;
+  const liveRating = location.state.liveRating;
   const [userArr, setUserArr] = useState([]);
   const dbRef = ref(db, 'written reviews' + '/' + diningHallName);
 
@@ -42,12 +45,16 @@ export default function Restaurant() {
   function Menu() {
     return (
       <div>
-        <div id="stars" className="star-rating">
-          <p>Rate Your Meal:</p>
-          <StarRating hallName={diningHallName} />
-        </div>
-        <div id="MenuHolder">
-          <h1 id="menuName">MENU</h1>
+        
+        <div id="MenuHolder" s>
+          <div className="menutitle">
+            <h1 id="menuName">MENU</h1>
+            <div id="stars" className="star-rating">
+              <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod}/>
+            </div>
+          </div >
+          
+          
           <div id="menuCols">
             <div className="col"><MenuComponent restaurant={diningHallName} /></div>
             {/* <div className="col"></div> */}
@@ -63,7 +70,18 @@ export default function Restaurant() {
         <div id="headerInfo">
           <h1 id="name">{diningHallName}</h1>
           <div id="header2">
-            <div>
+            <div className='restRating'>
+              {isMealPeriod ? 
+              <div className='live'>
+              <p className='liveTitle'>Live Rating: </p>
+                <Rating
+                    value={liveRating}
+                    readOnly
+                    />
+              </div>
+              :
+              <></>}
+                
               <ReviewRating userArr={userArr} />
             </div>
             <div id="activity">
@@ -71,7 +89,12 @@ export default function Restaurant() {
               <ActivityLevel restaurant={diningHallName} />
             </div>
           </div>
-          <p>HOURS: 7:00 - 10:00</p>
+          <div className='times'>
+            <p>BREAKFAST:<br/> 7:00am - 10:00am </p>  
+            <p> LUNCH:<br/> 11:00am - 3:00pm </p>
+            <p> DINNER: <br/>5:00pm - 9:00pm</p>
+          </div>
+           
         </div>
 
 
@@ -151,6 +174,7 @@ export default function Restaurant() {
               </h1>
             </div>
             <div id="reviewHolder">
+                
               <DisplayReviews userArr={userArr} />
             </div>
             <div id="reviewFooter"></div>
