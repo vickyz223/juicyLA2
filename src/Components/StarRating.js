@@ -9,13 +9,15 @@ function StarRating({ hallName, isMealPeriod }) {
     const [rating, setRating] = React.useState(0);
 
     const db = getDatabase();
-    const dbRef = ref(db, 'ratings' + '/' + hallName);
+    const dbRef = ref(db, 'ratings' + '/' + hallName );
     
     let num, count;
 
     onValue(dbRef, (snapshot) => {
         num = snapshot.val().rating;
         count = snapshot.val().count;
+        // console.log("IM CHANGING"+ hallName)
+
     });
 
     const updateRating = () => {
@@ -31,6 +33,7 @@ function StarRating({ hallName, isMealPeriod }) {
             rating: num,
             count: count,
         });
+        
     }
 
     function handleClick() {

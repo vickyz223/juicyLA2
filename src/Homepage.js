@@ -9,6 +9,7 @@ const getMealPeriod =()=>
         const now = new Date() ;
         // let time = 10.5;
         let time = now.getHours();
+        // time=13;
         console.log(now,time)
         if ((time < 10 && time >=8) ||(time < 15 && time >=11) || time >= 17 && time < 21){
              return true
