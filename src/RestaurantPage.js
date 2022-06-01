@@ -18,17 +18,21 @@ export default function Restaurant() {
   const location = useLocation();
   const diningHallName = location.state.name;
   const isMealPeriod = location.state.isMealPeriod;
-  const liveRating = location.state.liveRating;
+  const [liveRating, setLiveRating] = useState(location.state.liveRating);
   const [userArr, setUserArr] = useState([]);
-  const dbRef = ref(db, 'written reviews' + '/' + diningHallName);
+  let dbRef = ref(db, 'written reviews' + '/' + diningHallName);
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
   }
 
+    // onValue(dbRef, (snapshot) => {
+    //     num = snapshot.val().rating;
+    //     count = snapshot.val().count;
+    // });
   useEffect(() => {
-    return onValue(dbRef, (snapshot) => {
+      onValue(dbRef, (snapshot) => {
         let userArrTemp = [];
         snapshot.forEach((childSnapshot) => {
             let userObj = {
@@ -39,7 +43,15 @@ export default function Restaurant() {
             userArrTemp.push(userObj);
         });
         setUserArr(userArrTemp);
+    })
+    dbRef = ref(db, 'ratings' + '/' + diningHallName + "/rating");
+    let num = 0;
+    onValue(dbRef, (snapshot) => {
+      num = snapshot.val();
+      setLiveRating(num)
+      console.log(liveRating)
     });
+  
   }, []);
   
   function Menu() {
