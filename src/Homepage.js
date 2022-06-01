@@ -7,6 +7,8 @@ import { getDatabase, ref, get, child, set} from "firebase/database";
 const getMealPeriod =()=>
     {
         const now = new Date() ;
+        // let time = 10.5;
+
         let time = now.getHours();
         // const now = new Date()
         console.log(now,time)
@@ -88,7 +90,7 @@ const Homepage = () => {
                     <div className='second'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[1].name } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[1].name, isMealPeriod: mealperiod} }) }
                         }
                     >
                         <PodiumBox name={restaurants[1].name} rating={restaurants[1].rating} mealperiod={mealperiod} />
@@ -96,7 +98,7 @@ const Homepage = () => {
                     <div className='first'
                         id='podiumBoxes'
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[0].name } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[0].name, isMealPeriod: mealperiod} }) }
                         }
                     >
                         <PodiumBox name={restaurants[0].name} rating={restaurants[0].rating} mealperiod={mealperiod} />
@@ -104,7 +106,7 @@ const Homepage = () => {
                     <div className='third'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[2].name } }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[2].name, isMealPeriod: mealperiod} }) }
                         }
                     >
                         <PodiumBox name={restaurants[2].name} rating={restaurants[2].rating} mealperiod={mealperiod} />

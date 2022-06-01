@@ -15,6 +15,11 @@
     display: flex;
     align-items: center;
 }
+.times{
+    display: flex;
+    justify-content: space-between ;
+    width: 60%;
+}
 
 #header {
     margin-top: -80px;

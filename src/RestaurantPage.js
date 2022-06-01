@@ -16,6 +16,7 @@ export default function Restaurant() {
   const navigate = useNavigate();
   const location = useLocation();
   const diningHallName = location.state.name;
+  const isMealPeriod = location.state.isMealPeriod;
   const [userArr, setUserArr] = useState([]);
   const dbRef = ref(db, 'written reviews' + '/' + diningHallName);
 
@@ -43,8 +44,7 @@ export default function Restaurant() {
     return (
       <div>
         <div id="stars" className="star-rating">
-          <p>Rate Your Meal:</p>
-          <StarRating hallName={diningHallName} />
+          <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod}/>
         </div>
         <div id="MenuHolder">
           <h1 id="menuName">MENU</h1>
@@ -71,7 +71,12 @@ export default function Restaurant() {
               <ActivityLevel restaurant={diningHallName} />
             </div>
           </div>
-          <p>HOURS: 7:00 - 10:00</p>
+          <div className='times'>
+            <p>BREAKFAST:<br/> 7:00am - 10:00am </p>  
+            <p> LUNCH:<br/> 11:00am - 3:00pm </p>
+            <p> DINNER: <br/>5:00pm - 9:00pm</p>
+          </div>
+           
         </div>
 
 
