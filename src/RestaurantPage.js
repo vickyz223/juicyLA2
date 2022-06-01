@@ -7,6 +7,7 @@ import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './Components/MenuComponent.js';
 import ActivityLevel from './Components/ActivityLevel.js';
 import DisplayReviews from './Components/DisplayReviews';
+import { auth } from './firebase';
 import "./RestaurantPage.css";
 
 export default function Restaurant() {
@@ -90,7 +91,7 @@ export default function Restaurant() {
           <div id="reviews">
             <div id="reviewTop">
               <div>
-                <Button
+                {auth.currentUser ? <Button
                   variant="contained"
                   onClick={() => handleShow()}
                   sx={{
@@ -107,6 +108,24 @@ export default function Restaurant() {
                     }
                   }}
                 >{show ? "Back to Menu" : "Add Review"}</Button>
+                  : <Button
+                    variant="contained"
+                    disabled
+                    sx={{
+                      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                      fontWeight: 'bold',
+                      fontSize: 15,
+                      color: '#F2F2F0',
+                      backgroundColor: "transparent",
+                      border: 1,
+                      borderColor: "white",
+
+                      '&:hover': {
+                        backgroundColor: '#868686',
+                      }
+                    }}
+                  >Login to leave a Review</Button>}
+
               </div>
               <h1>
                 <b>REVIEWS</b>
