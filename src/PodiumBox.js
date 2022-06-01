@@ -6,24 +6,34 @@ import MenuComponent from './Components/MenuComponent';
 import './Homepage.css';
 
 
-const PodiumBox = ({rating, name}) => {
+const PodiumBox = ({rating, name, mealperiod}) => {
+    console.log("mealperiod" + mealperiod)
     return (
         <>
             <div className='podiumName'>
                 {name}
             </div>
             <div className="info">
-                <div className='stars'>
-                    <Rating
-                        // defaultValue='3'
-                        value={rating}
-                        readOnly
-                    />
-                </div>
-                <div className='activity'>
-                    <div> Activity</div>
-                </div>
-                <ActivityLevel restaurant={name} />
+               
+                
+                {mealperiod ? 
+                    <>
+                        <div className='stars'>
+                            <Rating
+                                // defaultValue='3'
+                                value={rating}
+                                readOnly
+                            />
+                        </div>
+                        <div className='activity'>
+                            <div> Activity</div>
+                        </div>
+                            <ActivityLevel restaurant={name} />
+                    </>
+                    
+                    : <div className="mealperiod" color='black'>
+                        non meal period: no activity and live rating
+                        </div> }
 
             </div>
             <div className='summary'>
@@ -37,6 +47,7 @@ const PodiumBox = ({rating, name}) => {
 PodiumBox.propTypes = {
     name: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
+    mealperiod: PropTypes.bool.isRequired
 }
 
 export default PodiumBox;
