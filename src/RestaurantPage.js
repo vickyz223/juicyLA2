@@ -16,6 +16,37 @@ export default function Restaurant() {
   const db = getDatabase();
   const navigate = useNavigate();
   const location = useLocation();
+
+  if (location.state === null) {
+    return (
+      <div>
+        <h1>Please return to the homepage and choose a dining hall.</h1>
+        <Button id="photoAdd" variant="contained"
+          sx={{
+            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+            fontWeight: 'bold',
+            fontSize: 15,
+            width: 150,
+            color: '#F2F2F0',
+            backgroundColor: "transparent",
+            border: 1,
+            borderColor: "white",
+            marginLeft: '2%',
+
+            '&:hover': {
+              backgroundColor: '#868686',
+            }
+          }}
+          onClick={
+            () => { navigate('/') }
+          }
+        >
+          Return to HomePage
+        </Button>
+      </div>
+    )
+  }
+
   const diningHallName = location.state.name;
   const isMealPeriod = location.state.isMealPeriod;
   const [liveRating, setLiveRating] = useState(location.state.liveRating);
@@ -27,22 +58,22 @@ export default function Restaurant() {
     setShow(!show);
   }
 
-    // onValue(dbRef, (snapshot) => {
-    //     num = snapshot.val().rating;
-    //     count = snapshot.val().count;
-    // });
+  // onValue(dbRef, (snapshot) => {
+  //     num = snapshot.val().rating;
+  //     count = snapshot.val().count;
+  // });
   useEffect(() => {
-      onValue(dbRef, (snapshot) => {
-        let userArrTemp = [];
-        snapshot.forEach((childSnapshot) => {
-            let userObj = {
-                user: childSnapshot.key,
-                rating: childSnapshot.val().rating,
-                review: childSnapshot.val().review,
-            };
-            userArrTemp.push(userObj);
-        });
-        setUserArr(userArrTemp);
+    onValue(dbRef, (snapshot) => {
+      let userArrTemp = [];
+      snapshot.forEach((childSnapshot) => {
+        let userObj = {
+          user: childSnapshot.key,
+          rating: childSnapshot.val().rating,
+          review: childSnapshot.val().review,
+        };
+        userArrTemp.push(userObj);
+      });
+      setUserArr(userArrTemp);
     })
     dbRef = ref(db, 'ratings' + '/' + diningHallName + "/rating");
     let num = 0;
@@ -51,22 +82,22 @@ export default function Restaurant() {
       setLiveRating(num)
       console.log(liveRating)
     });
-  
+
   }, []);
-  
+
   function Menu() {
     return (
       <div>
-        
+
         <div id="MenuHolder" s>
           <div className="menutitle">
             <h1 id="menuName">MENU</h1>
             <div id="stars" className="star-rating">
-              <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod}/>
+              <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod} />
             </div>
           </div >
-          
-          
+
+
           <div id="menuCols">
             <div className="col"><MenuComponent restaurant={diningHallName} /></div>
             {/* <div className="col"></div> */}
@@ -83,17 +114,17 @@ export default function Restaurant() {
           <h1 id="name">{diningHallName}</h1>
           <div id="header2">
             <div className='restRating'>
-              {isMealPeriod ? 
-              <div className='live'>
-              <p className='liveTitle'>Live Rating: </p>
-                <Rating
+              {isMealPeriod ?
+                <div className='live'>
+                  <p className='liveTitle'>Live Rating: </p>
+                  <Rating
                     value={liveRating}
                     readOnly
-                    />
-              </div>
-              :
-              <></>}
-                
+                  />
+                </div>
+                :
+                <></>}
+
               <ReviewRating userArr={userArr} />
             </div>
             <div id="activity">
@@ -102,11 +133,11 @@ export default function Restaurant() {
             </div>
           </div>
           <div className='times'>
-            <p>BREAKFAST:<br/> 7:00am - 10:00am </p>  
-            <p> LUNCH:<br/> 11:00am - 3:00pm </p>
-            <p> DINNER: <br/>5:00pm - 9:00pm</p>
+            <p>BREAKFAST:<br /> 7:00am - 10:00am </p>
+            <p> LUNCH:<br /> 11:00am - 3:00pm </p>
+            <p> DINNER: <br />5:00pm - 9:00pm</p>
           </div>
-           
+
         </div>
 
 
@@ -186,7 +217,7 @@ export default function Restaurant() {
               </h1>
             </div>
             <div id="reviewHolder">
-                
+
               <DisplayReviews userArr={userArr} />
             </div>
             <div id="reviewFooter"></div>
