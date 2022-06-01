@@ -33,7 +33,7 @@
 	justify-content: space-between;
 	width: 100%;
 	align-content: center;
-	margin-top: -4px;
+	margin-top: -5px;
 }
 
 .buttonLeft {
@@ -84,6 +84,14 @@ Button {
 
 .rightSpace10 {
 	margin-right: 10px;
+}
+
+.rightSpace5 {
+	margin-right: 5px;
+}
+
+.leftSpace5 {
+	margin-left: 5px;
 }
 
 .signBtn {

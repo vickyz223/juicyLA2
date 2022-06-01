@@ -33,7 +33,7 @@ const NavBar = () => {
     return (
         <div className={navbar ? 'nav active headerBar' : 'nav headerBar'}>
             <div className='topBar buttonGroup'>
-                <div className='title buttonLeft'>
+                <div className='title buttonLeft leftSpace5'>
                     <Link className='text-white' to='/' style={{ textDecoration: 'none' }}>
                         JUICYLA
                     </Link>
@@ -47,7 +47,7 @@ const NavBar = () => {
                             <Button className="ml-4" onClick={handleLogout}> Sign out </Button>
                         </div>
                         :
-                        <div>
+                        <div className='rightSpace5'>
                             <Button className='rightSpace10 signBtn' variant="danger" onClick={() => { navigate('/Signup') }}> Register </Button>
                             <Button className='signBtn'     variant="primary"onClick={() => { navigate('/Login')  }}> Sign in  </Button>
                         </div>
