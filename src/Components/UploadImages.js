@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import Button from '@mui/material/Button';
 import ProgressBar from "./ProgressBar"; 
 import { PropTypes } from "prop-types";
+import { auth } from '../firebase';
+
 
 const types = ['image/png', 'image/jpeg'];
 const UploadImages = ({restName}) =>{
@@ -28,30 +30,47 @@ const UploadImages = ({restName}) =>{
                     <input type="file" onChange={changeHandler} ref={fileInputRef} style={{display: "none"}} />
 
         <label>
-            <Button id="photoAdd" variant="contained"
-          sx={{
-            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-            fontWeight: 'bold',
-            fontSize: 15,
-            width: 150,
-            color: '#F2F2F0',
-            backgroundColor: "transparent",
-            border: 1,
-            borderColor: "white",
+            {auth.currentUser ? <Button id="photoAdd" variant="contained"
+              sx={{
+                fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                fontWeight: 'bold',
+                fontSize: 15,
+                width: 150,
+                color: '#F2F2F0',
+                backgroundColor: "transparent",
+                border: 1,
+                borderColor: "white",
 
-            '&:hover': {
-              backgroundColor: '#F8C27C',
-            }
-          }}
-          onClick={
-              () => { 
-                fileInputRef.current.click()
+                '&:hover': {
+                  backgroundColor: '#F8C27C',
+                }
+              }} 
+              onClick={
+                  () => { 
+                    fileInputRef.current.click()
+                  }
               }
-          }
-        >
+            >ADD PHOTOS</Button> 
+            :
+            <Button
+              variant="contained"
+              disabled
+              sx={{
+                fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                fontWeight: 'bold',
+                fontSize: 15,
+                color: '#F2F2F0',
+                backgroundColor: "transparent",
+                border: 1,
+                borderColor: "white",
 
-          ADD PHOTOS
-        </Button>
+                '&:hover': {
+                  backgroundColor: '#868686',
+                }
+              }}
+              >Login to add a photo</Button>
+              }
+        
             
         </label>
 
