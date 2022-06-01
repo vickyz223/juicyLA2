@@ -6,33 +6,34 @@ import MenuComponent from './Components/MenuComponent';
 import './Homepage.css';
 
 
-const PodiumBox = (props) => {
+const PodiumBox = ({rating, name}) => {
     return (
         <>
             <div className='podiumName'>
-                {props.name}
+                {name}
             </div>
             <div className="info">
                 <div className='stars'>
                     <Rating
-                        defaultValue='3'
-                        value={props.rating}
+                        // defaultValue='3'
+                        value={rating}
                         readOnly
                     />
                 </div>
                 <div className='activity'>
                     <div> Activity</div>
                 </div>
-                <ActivityLevel restaurant={props.name} />
+                <ActivityLevel restaurant={name} />
 
             </div>
             <div className='summary'>
-                <MenuComponent restaurant={props.name} />
+                <MenuComponent restaurant={name} />
             </div>
         </>
     )
 
 }
+
 PodiumBox.propTypes = {
     name: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,

@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { getDatabase, ref, onValue } from "firebase/database";
 import Rating from '@mui/material/Rating';
 import "../RestaurantPage.css";
 
-function ReviewRating({ hallName }) {
-    const db = getDatabase();
-    const dbRef = ref(db, 'written reviews' + '/' + hallName);
-    let total = 0;
-    let count = 0;
-
-    onValue(dbRef, (snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-            total += childSnapshot.val().rating;
-            count += 1;
+function ReviewRating({ userArr }) {
+    const [rating, setRating] = useState(0);
+    
+    useEffect(() => {
+        let count = 0;
+        let ratingSum = 0;
+        console.log(userArr);
+        if (!userArr) {
+            return;
+        }
+        userArr.forEach((user) => {
+            ratingSum += user.rating;
+            count++;
         });
-        total /= count;
-        console.log(total);
-    });
+        setRating(count === 0 ? 0 : ratingSum / count );
+    }, [userArr])
+
+
 
     return (
         <div>
             <Rating
-                value={total}
+                value={rating}
                 defaultValue='3'
                 readOnly
             />
@@ -31,7 +34,7 @@ function ReviewRating({ hallName }) {
 }
 
 ReviewRating.propTypes = {
-    hallName: PropTypes.string.isRequired,
+    userArr: PropTypes.array.isRequired,
 };
 
 export default ReviewRating;
