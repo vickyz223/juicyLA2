@@ -69,6 +69,8 @@
 }
 .live{
     display: flex;
+    padding-right: 1vw;
+
 }
 .liveTitle{
     padding-right: 1vw;
