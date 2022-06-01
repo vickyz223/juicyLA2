@@ -3,6 +3,16 @@ import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
 import "../RestaurantPage.css";
 
+const styles ={
+    historical:{
+        display: "flex",
+        width: "20vw",
+    },
+    title: {
+        marginRight: "1vw"
+      }
+}
+
 function ReviewRating({ userArr }) {
     const [rating, setRating] = useState(0);
     
@@ -23,10 +33,10 @@ function ReviewRating({ userArr }) {
 
 
     return (
-        <div>
+        <div style={styles.historical}>
+            <p style={styles.title}>Historical Rating: </p>
             <Rating
                 value={rating}
-                defaultValue='3'
                 readOnly
             />
         </div>
