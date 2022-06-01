@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './NavBar.css';
 import { useNavigate, Link } from "react-router-dom";
-import Button from '@mui/material/Button';
+import { Button } from 'react-bootstrap';
 import { auth } from './firebase';
 import { useUserAuth } from "./UserAuthContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const NavBar = () => {
@@ -30,69 +31,28 @@ const NavBar = () => {
 
     window.addEventListener('scroll', changeBackground);
     return (
-        <div className={navbar ? 'nav active' : 'nav'}>
-            <div className='topBar'>
-                <div className='title'>
-                    <Link to='/' style={{ textDecoration: 'none' }}>
+        <div className={navbar ? 'nav active headerBar' : 'nav headerBar'}>
+            <div className='topBar buttonGroup'>
+                <div className='title buttonLeft'>
+                    <Link className='text-white' to='/' style={{ textDecoration: 'none' }}>
                         JUICYLA
                     </Link>
                 </div>
-                <div className='ButtonGroup'>
-                    <Button className='register' variant="contained"
-                        onClick={
-                            () => { navigate('/Signup') }
-                        }
-                        sx={{
-                            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                            fontWeight: 'bold',
-                            fontSize: 15,
-                            width: 120,
-
-                            color: '#F2F2F0',
-                            backgroundColor: "#EA4033",
-                            '&:hover': {
-                                backgroundColor: '#EA4033',
-                            }
-                        }}
-
-                    >
-                        register
-                    </Button>
-					{ console.log(auth.currentUser) }
-					{ auth.currentUser ? console.log("logged in") : console.log("logged out")}
+                <div className='buttonRight'>
+                    {/* { console.log(auth.currentUser) } */}
+					{/* { auth.currentUser ? console.log("logged in") : console.log("logged out")} */}
 					{ auth.currentUser ?
-					<Button
-                        onClick={handleLogout}
-
-                        sx={{
-                            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                            fontWeight: 'bold',
-                            fontSize: 15,
-                            width: 120,
-                            color: '#F2F2F0',
-                        }}
-                    >
-                        sign out
-                    </Button>
-					:
-                    <Button
-                        onClick={
-                            () => { navigate('/Login') }
-                        }
-                        sx={{
-                            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                            fontWeight: 'bold',
-                            fontSize: 15,
-                            width: 120,
-                            color: '#F2F2F0',
-                        }}
-                    >
-                        sign in
-                    </Button>
+                        <div>
+                            <span className="mr-4 textShadow">{ auth.currentUser.email }  </span>
+                            <Button className="ml-4" onClick={handleLogout}> Sign out </Button>
+                        </div>
+                        :
+                        <div>
+                            <Button className='rightSpace10 signBtn' variant="danger" onClick={() => { navigate('/Signup') }}> Register </Button>
+                            <Button className='signBtn'     variant="primary"onClick={() => { navigate('/Login')  }}> Sign in  </Button>
+                        </div>
 					}
                 </div>
-
-
             </div>
         </div>
 

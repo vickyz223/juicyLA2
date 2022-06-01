@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Form, Alert, Button } from "react-bootstrap";
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "./UserAuthContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './LoginPage.css';
 
 
@@ -38,7 +38,7 @@ const Login = () => {
   return (
 	<div className="background">
 		<div className="loginDiv">
-		<div className="p-4 box">
+		<div className="p-2 box">
 			<h2 className="mb-3">Firebase Auth Login</h2>
 			{error && <Alert variant="danger">{error}</Alert>}
 			<Form onSubmit={handleSubmit}>
@@ -64,16 +64,15 @@ const Login = () => {
 				</Button>
 			</div>
 			</Form>
-			<hr />
-			<div>
-			<GoogleButton
-				className="g-btn"
-				type="dark"
-				onClick={handleGoogleSignIn}
-			/>
+			<hr className="loginHr"/>
+			<div className="d-flex justify-content-center">
+				<GoogleButton
+					type="dark"
+					onClick={handleGoogleSignIn}
+				/>
 			</div>
 		</div>
-		<div className="p-4 box mt-3 text-center">
+		<div className="box text-center textShadow">
 			No account? <Link to="/Signup">Sign up</Link>
 		</div>
 		</div>

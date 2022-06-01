@@ -66,16 +66,16 @@ const Homepage = () => {
 
                 });
                 // console.log("useeffect if")
-            }  
+            }
                 setRestaurants(restaurantTemp);
                 console.log("useeffect else?")
-            
+
         }
         getRestaurantData();
     }, [])
 
     return (
-        restaurants && 
+        restaurants &&
         (<>
             <div className='topDivider'>
                 <div className='brand'>
