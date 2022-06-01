@@ -1,32 +1,14 @@
 import React from "react";
-import { getDatabase, ref, onValue } from "firebase/database";
 import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
 import "../RestaurantPage.css";
 
-function DisplayReviews({ hallName }) {
-    const db = getDatabase();
-    const dbRef = ref(db, 'written reviews' + '/' + hallName);
-    let userObj = {};
-    let userArr = [];
-
-    onValue(dbRef, (snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-            userObj = {
-                user: childSnapshot.key,
-                rating: childSnapshot.val().rating,
-                review: childSnapshot.val().review,
-            };
-            userArr.push(userObj);
-        });
-    });
-
-
+function DisplayReviews({ userArr }) {
     return (
         <div>
-            {userArr.map((element) => {
+            {userArr.map((element, i) => {
                 return (
-                    <div key={element} className="review">
+                    <div key={i} className="review">
                         <div id="reviewHeader">
                             <img
                                 src={require("../images/bqmfbsn2fpw51.jpeg")}
@@ -50,7 +32,7 @@ function DisplayReviews({ hallName }) {
 }
 
 DisplayReviews.propTypes = {
-    hallName: PropTypes.string.isRequired,
+    userArr: PropTypes.array.isRequired
 };
 
 export default DisplayReviews;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from '@mui/material/Button';
 import StarRating from './Components/StarRating';
@@ -7,18 +7,38 @@ import WriteReviews from './Components/WriteReviews';
 import MenuComponent from './Components/MenuComponent.js';
 import ActivityLevel from './Components/ActivityLevel.js';
 import DisplayReviews from './Components/DisplayReviews';
+import { auth } from './firebase';
 import "./RestaurantPage.css";
+import { onValue, getDatabase, ref } from "firebase/database";
 
 export default function Restaurant() {
+  const db = getDatabase();
   const navigate = useNavigate();
   const location = useLocation();
   const diningHallName = location.state.name;
+  const [userArr, setUserArr] = useState([]);
+  const dbRef = ref(db, 'written reviews' + '/' + diningHallName);
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
   }
 
+  useEffect(() => {
+    return onValue(dbRef, (snapshot) => {
+        let userArrTemp = [];
+        snapshot.forEach((childSnapshot) => {
+            let userObj = {
+                user: childSnapshot.key,
+                rating: childSnapshot.val().rating,
+                review: childSnapshot.val().review,
+            };
+            userArrTemp.push(userObj);
+        });
+        setUserArr(userArrTemp);
+    });
+  }, []);
+  
   function Menu() {
     return (
       <div>
@@ -44,7 +64,7 @@ export default function Restaurant() {
           <h1 id="name">{diningHallName}</h1>
           <div id="header2">
             <div>
-              <ReviewRating hallName={diningHallName} />
+              <ReviewRating userArr={userArr} />
             </div>
             <div id="activity">
               <p>ACTIVITY:</p>
@@ -90,7 +110,7 @@ export default function Restaurant() {
           <div id="reviews">
             <div id="reviewTop">
               <div>
-                <Button
+                {auth.currentUser ? <Button
                   variant="contained"
                   onClick={() => handleShow()}
                   sx={{
@@ -107,13 +127,31 @@ export default function Restaurant() {
                     }
                   }}
                 >{show ? "Back to Menu" : "Add Review"}</Button>
+                  : <Button
+                    variant="contained"
+                    disabled
+                    sx={{
+                      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                      fontWeight: 'bold',
+                      fontSize: 15,
+                      color: '#F2F2F0',
+                      backgroundColor: "transparent",
+                      border: 1,
+                      borderColor: "white",
+
+                      '&:hover': {
+                        backgroundColor: '#868686',
+                      }
+                    }}
+                  >Login to leave a Review</Button>}
+
               </div>
               <h1>
                 <b>REVIEWS</b>
               </h1>
             </div>
             <div id="reviewHolder">
-              <DisplayReviews hallName={diningHallName} />
+              <DisplayReviews userArr={userArr} />
             </div>
             <div id="reviewFooter"></div>
           </div>

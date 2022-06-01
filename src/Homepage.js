@@ -11,7 +11,6 @@ const getRating = async (diningId) => {
     return num;
 };
 
-
 function diningHall(name, rating) {
     this.name = name;
     this.rating = rating;
