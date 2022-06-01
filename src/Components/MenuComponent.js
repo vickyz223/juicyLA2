@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { get, getDatabase, child, ref, set } from "firebase/database";
@@ -150,8 +150,8 @@ function MenuData(rest) {
             set(menu_table_ref, {
                 table: d
             })
-        }).catch((error) => {
-            console.error(error);
+        }).catch(() => {
+            console.log(`No ${period} time at ${rest}`);
         });
 
         return (ds + '/' + period + '/' + rest);
@@ -160,33 +160,31 @@ function MenuData(rest) {
     }
 }
 
-export default class MenuComponent extends React.Component {
+const MenuComponent = ({restaurant}) => { 
+    const [menu, setMenu] = useState(null);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            menu: '',
+    useEffect(() => {
+        async function getMenu() {
+            const menu_path = MenuData(restaurant);
+            await get(child(ref(getDatabase()), 'menu_table/' + menu_path)).then((snapshot) => {
+                let newMenu = snapshot.val().table
+                if (menu !== newMenu) {
+                    setMenu(newMenu)
+                }
+            }).catch(() => {
+                console.log("Failed to get menu.");
+            });
         }
-    }
+        getMenu();
+    }, [])
 
-    render() {
-        const restaurant = this.props.restaurant;
-        const menu_path = MenuData(restaurant);
-        get(child(ref(getDatabase()), 'menu_table/' + menu_path)).then((snapshot) => {
-            if (this.state.menu != snapshot.val().table) {
-                this.setState({
-                    menu: snapshot.val().table
-                });
-            }
-        }).catch((error) => {
-            console.error(error);
-        });
-        return (
-            <div dangerouslySetInnerHTML={{ __html: this.state.menu }} />
-        );
-    }
+    return (
+        menu && (<div dangerouslySetInnerHTML={{ __html: menu }} />)
+    );
 }
 
 MenuComponent.propTypes = {
     restaurant: PropTypes.string,
 }
+
+export default MenuComponent;

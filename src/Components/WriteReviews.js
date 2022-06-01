@@ -144,7 +144,7 @@ function WriteReview({ hallName }) {
 }
 
 WriteReview.propTypes = {
-    hallName: PropType.string.isRequired,
+    hallName: PropType.string,
 };
 
 export default WriteReview;

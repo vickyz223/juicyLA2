@@ -10,6 +10,11 @@ function ReviewRating({ hallName }) {
     let total = 0;
     let count = 0;
 
+    // useEffect(() => {
+
+
+    // });
+
     onValue(dbRef, (snapshot) => {
         snapshot.forEach((childSnapshot) => {
             total += childSnapshot.val().rating;
