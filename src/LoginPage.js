@@ -29,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/Profile");
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }

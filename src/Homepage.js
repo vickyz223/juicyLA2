@@ -4,7 +4,21 @@ import { useNavigate } from "react-router-dom";
 import './Homepage.css';
 import PodiumBox from './PodiumBox';
 import { getDatabase, ref, onValue } from "firebase/database";
+// import { useUserAuth } from "./UserAuthContext";
+// import { auth } from "./firebase";
 
+
+// const { logOut, user } = useUserAuth();
+//   const navigate = useNavigate();
+//   const handleLogout = async () => {
+//     try {
+//       await logOut();
+//       navigate("/");
+//     } catch (error) {
+//       console.log(error.message);
+//     }
+//   };
+// user = firebase.auth().currentUser;
 
 function getActivity(diningId) {
 
@@ -47,6 +61,8 @@ function diningHall(name, rating, menu, activity) {
     this.menu = menu;
     this.activity = activity;
 }
+
+
 const Homepage = () => {
     let navigate = useNavigate();
     const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
