@@ -15,9 +15,10 @@
     display: flex;
     align-items: center;
 }
-.times{
+
+.times {
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     width: 60%;
 }
 
@@ -67,18 +68,22 @@
     align-self: top;
     margin: 10px 0;
 }
-.live{
+
+.live {
     display: flex;
     padding-right: 1vw;
 
 }
-.liveTitle{
+
+.liveTitle {
     padding-right: 1vw;
 }
-.restRating{
+
+.restRating {
     display: flex;
     margin: 10vw 0;
 }
+
 #activity {
     display: flex;
     min-width: 200px;
@@ -182,18 +187,21 @@ textarea:focus {
     margin-right: 2vw;
     /* min-width: 50vw; */
 }
-#MenuHolder{
+
+#MenuHolder {
     margin-top: 3vh
 }
+
 #menuName {
     /* padding: 10px 10px 10px 0vw;  */
     margin-bottom: 20;
 }
 
-.menutitle{
+.menutitle {
     display: flex;
     justify-content: space-between;
 }
+
 #menu {
     margin-left: 20vw;
     margin-right: 2vw;

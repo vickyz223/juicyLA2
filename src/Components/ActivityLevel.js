@@ -19,13 +19,13 @@ function getLevel(restaurant) {
     request(restaurant).then(re => {
         const pattern = /<span class="activity-level activity-level-.*?><\/span><\/span> ([0-9]*)%/s;
         let al;
-        
-        try{
+
+        try {
             al = re.match(pattern)[1];
         } catch {
             al = 0;
         }
-        
+
         set(reference, {
             level: al
         })
@@ -40,17 +40,17 @@ const ActivityLevel = ({ restaurant }) => {
         const reference = ref(getDatabase(), 'activity/');
 
         getLevel(restaurant);
-        get(child(reference,restaurant)).then((snapshot) => {
+        get(child(reference, restaurant)).then((snapshot) => {
             set_level(activity_level => activity_level - activity_level + snapshot.val().level);
         })
     }, []);
-    
+
     useEffect(() => {
         const interval = setInterval(() => {
             const reference = ref(getDatabase(), 'activity/');
 
             getLevel(restaurant);
-            get(child(reference,restaurant)).then((snapshot) => {
+            get(child(reference, restaurant)).then((snapshot) => {
                 set_level(activity_level => activity_level - activity_level + snapshot.val().level);
             })
 

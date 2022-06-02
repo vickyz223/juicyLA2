@@ -1,5 +1,5 @@
-.img_grid{
-    
+.img_grid {
+
     margin-top: 2vh;
     display: grid;
     grid-template-columns: 23vw 23vw 23vw;
@@ -10,7 +10,7 @@
 
 }
 
-.image_wrap{
+.image_wrap {
     overflow: hidden;
     height: 100%;
     /* padding: 10% 0; */
@@ -18,13 +18,14 @@
     opacity: 0.8;
     width: 100%;
 }
-.image_wrap > img{
+
+.image_wrap>img {
     object-fit: cover;
     height: 100%;
     width: 100%;
     min-width: 100%;
     min-height: 100%;
     /* position: absolute; */
-    top:0;
-    left: 0; 
+    top: 0;
+    left: 0;
 }

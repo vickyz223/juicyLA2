@@ -19,15 +19,15 @@ const NavBar = () => {
         }
     }
 
-	const { logOut } = useUserAuth();
-	const handleLogout = async () => {
-		try {
-		await logOut();
-		navigate("/");
-		} catch (error) {
-		console.log(error.message);
-		}
-	};
+    const { logOut } = useUserAuth();
+    const handleLogout = async () => {
+        try {
+            await logOut();
+            navigate("/");
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
     window.addEventListener('scroll', changeBackground);
     return (
@@ -40,18 +40,18 @@ const NavBar = () => {
                 </div>
                 <div className='buttonRight'>
                     {/* { console.log(auth.currentUser) } */}
-					{/* { auth.currentUser ? console.log("logged in") : console.log("logged out")} */}
-					{ auth.currentUser ?
+                    {/* { auth.currentUser ? console.log("logged in") : console.log("logged out")} */}
+                    {auth.currentUser ?
                         <div>
-                            <span className="mr-4 textShadow">{ auth.currentUser.email }  </span>
+                            <span className="mr-4 textShadow">{auth.currentUser.email}  </span>
                             <Button className="ml-4" onClick={handleLogout}> Sign out </Button>
                         </div>
                         :
                         <div className='rightSpace5'>
                             <Button className='rightSpace10 signBtn' variant="danger" onClick={() => { navigate('/Signup') }}> Register </Button>
-                            <Button className='signBtn'     variant="primary"onClick={() => { navigate('/Login')  }}> Sign in  </Button>
+                            <Button className='signBtn' variant="primary" onClick={() => { navigate('/Login') }}> Sign in  </Button>
                         </div>
-					}
+                    }
                 </div>
             </div>
         </div>
