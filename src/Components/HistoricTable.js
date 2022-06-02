@@ -27,17 +27,14 @@ async function getData(period) {
 }
 
 function processData(data) {
-    // data is: [(BruinPlate, 20), (Epicuria, 15), (DeNeve, 10)]
-    //console.log(data);
     var finTable = "";
     finTable += "<table id='rankingHolder'>";
     for(let i = 0; i < data.length; i++) {
         finTable += "<tr>";
-        for(let j = 0; j < 2; j++) {
-            finTable += "<td>";
-            finTable += data[i][j];
-            finTable += " </td>";
-        }
+        let line1 = "<td><i>" + data[i][0] + "</i></td>";
+        let line2 = "<td>" + data[i][1] + "</td>";
+        finTable += line1;
+        finTable += line2;
         finTable += "</tr>";
     }
     finTable += "</table>";

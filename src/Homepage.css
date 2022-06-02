@@ -41,6 +41,12 @@
 	padding: 0;
 }
 
+.podiumName-lb {
+	color: black;
+	font-weight: bolder;
+	font-size: 300%;
+}
+
 .brand {
 	/* margin: -20px; */
 	
@@ -116,6 +122,16 @@
 	overflow-y: scroll;
 	padding: 2vh; 
 
+	height: 80%;
+	width: 100%;
+}
+
+.summary-lb {
+	justify-self: flex-end;
+	font-size: 80%;
+	background-color: #dccecc;
+	border-radius: 2%;
+	padding: 2vh; 
 	height: 80%;
 	width: 100%;
 }

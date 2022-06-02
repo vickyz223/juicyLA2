@@ -123,10 +123,9 @@ const Homepage = () => {
                     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                     fontWeight: 'bold',
                     fontSize: 15,
+                    top:20,
                     color: 'white',
                     backgroundColor: "#DC3545",
-                    border: 1,
-                    borderColor: "#DC354",
                     '&:hover': {
                       backgroundColor: 'white',
                       color:"black",

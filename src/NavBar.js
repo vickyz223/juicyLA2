@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NavBar.css";
 import { useNavigate, Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import Button from '@mui/material/Button';
 import { auth } from "./firebase";
 import { useUserAuth } from "./UserAuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -49,35 +49,68 @@ const NavBar = () => {
               <span className="mr-4 textShadow rightSpace10">
                 {auth.currentUser.email}{" "}
               </span>
-              <Button
-                className="signBtn rightSpace5"
-                variant="light"
-                onClick={handleLogout}
-              >
-                Sign Out
-              </Button>
+              <Button id="backButton"
+              variant="contained"
+              onClick={handleLogout}
+
+              sx={{
+                fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                fontWeight: 'bold',
+                fontSize: 15,
+                color: '#EA4033',
+                backgroundColor: "white",
+                '&:hover': {
+                  backgroundColor: 'white',
+                }
+              }}
+            >
+              Sign Out
+            </Button>
             </div>
           ) : (
+
+            
             <div className="rightSpace5">
-              <Button
-                className="rightSpace10 signBtn"
-                variant="danger"
-                onClick={() => {
-                  navigate("/Signup");
-                }}
-              >
-                {" "}
-                Register{" "}
-              </Button>
-              <Button
-                className="signBtn"
-                variant="light"
-                onClick={() => {
-                  navigate("/Login");
-                }}
-              >
-                Sign in
-              </Button>
+              <Button id="backButton"
+              variant="contained"
+              onClick={
+                () => { navigate('/Signup') }
+              }
+
+              sx={{
+                fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                fontWeight: 'bold',
+                fontSize: 15,
+                right: 20,
+                color: '#F2F2F0',
+                backgroundColor: "#EA4033",
+                '&:hover': {
+                  backgroundColor: '#EA4033',
+                }
+              }}
+            >
+              {" "}
+              Register{" "}
+            </Button>
+            <Button id="backButton"
+              variant="contained"
+              onClick={
+                () => { navigate('/Login') }
+              }
+
+              sx={{
+                fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                fontWeight: 'bold',
+                fontSize: 15,
+                color: '#EA4033',
+                backgroundColor: "white",
+                '&:hover': {
+                  backgroundColor: 'white',
+                }
+              }}
+            >
+              Sign in
+            </Button>
             </div>
           )}
         </div>

@@ -7,10 +7,10 @@ import './Homepage.css';
 const Leaderboard = ({mealperiod}) => {
     return (
         <>
-            <div  className='podiumName '>
-                {mealperiod}
+            <div  className='podiumName-lb'><center>
+                {mealperiod}</center>
             </div>
-            <div className='summary'>
+            <div className='summary-lb'>
                 <HistoricTable period={mealperiod}/>
             </div>
         </>
