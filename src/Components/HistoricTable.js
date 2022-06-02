@@ -5,6 +5,9 @@ import { get, getDatabase, child, ref, set } from "firebase/database";
 async function getData(period) {
     let data = [];
     let rs = ['BruinPlate','DeNeve','Epicuria'];
+    if(period=='Breakfast') {
+        rs = ['BruinPlate','DeNeve'];
+    }
     for(let i = 0; i < rs.length; i++) {
         await get(child(ref(getDatabase()), 'historic_ratings/' + period + '/' + rs[i])).then((snapshot)=>{
             data.push([rs[i],snapshot.val().count]);
