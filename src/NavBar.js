@@ -46,10 +46,15 @@ const NavBar = () => {
           {/* { auth.currentUser ? console.log("logged in") : console.log("logged out")} */}
           {auth.currentUser ? (
             <div>
-              <span className="mr-4 textShadow">{auth.currentUser.email} </span>
-              <Button className="ml-4" onClick={handleLogout}>
-                {" "}
-                Sign out{" "}
+              <span className="mr-4 textShadow rightSpace10">
+                {auth.currentUser.email}{" "}
+              </span>
+              <Button
+                className="signBtn rightSpace5"
+                variant="light"
+                onClick={handleLogout}
+              >
+                Sign Out
               </Button>
             </div>
           ) : (
