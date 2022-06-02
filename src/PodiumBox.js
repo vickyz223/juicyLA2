@@ -6,7 +6,7 @@ import MenuComponent from './Components/MenuComponent';
 import './Homepage.css';
 
 
-const PodiumBox = ({rating, name, mealperiod}) => {
+const PodiumBox = ({ rating, name, mealperiod }) => {
     console.log("mealperiod" + mealperiod)
     return (
         <>
@@ -14,9 +14,9 @@ const PodiumBox = ({rating, name, mealperiod}) => {
                 {name}
             </div>
             <div className="info">
-               
-                
-                {mealperiod ? 
+
+
+                {mealperiod ?
                     <>
                         <div className='stars'>
                             <Rating
@@ -28,12 +28,12 @@ const PodiumBox = ({rating, name, mealperiod}) => {
                         <div className='activity'>
                             <div> Activity</div>
                         </div>
-                            <ActivityLevel restaurant={name} />
+                        <ActivityLevel restaurant={name} />
                     </>
-                    
+
                     : <div className="mealperiod" color='black'>
                         non meal period: no activity and live rating
-                        </div> }
+                    </div>}
 
             </div>
             <div className='summary'>

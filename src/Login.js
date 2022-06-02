@@ -1,7 +1,7 @@
 import React from "react";
 
-const Login = () =>{
-    return(
+const Login = () => {
+    return (
         <div>Login header</div>
     )
 }

@@ -3,14 +3,15 @@ import { getDatabase, ref, onValue, set } from "firebase/database";
 import { PropTypes } from 'prop-types';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
+import "./StarRating.css"
 // import { NoteTwoTone } from '@material-ui/icons';
 
 function StarRating({ hallName, isMealPeriod }) {
     const [rating, setRating] = React.useState(0);
 
     const db = getDatabase();
-    const dbRef = ref(db, 'ratings' + '/' + hallName );
-    
+    const dbRef = ref(db, 'ratings' + '/' + hallName);
+
     let num, count;
 
     onValue(dbRef, (snapshot) => {
@@ -21,7 +22,7 @@ function StarRating({ hallName, isMealPeriod }) {
     });
 
     const updateRating = () => {
-        if (!isMealPeriod){
+        if (!isMealPeriod) {
             console.log('not a meal period')
             return
         } else {
@@ -33,19 +34,20 @@ function StarRating({ hallName, isMealPeriod }) {
             rating: num,
             count: count,
         });
-        
+
     }
 
     function handleClick() {
         updateRating();
     }
-    
+
     return (
         isMealPeriod &&
-        <div>
+        <div id="holder">
             <p>Rate Your Meal for this dining period:</p>
 
-            <Rating
+            <div>
+                <Rating
                 name="simple-controlled"
                 value={rating}
                 onChange={(event, ratingValue) => {
@@ -62,6 +64,7 @@ function StarRating({ hallName, isMealPeriod }) {
             >
                 Vote
             </Button>
+            </div>
         </div>
     );
 }

@@ -1,8 +1,7 @@
 .review-box {
     width: 40vw;
     margin-left: -10vw;
-    padding-right: 5vw;
-    padding-left: 7vw;
+    padding-left: 0vw;
     display: flex;
     flex-direction: column;
     background-color: #C4C4C4;
@@ -12,7 +11,7 @@
     font-size: 3em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
-    padding-left: 1vh; 
+    padding-left: 1vh;
 }
 
 .review-field {
@@ -20,7 +19,7 @@
 }
 
 .review-post-btn {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     width: 10vw;
 }

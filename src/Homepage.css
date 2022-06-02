@@ -55,6 +55,7 @@
 	margin-bottom: 10vh;
 	color: var(--white);
 	text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
+	line-height: 50%; 
 
 	font-size: 300%;
 }
@@ -104,17 +105,25 @@
 .third {
 	height: 350px;
 
-
 }
 
 .summary {
 	justify-self: flex-end;
-	font-size: 70%;
+	font-size: 100%;
 	background-color: #dccecc;
 	/*color: var(--white); */
 	border-radius: 2%;
 	overflow-y: scroll;
+	padding: 2vh; 
 
 	height: 80%;
 	width: 100%;
+}
+
+h2 {
+	font-size: x-large;
+}
+
+ul {
+	font-size: large;
 }

@@ -15,17 +15,17 @@ const getMealPeriod =()=>
              return true
         }
         return false
-    }
+}
 
 const getRating = async (diningId) => {
     const db = getDatabase();
 
-    if (getMealPeriod()){
-        const num = (await get(child(ref(db),'ratings' + '/' + diningId))).val().rating;
+    if (getMealPeriod()) {
+        const num = (await get(child(ref(db), 'ratings' + '/' + diningId))).val().rating;
         console.log("getRating?")
         return num;
     } else {
-        set(ref(db,'ratings' + '/' + diningId),{
+        set(ref(db, 'ratings' + '/' + diningId), {
             rating: 0,
             count: 0
         })
@@ -53,7 +53,7 @@ const Homepage = () => {
     const [restaurants, setRestaurants] = useState(null);
 
     useEffect(() => {
-        async function getRestaurantData () {
+        async function getRestaurantData() {
             const restaurantTemp = []
             for (let i = 0; i < len; i++) {
                 const name = places[i];
@@ -61,7 +61,7 @@ const Homepage = () => {
                 restaurantTemp.push(item);
                 console.log(item)
             }
-            if (mealperiod){
+            if (mealperiod) {
 
                 restaurantTemp.sort((a, b) => {
                     if (a.rating > b.rating) {
@@ -98,8 +98,8 @@ const Homepage = () => {
                     })
                 }
             }
-                setRestaurants(restaurantTemp);
-                //console.log("useeffect else?")
+          setRestaurants(restaurantTemp);
+          //console.log("useeffect else?")
 
         }
         getRestaurantData();
@@ -142,7 +142,7 @@ const Homepage = () => {
                     <div className='second'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[1].name, isMealPeriod: mealperiod, liveRating: restaurants[1].rating} }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[1].name, isMealPeriod: mealperiod, liveRating: restaurants[1].rating } }) }
                         }
                     >
                         <PodiumBox name={restaurants[1].name} rating={restaurants[1].rating} mealperiod={mealperiod} />
@@ -150,7 +150,7 @@ const Homepage = () => {
                     <div className='first'
                         id='podiumBoxes'
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[0].name, isMealPeriod: mealperiod, liveRating: restaurants[0].rating} }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[0].name, isMealPeriod: mealperiod, liveRating: restaurants[0].rating } }) }
                         }
                     >
                         <PodiumBox name={restaurants[0].name} rating={restaurants[0].rating} mealperiod={mealperiod} />
@@ -158,7 +158,7 @@ const Homepage = () => {
                     <div className='third'
                         id="podiumBoxes"
                         onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[2].name, isMealPeriod: mealperiod, liveRating: restaurants[2].rating} }) }
+                            () => { navigate('/RestaurantPage', { state: { name: restaurants[2].name, isMealPeriod: mealperiod, liveRating: restaurants[2].rating } }) }
                         }
                     >
                         <PodiumBox name={restaurants[2].name} rating={restaurants[2].rating} mealperiod={mealperiod} />
