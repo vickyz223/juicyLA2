@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './Homepage.css';
 import PodiumBox from './PodiumBox';
-import { getDatabase, ref, get, child, set } from "firebase/database";
+import Leaderboard from './HistoricLeaderboard';
+import Button from '@mui/material/Button';
+import { getDatabase, ref, get, child, set, onValue} from "firebase/database";
 
-const getMealPeriod = () => {
-    const now = new Date();
-    // let time = 10.5;
-    let time = now.getHours();
-    // time=13;
-    console.log(now, time)
-    if ((time < 10 && time >= 8) || (time < 15 && time >= 11) || time >= 17 && time < 21) {
-        return true
-    }
-    return false
+const getMealPeriod =()=>
+    {
+        const now = new Date();
+        let time = now.getHours();
+        console.log(now,time)
+        if ((time < 10 && time >=8) ||(time < 15 && time >=11) || time >= 17 && time < 21){
+             return true
+        }
+        return false
 }
 
 const getRating = async (diningId) => {
@@ -38,6 +39,12 @@ function diningHall(name, rating) {
 }
 
 const Homepage = () => {
+
+    const [show, setShow] = React.useState(false)
+    const handleShow = () => {
+        setShow(!show);
+    }
+
     let navigate = useNavigate();
     const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
     let len = places.length;
@@ -65,10 +72,34 @@ const Homepage = () => {
                     return 0;
 
                 });
-                // console.log("useeffect if")
+
+                const now = new Date();
+                if((now.getHours() == 20 || now.getHours() == 9 || now.getHours() == 14) && now.getMinutes() == 59) {
+                    let high_rank = restaurantTemp[0].name;
+                    var mealPeriod;
+                    switch(now.getHours()) {
+                        case 9:
+                            mealPeriod = 'Breakfast';
+                            break;
+                        case 14:
+                            mealPeriod = 'Lunch';
+                            break;
+                        case 20:
+                            mealPeriod = 'Dinner';
+                            break;
+                    }
+                    const hist_dbRef = ref(getDatabase(), 'historic_ratings/' + mealPeriod + '/' + high_rank);
+                    let updated_count;
+                    onValue(hist_dbRef, (snapshot) => {
+                        updated_count = snapshot.val().count += 1;
+                    })
+                    set(hist_dbRef, {
+                        count: updated_count
+                    })
+                }
             }
-            setRestaurants(restaurantTemp);
-            console.log("useeffect else?")
+          setRestaurants(restaurantTemp);
+          //console.log("useeffect else?")
 
         }
         getRestaurantData();
@@ -82,8 +113,31 @@ const Homepage = () => {
                     JUICYLA
                 </div>
                 <div className='status'>
-                    Current Rankings
+                    Meal Period Rankings 
                 </div>
+                <div>
+                    <Button
+                    variant="contained"
+                    onClick={()=>handleShow()}>{show ? "Back to Current" : "Historic Rankings" }</Button>
+                </div>
+                {show ? <div className='podium'>
+                    <div className='first'
+                        id="podiumBoxes"
+                    >
+                        <Leaderboard mealperiod={'Breakfast'}/>
+                    </div>
+                    <div className='first'
+                        id='podiumBoxes'
+                    >
+                        <Leaderboard mealperiod={'Lunch'}/>
+                    </div>
+                    <div className='first'
+                        id="podiumBoxes"
+                    >
+                        <Leaderboard mealperiod={'Dinner'}/>
+                    </div>
+                </div> : 
+                
                 <div className='podium'>
                     <div className='second'
                         id="podiumBoxes"
@@ -109,7 +163,7 @@ const Homepage = () => {
                     >
                         <PodiumBox name={restaurants[2].name} rating={restaurants[2].rating} mealperiod={mealperiod} />
                     </div>
-                </div>
+                </div>}
 
 
             </div>
