@@ -104,6 +104,10 @@
     height: 45vh;
 }
 
+.smaller {
+	height: 250px; 
+}
+
 .summary {
     justify-self: flex-end;
     font-size: 80%;

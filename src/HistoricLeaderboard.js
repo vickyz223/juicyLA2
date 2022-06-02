@@ -7,7 +7,7 @@ import './Homepage.css';
 const Leaderboard = ({mealperiod}) => {
     return (
         <>
-            <div className='podiumName'>
+            <div  className='podiumName '>
                 {mealperiod}
             </div>
             <div className='summary'>
