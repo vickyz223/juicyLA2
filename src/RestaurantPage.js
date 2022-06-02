@@ -19,26 +19,24 @@ export default function Restaurant() {
 
   if (location.state === null) {
     return (
-      <div>
-        <h1>Please return to the homepage and choose a dining hall.</h1>
-        <Button id="photoAdd" variant="contained"
+        <div id='return-to-homepage'>
+        <h1>Please return to the homepage <br></br>and choose a dining hall.</h1>
+        
+        <Button id="backButton" variant="contained"
+          onClick={
+            () => { navigate('/') }
+          }
+
           sx={{
             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
             fontWeight: 'bold',
             fontSize: 15,
-            width: 150,
+            top:20,
             color: '#F2F2F0',
-            backgroundColor: "transparent",
-            border: 1,
-            borderColor: "white",
-            marginLeft: '2%',
-
+            backgroundColor: "#EA4033",
             '&:hover': {
-              backgroundColor: '#868686',
-            }
-          }}
-          onClick={
-            () => { navigate('/') }
+              backgroundColor: '#EA4033',
+            }}
           }
         >
           Return to HomePage
