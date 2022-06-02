@@ -11,10 +11,13 @@ import { getDatabase, ref, set } from "firebase/database";
 console.log(app);
 function writeUserData(diningId, username, review, stars) {
     const db = getDatabase();
-    const reference = ref(db, 'written reviews' + '/' + diningId + '/' + username);
-
+    const id = Math.random().toString(36).substr(2, 20);
+    console.log(id)
+    const reference = ref(db, 'written reviews' + '/' + diningId + '/' + id);
+    console.log(username)
     set(reference, {
         // could add an optional username in here, in case we index the reviews in firebase
+        name: username,
         review: review,
         rating: stars,
     });
@@ -23,7 +26,7 @@ function writeUserData(diningId, username, review, stars) {
 function WriteReview({ hallName }) {
     const [value, setValue] = React.useState('');
     const [name, setName] = React.useState('');
-    const [count, setCount] = React.useState(0);
+    // const [count, setCount] = React.useState(0);
     const [rating, setRating] = React.useState(0);
 
     const handleName = (event) => {
@@ -43,9 +46,9 @@ function WriteReview({ hallName }) {
     const handleClick = () => {
         if (value !== '') {
             if (name === '') {
-                const newName = 'Anonymous' + count;
+                const newName = 'Anonymous';
                 writeUserData(hallName, newName, value, rating);
-                setCount(count + 1);
+                // setCount(count + 1);
             }
             else {
                 writeUserData(hallName, name, value, rating);

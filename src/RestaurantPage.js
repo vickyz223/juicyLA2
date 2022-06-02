@@ -19,24 +19,26 @@ export default function Restaurant() {
 
   if (location.state === null) {
     return (
-        <div id='return-to-homepage'>
-        <h1>Please return to the homepage <br></br>and choose a dining hall.</h1>
-        
-        <Button id="backButton" variant="contained"
-          onClick={
-            () => { navigate('/') }
-          }
-
+      <div>
+        <h1>Please return to the homepage and choose a dining hall.</h1>
+        <Button id="photoAdd" variant="contained"
           sx={{
             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
             fontWeight: 'bold',
             fontSize: 15,
-            top:20,
+            width: 150,
             color: '#F2F2F0',
-            backgroundColor: "#EA4033",
+            backgroundColor: "transparent",
+            border: 1,
+            borderColor: "white",
+            marginLeft: '2%',
+
             '&:hover': {
-              backgroundColor: '#EA4033',
-            }}
+              backgroundColor: '#868686',
+            }
+          }}
+          onClick={
+            () => { navigate('/') }
           }
         >
           Return to HomePage
@@ -49,23 +51,20 @@ export default function Restaurant() {
   const isMealPeriod = location.state.isMealPeriod;
   const [liveRating, setLiveRating] = useState(location.state.liveRating);
   const [userArr, setUserArr] = useState([]);
+  
   let dbRef = ref(db, 'written reviews' + '/' + diningHallName);
 
   const [show, setShow] = React.useState(false)
   const handleShow = () => {
     setShow(!show);
   }
-
-  // onValue(dbRef, (snapshot) => {
-  //     num = snapshot.val().rating;
-  //     count = snapshot.val().count;
-  // });
   useEffect(() => {
+    //get reviews
     onValue(dbRef, (snapshot) => {
       let userArrTemp = [];
       snapshot.forEach((childSnapshot) => {
         let userObj = {
-          user: childSnapshot.key,
+          user: childSnapshot.val().name,
           rating: childSnapshot.val().rating,
           review: childSnapshot.val().review,
         };
@@ -73,6 +72,8 @@ export default function Restaurant() {
       });
       setUserArr(userArrTemp);
     })
+
+    //get star ratings
     dbRef = ref(db, 'ratings' + '/' + diningHallName + "/rating");
     let num = 0;
     onValue(dbRef, (snapshot) => {
@@ -82,7 +83,7 @@ export default function Restaurant() {
     });
 
   }, []);
-
+  console.log(userArr)
   function Menu() {
     return (
       <div>
@@ -181,7 +182,7 @@ export default function Restaurant() {
                     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                     fontWeight: 'bold',
                     fontSize: 15,
-                    color: '#DC3545',
+                    color: '#F2F2F0',
                     backgroundColor: "transparent",
                     border: 1,
                     borderColor: "white",
@@ -247,3 +248,4 @@ export default function Restaurant() {
     </div>
   );
 }
+
