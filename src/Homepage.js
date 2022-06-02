@@ -113,7 +113,7 @@ const Homepage = () => {
                     JUICYLA
                 </div>
                 <div className='status'>
-                    Meal Period Rankings 
+                    Current Rankings 
                 </div>
                 <div>
                     <Button
