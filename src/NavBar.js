@@ -44,12 +44,12 @@ const NavBar = () => {
 					{ auth.currentUser ?
                         <div>
                             <span className="mr-4 textShadow">{ auth.currentUser.email }  </span>
-                            <Button className="ml-4" onClick={handleLogout}> Sign out </Button>
+                            <Button id="buttonC" className="ml-4" onClick={handleLogout}> Sign out </Button>
                         </div>
                         :
                         <div>
-                            <Button className='rightSpace10 signBtn' variant="danger" onClick={() => { navigate('/Signup') }}> Register </Button>
-                            <Button className='signBtn'     variant="primary"onClick={() => { navigate('/Login')  }}> Sign in  </Button>
+                            <Button id="buttonC" className='rightSpace10 signBtn' variant="danger" onClick={() => { navigate('/Signup') }}> Register </Button>
+                            <Button id="buttonC" className='signBtn'     variant="primary"onClick={() => { navigate('/Login')  }}> Sign in  </Button>
                         </div>
 					}
                 </div>

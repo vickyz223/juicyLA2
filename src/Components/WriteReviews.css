@@ -1,8 +1,7 @@
 .review-box {
     width: 40vw;
     margin-left: -10vw;
-    padding-right: 5vw;
-    padding-left: 7vw;
+    padding-left: 0vw;
     display: flex;
     flex-direction: column;
     background-color: #C4C4C4;
