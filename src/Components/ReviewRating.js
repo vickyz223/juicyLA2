@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
 import "../RestaurantPage.css";
 
-const styles ={
-    historical:{
+const styles = {
+    historical: {
         display: "flex",
         width: "20vw",
     },
     title: {
         marginRight: "1vw"
-      }
+    }
 }
 
 function ReviewRating({ userArr }) {
     const [rating, setRating] = useState(0);
-    
+
     useEffect(() => {
         let count = 0;
         let ratingSum = 0;
@@ -27,7 +27,7 @@ function ReviewRating({ userArr }) {
             ratingSum += user.rating;
             count++;
         });
-        setRating(count === 0 ? 0 : ratingSum / count );
+        setRating(count === 0 ? 0 : ratingSum / count);
     }, [userArr])
 
 

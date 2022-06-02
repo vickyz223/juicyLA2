@@ -160,7 +160,7 @@ function MenuData(rest) {
     }
 }
 
-const MenuComponent = ({restaurant}) => { 
+const MenuComponent = ({ restaurant }) => {
     const [menu, setMenu] = useState(null);
 
     useEffect(() => {

@@ -77,7 +77,7 @@ function WriteReview({ hallName }) {
                             variant="standard"
                             value={name}
                             onChange={handleName}
-        
+
                         />
                     </Box>
                 </div>
@@ -135,7 +135,7 @@ function WriteReview({ hallName }) {
                                 onClick={() => handleClick()}
                             >
                                 Post</Button>
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>

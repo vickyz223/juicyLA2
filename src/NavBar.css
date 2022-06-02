@@ -33,7 +33,7 @@
 	justify-content: space-between;
 	width: 100%;
 	align-content: center;
-	margin-top: -4px;
+	margin-top: -5px;
 }
 
 .buttonLeft {
@@ -68,12 +68,20 @@ a {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 	font-weight: bold; 
 	 font-size: 100%; 
+}
+
+.noTxtDec {
+	text-decoration: none;
+}
+
+/* Button {
+
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #EA4033;
 	color: var(--textcolor);
 	padding: 10px;
-}
+} */
 
 .register {
 	background-color: var(--textcolor);
@@ -86,6 +94,14 @@ a {
 	margin-right: 10px;
 }
 
+.rightSpace5 {
+	margin-right: 5px;
+}
+
+.leftSpace5 {
+	margin-left: 5px;
+}
+
 .signBtn {
 	width: 100px;
 }
@@ -93,4 +109,9 @@ a {
 .headerBar {
 	display: flex;
 	align-items: center;
+}
+
+.redtext
+{
+	color: #B22F25;
 }

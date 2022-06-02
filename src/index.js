@@ -17,8 +17,8 @@ import PhotoGallery from './PhotoGallery';
 
 function JuicyLa() {
 
-    console.log(app)
-    return (
+	console.log(app)
+	return (
 		<UserAuthContextProvider>
 			<div>
 				<Router>
@@ -27,20 +27,19 @@ function JuicyLa() {
 						{/* <Route path="/Register" element={<Register/>}/>
 					<Route path="/Login" element={<Login/>}/> */}
 						<Route path="/RestaurantPage" element={<RestaurantPage />} />
-                        <Route path="/PhotoGallery" element={<PhotoGallery />}/>
-						
-                        {/* <Route path="/UploadImages" element={<UploadImages/>}/> */}
+						<Route path="/PhotoGallery" element={<PhotoGallery />} />
+						{/* <Route path="/UploadImages" element={<UploadImages/>}/> */}
 						<Route path="/Login" element={<Login />} />
 						<Route path="/Signup" element={<Signup />} />
 						<Route path="/Profile" element={<Profile />} />
-                        <Route path="/" element={<Homepage />} />
+						<Route path="/" element={<Homepage />} />
 						<Route path="/" element={<WriteReviews />} />
 
 					</Routes>
 				</Router>
 			</div>
 		</UserAuthContextProvider>
-    );
+	);
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

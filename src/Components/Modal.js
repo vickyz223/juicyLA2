@@ -1,16 +1,16 @@
 import React from "react";
-import PropTypes  from "prop-types";
+import PropTypes from "prop-types";
 import "./Modal.css"
 
-const Modal = ({selectedImage, setSelectedImage}) => {
-    const handleClick = (e) =>{
+const Modal = ({ selectedImage, setSelectedImage }) => {
+    const handleClick = (e) => {
         if (e.target.classList.contains('backdrop'))
             setSelectedImage(null);
     }
 
-    return(
+    return (
         <div className="backdrop" onClick={handleClick}>
-            <img src ={selectedImage} alt="enlarged pic"/>
+            <img src={selectedImage} alt="enlarged pic" />
         </div>
     );
 }
