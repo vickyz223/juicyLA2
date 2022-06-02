@@ -8,8 +8,9 @@
 
 * {
 	font-family: var(--font);
-
+	padding: 0;
 	margin: 0px;
+	line-height: normal;
 }
 
 .topDivider {
@@ -37,6 +38,7 @@
 	color: black;
 	font-weight: bolder;
 	font-size: 300%;
+	padding: 0;
 }
 
 .brand {
@@ -97,13 +99,11 @@
 
 .third {
 	height: 45vh;
-
-
 }
 
 .summary {
 	justify-self: flex-end;
-	font-size: 70%;
+	font-size: 80%;
 	background-color: #dccecc;
 	/*color: var(--white); */
 	border-radius: 2%;
@@ -115,9 +115,12 @@
 }
 
 h2 {
-	font-size: large;
+	font-size: 220%;
+	margin: 0;
+	font: 0;
 }
 
-p {
-	font-size: medium;
+ul {
+	font-size: 110%;
+	padding: 0;
 }
