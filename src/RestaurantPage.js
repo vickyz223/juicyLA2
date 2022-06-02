@@ -183,7 +183,7 @@ export default function Restaurant() {
                     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                     fontWeight: 'bold',
                     fontSize: 15,
-                    color: '#F2F2F0',
+                    color: '#DC3545',
                     backgroundColor: "transparent",
                     border: 1,
                     borderColor: "white",

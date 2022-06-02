@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { get, getDatabase, child, ref, set } from "firebase/database";
+import "./HistoricTable.css"
 
 async function getData(period) {
     let data = [];
@@ -29,13 +30,13 @@ function processData(data) {
     // data is: [(BruinPlate, 20), (Epicuria, 15), (DeNeve, 10)]
     //console.log(data);
     var finTable = "";
-    finTable += "<table>";
+    finTable += "<table id='rankingHolder'>";
     for(let i = 0; i < data.length; i++) {
         finTable += "<tr>";
         for(let j = 0; j < 2; j++) {
             finTable += "<td>";
             finTable += data[i][j];
-            finTable += "</td>";
+            finTable += " </td>";
         }
         finTable += "</tr>";
     }

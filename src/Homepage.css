@@ -107,6 +107,10 @@
 
 }
 
+.smaller {
+	height: 250px; 
+}
+
 .summary {
 	justify-self: flex-end;
 	font-size: 100%;
@@ -126,4 +130,10 @@ h2 {
 
 ul {
 	font-size: large;
+}
+
+#rankingButton {
+	padding-bottom: 6vw;
+	margin-top: -4.5vw;
+
 }
