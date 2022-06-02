@@ -3,9 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert, Button } from "react-bootstrap";
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "./UserAuthContext";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './LoginPage.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./LoginPage.css";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -39,7 +38,7 @@ const Login = () => {
 		<div className="background">
 			<div className="loginDiv">
 				<div className="p-2 box">
-					<h2 className="mb-3">Firebase Auth Login</h2>
+					<h2 className="mb-3 textShadow">JUICYLA Login</h2>
 					{error && <Alert variant="danger">{error}</Alert>}
 					<Form onSubmit={handleSubmit}>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
@@ -66,14 +65,14 @@ const Login = () => {
 					</Form>
 					<hr className="loginHr" />
 					<div className="d-flex justify-content-center">
-						<GoogleButton
-							type="dark"
-							onClick={handleGoogleSignIn}
-						/>
+						<GoogleButton type="dark" onClick={handleGoogleSignIn} />
 					</div>
 				</div>
 				<div className="box text-center textShadow">
-					No account? <Link to="/Signup">Sign up</Link>
+					No account?{" "}
+					<Link className="noTxtDec" to="/Signup">
+						Sign up
+					</Link>
 				</div>
 			</div>
 		</div>
