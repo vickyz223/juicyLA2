@@ -60,7 +60,7 @@ function WriteReview({ hallName }) {
         <div>
             <div className='review-box'>
                 <div>
-                    <h2 className="review-header">Write Review</h2>
+                    <h2 className="review-header">WRITE REVIEW</h2>
                 </div>
                 <div>
                     <Box

@@ -3,6 +3,7 @@ import { getDatabase, ref, onValue, set } from "firebase/database";
 import { PropTypes } from 'prop-types';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
+import "./StarRating.css"
 // import { NoteTwoTone } from '@material-ui/icons';
 
 function StarRating({ hallName, isMealPeriod }) {
@@ -42,10 +43,11 @@ function StarRating({ hallName, isMealPeriod }) {
 
     return (
         isMealPeriod &&
-        <div>
+        <div id="holder">
             <p>Rate Your Meal for this dining period:</p>
 
-            <Rating
+            <div>
+                <Rating
                 name="simple-controlled"
                 value={rating}
                 onChange={(event, ratingValue) => {
@@ -62,6 +64,7 @@ function StarRating({ hallName, isMealPeriod }) {
             >
                 Vote
             </Button>
+            </div>
         </div>
     );
 }

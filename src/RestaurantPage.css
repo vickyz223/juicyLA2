@@ -18,7 +18,9 @@
 
 .times {
     display: flex;
-    justify-content: space-between;
+    padding-top: 2vh; 
+    justify-content: space-between ;
+    width: 40vw !important;
     width: 60%;
 }
 
@@ -161,7 +163,7 @@ p {
 }
 
 textarea {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-size: 20px;
     resize: none;
     width: 95%;
