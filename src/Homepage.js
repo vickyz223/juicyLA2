@@ -115,23 +115,38 @@ const Homepage = () => {
                 <div className='status'>
                     Current Rankings 
                 </div>
-                <div>
+                <div id="rankingButton">
                     <Button
                     variant="contained"
-                    onClick={()=>handleShow()}>{show ? "Back to Current" : "Historic Rankings" }</Button>
+                    onClick={()=>handleShow()}
+                    sx={{
+                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    color: 'white',
+                    backgroundColor: "#DC3545",
+                    border: 1,
+                    borderColor: "#DC354",
+                    '&:hover': {
+                      backgroundColor: 'white',
+                      color:"black",
+                    }
+                    }}
+                    >{show ? "Back to Current" : "Historic Rankings" }
+                    </Button>
                 </div>
                 {show ? <div className='podium'>
-                    <div className='first'
+                    <div className='smaller'
                         id="podiumBoxes"
                     >
                         <Leaderboard mealperiod={'Breakfast'}/>
                     </div>
-                    <div className='first'
+                    <div className='smaller'
                         id='podiumBoxes'
                     >
                         <Leaderboard mealperiod={'Lunch'}/>
                     </div>
-                    <div className='first'
+                    <div className='smaller'
                         id="podiumBoxes"
                     >
                         <Leaderboard mealperiod={'Dinner'}/>
