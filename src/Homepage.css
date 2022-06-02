@@ -82,34 +82,28 @@
 	margin-right: 20px;
 	background-color: var(--textcolor);
 	border-radius: 20px;
-	width: 370px;
+	width: 25vw;
 	padding: 20px;
-
-
-
 
 }
 
 .first {
-	height: 475px;
-
-
-
+	height: 55vh;
 }
 
 .second {
-	height: 400px;
+	height: 50vh;
 }
 
 .third {
-	height: 350px;
+	height: 45vh;
 
 
 }
 
 .summary {
 	justify-self: flex-end;
-	font-size: 100%;
+	font-size: 70%;
 	background-color: #dccecc;
 	/*color: var(--white); */
 	border-radius: 2%;
