@@ -16,13 +16,6 @@
 	border-top: 1px solid white;
 }
 
-.topDivider {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	height: 100vh;
-}
 
 .loginDiv {
 	display: flex;
@@ -45,86 +38,3 @@
 	background-size: cover;
 }
 
-.info {
-	display: flex;
-	justify-content: space-between;
-}
-
-
-.podiumName {
-	color: black;
-	font-weight: bolder;
-	font-size: 300%;
-}
-
-.brand {
-	margin: -20px;
-	font-weight: bolder;
-	font-size: 700%;
-	color: var(--white);
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: var(--darkestRed);
-	text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
-
-}
-
-.status {
-	font-weight: bolder;
-	margin-bottom: 10vh;
-	color: var(--white);
-	text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
-
-
-	font-size: 300%;
-
-}
-
-.podium {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-end;
-	margin-bottom: 3vh;
-
-
-}
-
-#podiumBoxes {
-	display: flex;
-	flex-direction: column;
-	margin-left: 20px;
-	margin-right: 20px;
-	background-color: var(--textcolor);
-	border-radius: 20px;
-	width: 370px;
-	padding: 20px;
-
-
-
-
-}
-
-.first {
-	height: 475px;
-
-
-
-}
-
-.second {
-	height: 400px;
-}
-
-.third {
-	height: 350px;
-
-
-}
-
-
-.footer {
-	background-color: #B22F25;
-}
-.rightSpace10 {
-	margin-right: 10px;
-}

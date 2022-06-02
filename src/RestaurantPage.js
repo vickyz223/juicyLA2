@@ -91,7 +91,7 @@ export default function Restaurant() {
 
         <div id="MenuHolder" s>
           <div className="menutitle">
-            <h1 id="menuName">MENU</h1>
+            <h1 id="menuName"><b>MENU</b></h1>
             <div id="stars" className="star-rating">
               <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod} />
             </div>
@@ -111,7 +111,7 @@ export default function Restaurant() {
     <div id="all">
       <div id="header">
         <div id="headerInfo">
-          <h1 id="name">{diningHallName}</h1>
+          <h1 id="name"><b>{diningHallName}</b></h1>
           <div id="header2">
             <div className='restRating'>
               {isMealPeriod ?
