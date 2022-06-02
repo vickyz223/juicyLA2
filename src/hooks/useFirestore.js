@@ -5,13 +5,13 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 // import { dialogClasses } from "@mui/material";
 const useFirestore = (collect) => {
     const [docs, setDocs] = useState([]);
-    useEffect(()=>{
-        const collectionRef = collection(projectFirestore,collect);  
+    useEffect(() => {
+        const collectionRef = collection(projectFirestore, collect);
         const q = query(collectionRef, orderBy('createdAt', 'desc'));
-        const unsub= onSnapshot(q, (querySnapshot)=>{
-            let documents =[];
+        const unsub = onSnapshot(q, (querySnapshot) => {
+            let documents = [];
             querySnapshot.forEach(doc => {
-                documents.push({...doc.data(), id: doc.id})
+                documents.push({ ...doc.data(), id: doc.id })
 
             });
             setDocs(documents);
@@ -19,12 +19,12 @@ const useFirestore = (collect) => {
         });
         return () => unsub();
     }, [collect])
-    
-    return{docs};
-    
+
+    return { docs };
+
 }
 
-useFirestore.propTypes={
+useFirestore.propTypes = {
     collection: PropTypes.string
 }
 export default useFirestore;

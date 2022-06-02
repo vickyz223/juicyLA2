@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TextField from "@mui/material/TextField"; 
+import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 import "./Register.css";

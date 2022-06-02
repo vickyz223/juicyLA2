@@ -60,9 +60,9 @@ const Signup = () => {
           <Link className="noTxtDec" to="/Login">
             Log In
           </Link>
-        </div>
-      </div>
-    </div>
+        </div >
+      </div >
+    </div >
   );
 };
 

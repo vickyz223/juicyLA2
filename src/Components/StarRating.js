@@ -9,8 +9,8 @@ function StarRating({ hallName, isMealPeriod }) {
     const [rating, setRating] = React.useState(0);
 
     const db = getDatabase();
-    const dbRef = ref(db, 'ratings' + '/' + hallName );
-    
+    const dbRef = ref(db, 'ratings' + '/' + hallName);
+
     let num, count;
 
     onValue(dbRef, (snapshot) => {
@@ -21,7 +21,7 @@ function StarRating({ hallName, isMealPeriod }) {
     });
 
     const updateRating = () => {
-        if (!isMealPeriod){
+        if (!isMealPeriod) {
             console.log('not a meal period')
             return
         } else {
@@ -33,13 +33,13 @@ function StarRating({ hallName, isMealPeriod }) {
             rating: num,
             count: count,
         });
-        
+
     }
 
     function handleClick() {
         updateRating();
     }
-    
+
     return (
         isMealPeriod &&
         <div>
