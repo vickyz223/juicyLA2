@@ -19,26 +19,24 @@ export default function Restaurant() {
 
   if (location.state === null) {
     return (
-      <div>
-        <h1>Please return to the homepage and choose a dining hall.</h1>
-        <Button id="photoAdd" variant="contained"
+        <div id='return-to-homepage'>
+        <h1>Please return to the homepage <br></br>and choose a dining hall.</h1>
+        
+        <Button id="backButton" variant="contained"
+          onClick={
+            () => { navigate('/') }
+          }
+
           sx={{
             fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
             fontWeight: 'bold',
             fontSize: 15,
-            width: 150,
+            top:20,
             color: '#F2F2F0',
-            backgroundColor: "transparent",
-            border: 1,
-            borderColor: "white",
-            marginLeft: '2%',
-
+            backgroundColor: "#EA4033",
             '&:hover': {
-              backgroundColor: '#868686',
-            }
-          }}
-          onClick={
-            () => { navigate('/') }
+              backgroundColor: '#EA4033',
+            }}
           }
         >
           Return to HomePage
@@ -91,7 +89,7 @@ export default function Restaurant() {
 
         <div id="MenuHolder" s>
           <div className="menutitle">
-            <h1 id="menuName">MENU</h1>
+            <h1 id="menuName"><b>MENU</b></h1>
             <div id="stars" className="star-rating">
               <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod} />
             </div>
@@ -111,7 +109,7 @@ export default function Restaurant() {
     <div id="all">
       <div id="header">
         <div id="headerInfo">
-          <h1 id="name">{diningHallName}</h1>
+          <h1 id="name"><b>{diningHallName}</b></h1>
           <div id="header2">
             <div className='restRating'>
               {isMealPeriod ?

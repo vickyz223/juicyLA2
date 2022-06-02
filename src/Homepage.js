@@ -113,7 +113,7 @@ const Homepage = () => {
                     JUICYLA
                 </div>
                 <div className='status'>
-                    Meal Period Rankings 
+                    Current Rankings 
                 </div>
                 <div id="rankingButton">
                     <Button
@@ -182,14 +182,6 @@ const Homepage = () => {
 
 
             </div>
-
-            {/* <div className='leaderBoard'>
-                hsvgjbckjndssdcv
-                <h1>fyghj</h1>
-                <h1>fyghj</h1>
-                <h1>fyghj</h1>
-                <h1>fyghj</h1>
-            </div> */}
         </>)
     );
 }

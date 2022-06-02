@@ -8,8 +8,9 @@
 
 * {
 	font-family: var(--font);
-
+	padding: 0;
 	margin: 0px;
+	line-height: normal;
 }
 
 .topDivider {
@@ -37,10 +38,12 @@
 	color: black;
 	font-weight: bolder;
 	font-size: 300%;
+	padding: 0;
 }
 
 .brand {
-	margin: -20px;
+	/* margin: -20px; */
+	
 	font-weight: bolder;
 	font-size: 700%;
 	color: var(--white);
@@ -83,28 +86,21 @@
 	margin-right: 20px;
 	background-color: var(--textcolor);
 	border-radius: 20px;
-	width: 370px;
+	width: 25vw;
 	padding: 20px;
-
-
-
 
 }
 
 .first {
-	height: 475px;
-
-
-
+	height: 55vh;
 }
 
 .second {
-	height: 400px;
+	height: 50vh;
 }
 
 .third {
-	height: 350px;
-
+	height: 45vh;
 }
 
 .smaller {
@@ -113,7 +109,7 @@
 
 .summary {
 	justify-self: flex-end;
-	font-size: 100%;
+	font-size: 80%;
 	background-color: #dccecc;
 	/*color: var(--white); */
 	border-radius: 2%;
@@ -125,7 +121,9 @@
 }
 
 h2 {
-	font-size: x-large;
+	font-size: 220%;
+	margin: 0;
+	font: 0;
 }
 
 ul {
