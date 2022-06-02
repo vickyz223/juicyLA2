@@ -27,7 +27,7 @@ const Signup = () => {
     <div className="background">
       <div className="loginDiv">
         <div className="p-2 box">
-          <h2 className="mb-3 textShadow">Sign up</h2>
+          <h2 className="mb-3 textShadow h2">Sign up</h2>
           {error && (
             <Alert variant="danger">{"Email or password is Invalid."}</Alert>
           )}
@@ -57,12 +57,12 @@ const Signup = () => {
         </div>
         <div className="box text-center textShadow">
           Already have an account?{" "}
-          <Link className="noTxtDec" to="/Login">
+          <Link className="noTxtDec textShadow" to="/Login">
             Log In
           </Link>
-        </div >
-      </div >
-    </div >
+        </div>
+      </div>
+    </div>
   );
 };
 

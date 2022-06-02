@@ -38,7 +38,7 @@ const Login = () => {
     <div className="background">
       <div className="loginDiv">
         <div className="p-2 box">
-          <h2 className="mb-3 textShadow">JUICYLA Login</h2>
+          <h2 className="mb-3 textShadow h2">JUICYLA Login</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -70,7 +70,7 @@ const Login = () => {
         </div>
         <div className="box text-center textShadow">
           No account?{" "}
-          <Link className="noTxtDec" to="/Signup">
+          <Link className="noTxtDec textShadow" to="/Signup">
             Sign up
           </Link>
         </div>

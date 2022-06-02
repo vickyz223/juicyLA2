@@ -21,7 +21,7 @@ const Profile = () => {
   useEffect(() => {
     setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, 1500);
   }, []);
 
   return (
