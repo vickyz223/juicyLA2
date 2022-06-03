@@ -113,8 +113,9 @@ const Homepage = () => {
                     JUICYLA
                 </div>
                 <div className='status'>
-                    Current Rankings 
+                    {show ? 'Historic Rankings' : 'Current Rankings' }
                 </div>
+                {show ? <div className="historic-explanation"><center>Number of times each restaurant <br></br>has ranked first in each meal period</center></div> : '' }
                 <div id="rankingButton">
                     <Button
                     variant="contained"
@@ -123,7 +124,7 @@ const Homepage = () => {
                     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                     fontWeight: 'bold',
                     fontSize: 15,
-                    bottom:65,
+                    bottom:40,
                     color: 'white',
                     backgroundColor: "#DC3545",
                     '&:hover': {

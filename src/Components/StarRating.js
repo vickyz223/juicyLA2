@@ -44,7 +44,7 @@ function StarRating({ hallName, isMealPeriod }) {
     return (
         isMealPeriod &&
         <div id="holder">
-            <p>Rate Your Meal for this dining period:</p>
+            <p>Rate your meal for this dining period:</p>
 
             <div>
                 <Rating

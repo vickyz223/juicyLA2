@@ -32,7 +32,7 @@ const PodiumBox = ({ rating, name, mealperiod }) => {
                     </>
 
                     : <div className="mealperiod" color='black'>
-                        non meal period: no activity and live rating
+                        non meal period: no activity or live rating
                     </div>}
 
             </div>
