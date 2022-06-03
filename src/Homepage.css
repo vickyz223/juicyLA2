@@ -60,16 +60,9 @@
 
 }
 
-.historic-explanation {
-	color: var(--white);
-	text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
-	font-size: 125%;
-	margin-bottom:8vh;
-}
-
 .status {
     font-weight: bolder;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
     color: var(--white);
     text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
     line-height: 50%; 

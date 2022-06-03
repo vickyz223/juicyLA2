@@ -115,8 +115,7 @@ const Homepage = () => {
                 <div className='status'>
                     {show ? 'Historic Rankings' : 'Current Rankings' }
                 </div>
-                {show ? <div className="historic-explanation"><center>Number of times each restaurant <br></br>has ranked first in each meal period</center></div> : '' }
-                <div id="rankingButton">
+               <div id="rankingButton">
                     <Button
                     variant="contained"
                     onClick={()=>handleShow()}
@@ -124,7 +123,7 @@ const Homepage = () => {
                     fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
                     fontWeight: 'bold',
                     fontSize: 15,
-                    bottom:40,
+                    bottom:60,
                     color: 'white',
                     backgroundColor: "#DC3545",
                     '&:hover': {
