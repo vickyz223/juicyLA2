@@ -9,8 +9,7 @@ import { useLocation } from "react-router-dom";
 const PhotoGallery = () => {
     const location = useLocation();
     const [selectedImage, setSelectedImage] = useState(null);
-    // const [name1, setName] = useState(null);
-    // useEffect(()=> {setName(name);},[]);
+
     console.log(app);
     return (
         <div className='Gallery'>
