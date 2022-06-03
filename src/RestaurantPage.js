@@ -127,8 +127,13 @@ export default function Restaurant() {
               <ReviewRating userArr={userArr} />
             </div>
             <div id="activity">
+            {isMealPeriod ? <>
               <p>ACTIVITY:</p>
-              <ActivityLevel restaurant={diningHallName} />
+                <ActivityLevel restaurant={diningHallName} />
+              </>
+              :
+              <p>No activity level: not a meal period</p>
+            }
             </div>
           </div>
           <div className='times'>
