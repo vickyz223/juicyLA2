@@ -87,7 +87,6 @@ export default function Restaurant() {
   function Menu() {
     return (
       <div>
-
         <div id="MenuHolder" s>
           <div className="menutitle">
             <h1 id="menuName"><b>MENU</b></h1>
@@ -95,11 +94,8 @@ export default function Restaurant() {
               <StarRating hallName={diningHallName} isMealPeriod={isMealPeriod} />
             </div>
           </div >
-
-
           <div id="menuCols">
             <div className="col"><MenuComponent restaurant={diningHallName} /></div>
-            {/* <div className="col"></div> */}
           </div>
         </div>
       </div>
@@ -169,7 +165,6 @@ export default function Restaurant() {
           PHOTOS
         </Button>
       </div>
-      {/* <div id="bruh">a</div> */}
 
       <div id="lower">
         <div id="bottom">
