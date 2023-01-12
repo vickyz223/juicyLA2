@@ -177,7 +177,7 @@ const MenuComponent = ({ restaurant }) => {
         }
         getMenu();
     }, [])
-
+    console.log("menu: ", menu)
     return (
         menu && (<div dangerouslySetInnerHTML={{ __html: menu }} />)
     );

@@ -6,21 +6,27 @@ import Leaderboard from './HistoricLeaderboard';
 import Button from '@mui/material/Button';
 import { getDatabase, ref, get, child, set, onValue} from "firebase/database";
 
-const getMealPeriod =()=>
-    {
-        const now = new Date();
-        let time = now.getHours();
-        console.log(now,time)
-        if ((time < 10 && time >=8) ||(time < 15 && time >=11) || time >= 17 && time < 21){
-             return true
-        }
-        return false
+const getMealPeriod = (name) => {
+    const now = new Date();
+    let time = now.getHours();
+    if (
+      !(time < 10 &&
+      time >= 7 &&
+      name != "Epicuria") ||
+      !(time < 15 && time >= 11) ||
+      !(time >= 17 && time < 21)
+    ) {
+      console.log("false")
+      return false;
+    }
+    console.log("true")
+    return true;
 }
 
 const getRating = async (diningId) => {
     const db = getDatabase();
 
-    if (getMealPeriod()) {
+    if (getMealPeriod("a")) {
         const num = (await get(child(ref(db), 'ratings' + '/' + diningId))).val().rating;
         console.log("getRating?")
         return num;
@@ -48,7 +54,7 @@ const Homepage = () => {
     let navigate = useNavigate();
     const places = ['Epicuria', 'BruinPlate', 'DeNeve'];
     let len = places.length;
-    const mealperiod = getMealPeriod()
+    const mealperiod = getMealPeriod("a")
 
     const [restaurants, setRestaurants] = useState(null);
 
@@ -62,7 +68,6 @@ const Homepage = () => {
                 console.log(item)
             }
             if (mealperiod) {
-
                 restaurantTemp.sort((a, b) => {
                     if (a.rating > b.rating) {
                         return -1;
@@ -99,89 +104,123 @@ const Homepage = () => {
                 }
             }
           setRestaurants(restaurantTemp);
-          //console.log("useeffect else?")
-
         }
         getRestaurantData();
     }, [])
 
     return (
-        restaurants &&
-        (<>
-            <div className='topDivider'>
-                <div className='brand'>
-                    JUICYLA
-                </div>
-                <div className='status'>
-                    {show ? 'Historic Rankings' : 'Current Rankings' }
-                </div>
-               <div id="rankingButton">
-                    <Button
-                    variant="contained"
-                    onClick={()=>handleShow()}
-                    sx={{
-                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                    bottom:60,
-                    color: 'white',
-                    backgroundColor: "#DC3545",
-                    '&:hover': {
-                      backgroundColor: 'white',
-                      color:"black",
-                    }
-                    }}
-                    >{show ? "Back to Current" : "Historic Rankings" }
-                    </Button>
-                </div>
-                {show ? <div className='podium'>
-                    <div className='smaller'
-                        id="podiumBoxes"
-                    >
-                        <Leaderboard mealperiod={'Breakfast'}/>
-                    </div>
-                    <div className='smaller'
-                        id='podiumBoxes'
-                    >
-                        <Leaderboard mealperiod={'Lunch'}/>
-                    </div>
-                    <div className='smaller'
-                        id="podiumBoxes"
-                    >
-                        <Leaderboard mealperiod={'Dinner'}/>
-                    </div>
-                </div> : 
-                
-                <div className='podium'>
-                    <div className='second'
-                        id="podiumBoxes"
-                        onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[1].name, isMealPeriod: mealperiod, liveRating: restaurants[1].rating } }) }
-                        }
-                    >
-                        <PodiumBox name={restaurants[1].name} rating={restaurants[1].rating} mealperiod={mealperiod} />
-                    </div>
-                    <div className='first'
-                        id='podiumBoxes'
-                        onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[0].name, isMealPeriod: mealperiod, liveRating: restaurants[0].rating } }) }
-                        }
-                    >
-                        <PodiumBox name={restaurants[0].name} rating={restaurants[0].rating} mealperiod={mealperiod} />
-                    </div>
-                    <div className='third'
-                        id="podiumBoxes"
-                        onClick={
-                            () => { navigate('/RestaurantPage', { state: { name: restaurants[2].name, isMealPeriod: mealperiod, liveRating: restaurants[2].rating } }) }
-                        }
-                    >
-                        <PodiumBox name={restaurants[2].name} rating={restaurants[2].rating} mealperiod={mealperiod} />
-                    </div>
-                </div>}
-
-
+      restaurants && (
+        <>
+          <div className="topDivider">
+            <div className="homepage-top"></div>
+            <div className="brand">JUICYLA</div>
+            <div className="status">
+              {show ? "Historic Rankings" : "Current Rankings"}
             </div>
-        </>)
+            <div id="rankingButton">
+              <Button
+                variant="contained"
+                onClick={() => handleShow()}
+                sx={{
+                  fontFamily:
+                    "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs",
+                  fontWeight: "bold",
+                  fontSize: 15,
+                  bottom: 60,
+                  color: "white",
+                  backgroundColor: "#DC3545",
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color: "black",
+                  },
+                }}
+              >
+                {show ? "Back to Current" : "Historic Rankings"}
+              </Button>
+            </div>
+
+            {show ? (
+              <div className="podium">
+                <div className="smaller" id="podiumBoxes">
+                  <Leaderboard mealperiod={"Breakfast"} />
+                </div>
+                <div className="smaller" id="podiumBoxes">
+                  <Leaderboard mealperiod={"Lunch"} />
+                </div>
+                <div className="smaller" id="podiumBoxes">
+                  <Leaderboard mealperiod={"Dinner"} />
+                </div>
+              </div>
+            ) : (
+              <div className="podium">
+                {getMealPeriod(restaurants[1].name) && (
+                  <div
+                    className="first"
+                    id="podiumBoxes"
+                    onClick={() => {
+                      navigate("/RestaurantPage", {
+                        state: {
+                          name: restaurants[1].name,
+                          isMealPeriod: mealperiod,
+                          liveRating: restaurants[1].rating,
+                        },
+                      });
+                    }}
+                  >
+                    <PodiumBox
+                      name={restaurants[1].name}
+                      rating={restaurants[1].rating}
+                      mealperiod={mealperiod}
+                    />
+                  </div>
+                )}
+                {getMealPeriod(restaurants[0].name) && (
+                  <div
+                    className="first"
+                    id="podiumBoxes"
+                    onClick={() => {
+                      navigate("/RestaurantPage", {
+                        state: {
+                          name: restaurants[0].name,
+                          isMealPeriod: mealperiod,
+                          liveRating: restaurants[0].rating,
+                        },
+                      });
+                    }}
+                  >
+                    <PodiumBox
+                      name={restaurants[0].name}
+                      rating={restaurants[0].rating}
+                      mealperiod={mealperiod}
+                    />
+                  </div>
+                )}
+                {getMealPeriod(restaurants[2].name) && (
+                  <div
+                    className="first"
+                    id="podiumBoxes"
+                    onClick={() => {
+                      navigate("/RestaurantPage", {
+                        state: {
+                          name: restaurants[2].name,
+                          isMealPeriod: mealperiod,
+                          liveRating: restaurants[2].rating,
+                        },
+                      });
+                    }}
+                  >
+                    <PodiumBox
+                      name={restaurants[2].name}
+                      rating={restaurants[2].rating}
+                      mealperiod={mealperiod}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </>
+      )
     );
 }
 

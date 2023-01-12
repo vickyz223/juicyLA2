@@ -19,13 +19,11 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 100vh;
-    background: no-repeat center fixed;
-    /* background-color: var(--bgcolor); */
-    background-image: url("../pexels-alena-darmel-7223306.jpg");
-    /* linear-gradient(to bottom, rgba(255, 255, 255,0), rgb(0,0,0, 0.75) */
-    background-size: cover;
+    gap: 30px; 
 
+    background: no-repeat center fixed;
+    background-image: url("../pexels-alena-darmel-7223306.jpg");
+    background-size: cover;
 }
 
 .info {
@@ -49,15 +47,11 @@
 }
 
 .brand {
-    /* margin: -20px; */
-    
-    font-weight: bolder;
-    font-size: 700%;
-    color: var(--white);
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: var(--darkestRed);
-    text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
-
+    font-weight: 9000;
+    font-size: 750%;
+    color: var(--bgcolor);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--white);
 }
 
 .status {
@@ -81,9 +75,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+
+    margin-top: -60px; 
     margin-bottom: 3vh;
-
-
 }
 
 #podiumBoxes {
@@ -95,7 +89,6 @@
     border-radius: 20px;
     width: 25vw;
     padding: 20px;
-
 }
 
 .first {
