@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css';
-import NavBar from './NavBar';
-import Homepage from './Homepage';
+import NavBar from "./Components/navbar_components/NavBar";
+import Homepage from "./Components/homepage_components/Homepage";
 import WriteReviews from "./Components/restaurant_page_comps/WriteReviews";
-import Login from './LoginPage';
-import Signup from './SignupPage'
-import Profile from './ProfilePage'
+import Login from "./Components/navbar_components/LoginPage";
+import Signup from "./Components/navbar_components/SignupPage";
+import Profile from "./Components/navbar_components/ProfilePage";
 import app from './firebase';
-import RestaurantPage from './RestaurantPage';
+import RestaurantPage from './Components/restaurant_page_comps/RestaurantPage';
 import { UserAuthContextProvider } from './UserAuthContext'
-import PhotoGallery from './PhotoGallery';
+import PhotoGallery from './Components/gallery_components/PhotoGallery';
 
 
 function JuicyLa() {

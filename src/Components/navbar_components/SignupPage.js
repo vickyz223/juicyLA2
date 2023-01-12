@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUserAuth } from "./UserAuthContext";
+import { useUserAuth } from "../..//UserAuthContext";
 import { Form, Alert, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Components/component_styles/LoginPage.css";
+import "../component_styles/LoginPage.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./Components/component_styles/PhotoGallery.css";
-import app from './firebase';
-import UploadImages from "./Components/gallery_components/UploadImages";
-import ImageGrid from "./Components/gallery_components/ImageGrid";
-import Modal from "./Components/common_components/Modal";
+import "../component_styles/PhotoGallery.css";
+import app from '../../firebase';
+import UploadImages from "../gallery_components/UploadImages.js";
+import ImageGrid from "../gallery_components/ImageGrid";
+import Modal from "../common_components/Modal";
 import { useLocation } from "react-router-dom";
 const PhotoGallery = () => {
     const location = useLocation();

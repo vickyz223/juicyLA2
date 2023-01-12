@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
-import StarRating from "./Components/common_components/StarRating";
-import ReviewRating from "./Components/restaurant_page_comps/ReviewRating";
-import WriteReviews from "./Components/restaurant_page_comps/WriteReviews";
-import MenuComponent from "./Components/common_components/MenuComponent.js";
-import ActivityLevel from "./Components/common_components/ActivityLevel.js";
-import DisplayReviews from './Components/restaurant_page_comps/DisplayReviews';
-import { auth } from './firebase';
-import "./Components/component_styles/RestaurantPage.css";
+import StarRating from "../common_components/StarRating";
+import ReviewRating from "../restaurant_page_comps/ReviewRating";
+import WriteReviews from "../restaurant_page_comps/WriteReviews";
+import MenuComponent from "../common_components/MenuComponent.js";
+import ActivityLevel from "../common_components/ActivityLevel.js";
+import DisplayReviews from '../restaurant_page_comps/DisplayReviews';
+import { auth } from '../../firebase';
+import "../component_styles/RestaurantPage.css";
 import { onValue, getDatabase, ref } from "firebase/database";
 
 export default function Restaurant() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import HistoricTable from './Components/homepage_components/HistoricTable';
-import "./Components/component_styles/Homepage.css";
+import HistoricTable from '../homepage_components/HistoricTable';
+import "../component_styles/Homepage.css";
 
 const Leaderboard = ({mealperiod}) => {
     return (

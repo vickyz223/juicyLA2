@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./NavBar.css";
+import "../component_styles/Navbar.css";
 import { useNavigate, Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-import { auth } from "./firebase";
-import { useUserAuth } from "./UserAuthContext";
+import { auth } from "../../firebase";
+import { useUserAuth } from "../../UserAuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = () => {
