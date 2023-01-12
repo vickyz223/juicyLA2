@@ -1,10 +1,9 @@
-// import { Update } from "@material-ui/icons";
 import React, { useState } from "react";
-import "./PhotoGallery.css";
+import "./Components/component_styles/PhotoGallery.css";
 import app from './firebase';
-import UploadImages from "./Components/UploadImages";
-import ImageGrid from "./Components/ImageGrid";
-import Modal from "./Components/Modal";
+import UploadImages from "./Components/gallery_components/UploadImages";
+import ImageGrid from "./Components/gallery_components/ImageGrid";
+import Modal from "./Components/common_components/Modal";
 import { useLocation } from "react-router-dom";
 const PhotoGallery = () => {
     const location = useLocation();

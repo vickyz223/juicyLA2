@@ -1,24 +1,12 @@
 import React, { useEffect } from "react";
-// import { Button } from "react-bootstrap";
 import { useUserAuth } from "./UserAuthContext";
 import { useNavigate } from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./Homepage.css";
-import "./ProfilePage.css";
+import "./Components/component_styles/ProfilePage.css";
 
 const Profile = () => {
   const { user } = useUserAuth();
   const navigate = useNavigate();
-  // const handleLogout = async () => {
-  //   try {
-  //     await logOut();
-  //     navigate("/");
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-
-  /* Show Hello Welcome 3 seconds (3000 mseconds) and redirect to root */
   useEffect(() => {
     setTimeout(() => {
       navigate("/");

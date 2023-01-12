@@ -1,9 +1,9 @@
 import React from 'react';
 import Rating from '@mui/material/Rating';
 import PropTypes from "prop-types";
-import ActivityLevel from './Components/ActivityLevel';
-import MenuComponent from './Components/MenuComponent';
-import './Homepage.css';
+import ActivityLevel from './Components/common_components/ActivityLevel';
+import MenuComponent from "./Components/common_components/MenuComponent";
+import "./Components/component_styles/Homepage.css";
 
 
 const PodiumBox = ({ rating, name }) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
-import "../../RestaurantPage.css";
+import "../component_styles/RestaurantPage.css";
 
 function DisplayReviews({ userArr }) {
     return (

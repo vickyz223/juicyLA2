@@ -23,18 +23,13 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	/* background: no-repeat center fixed;
-	background-color: var(--bgcolor);
-	background-image: url("../pexels-alena-darmel-7223306.jpg");
-	background-size: cover; */
 }
 
 .background {
 	margin-top: -80px;
 	height: 100vh;
 	background: no-repeat center fixed;
-	/* background-color: var(--bgcolor); */
-	background-image: url("../pexels-alena-darmel-7223306.jpg");
+	background-image: url("../../../pexels-alena-darmel-7223306.jpg");
 	background-size: cover;
 }
 

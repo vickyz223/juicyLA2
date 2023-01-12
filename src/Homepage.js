@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import './Homepage.css';
+import './Components/component_styles/Homepage.css';
 import PodiumBox from './PodiumBox';
 import Leaderboard from './HistoricLeaderboard';
 import Button from '@mui/material/Button';

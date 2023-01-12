@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css';
 import NavBar from './NavBar';
 import Homepage from './Homepage';
-import WriteReviews from './Components/WriteReviews';
+import WriteReviews from "./Components/restaurant_page_comps/WriteReviews";
 import Login from './LoginPage';
 import Signup from './SignupPage'
 import Profile from './ProfilePage'
@@ -12,7 +12,6 @@ import app from './firebase';
 import RestaurantPage from './RestaurantPage';
 import { UserAuthContextProvider } from './UserAuthContext'
 import PhotoGallery from './PhotoGallery';
-// import UploadImages from './Components/UploadImages';
 
 
 function JuicyLa() {
@@ -28,7 +27,6 @@ function JuicyLa() {
 					<Route path="/Login" element={<Login/>}/> */}
 						<Route path="/RestaurantPage" element={<RestaurantPage />} />
 						<Route path="/PhotoGallery" element={<PhotoGallery />} />
-						{/* <Route path="/UploadImages" element={<UploadImages/>}/> */}
 						<Route path="/Login" element={<Login />} />
 						<Route path="/Signup" element={<Signup />} />
 						<Route path="/Profile" element={<Profile />} />
