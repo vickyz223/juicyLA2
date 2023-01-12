@@ -6,7 +6,7 @@ import "./HistoricTable.css"
 async function getData(period) {
     let data = [];
     let rs = ['BruinPlate','DeNeve','Epicuria'];
-    if(period=='Breakfast') {
+    if(period=='BREAKFAST') {
         rs = ['BruinPlate','DeNeve'];
     }
     for(let i = 0; i < rs.length; i++) {
@@ -66,6 +66,7 @@ const HistoricTable = ({period}) => {
         const r = ref(getDatabase(),'leaderboard_html/' + period);
         get(r).then((snapshot)=>{
             let t = snapshot.val().html;
+            console.log("here", snapshot.val())
             setTable(t);
         })
     },[])

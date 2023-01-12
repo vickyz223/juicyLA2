@@ -3,17 +3,13 @@
 	--textcolor: #F2F2F0;
 	--darkestRed: #490F0D;
 	--font: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
 }
 
 .nav {
 	position: sticky;
 	top: 0;
-	/* Position the navbar at the top of the page */
 	width: 100%;
-	/* Full width */
-	height: 80px;
+	height: 60px;
 	z-index: 100000;
 }
 
@@ -25,9 +21,9 @@
 	display: flex;
 	justify-content: space-between;
 	background-color: transparent;
-	padding: 20px;
+	padding: 10px;
 	align-items: center;
-
+	padding-right: 30px; 
 }
 
 .buttonGroup {
@@ -76,20 +72,10 @@ a {
 	text-decoration: none;
 }
 
-/* Button {
-
-	padding-left: 20px;
-	padding-right: 20px;
-	background-color: #EA4033;
-	color: var(--textcolor);
-	padding: 10px;
-} */
-
 .register {
 	background-color: var(--textcolor);
 	color: #EA4033;
 	border-color: var(--darkestRed);
-
 }
 
 .rightSpace10 {

@@ -17,7 +17,7 @@
     margin-top: -80px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 30px; 
 
@@ -48,10 +48,11 @@
 
 .brand {
     font-weight: 9000;
-    font-size: 750%;
+    font-size: clamp(50px, 20vw, 150px);  
     color: var(--bgcolor);
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--white);
+    margin-top: 30px;
 }
 
 .status {
@@ -59,9 +60,9 @@
     margin-bottom: 10vh;
     color: var(--white);
     text-shadow: var(--darkestRed) 0 0 5px, var(--darkestRed) 0 0 5px;
-    line-height: 50%; 
-
-    font-size: 300%;
+    line-height: 100%; 
+    font-size: clamp(30px, 100vh,50px);
+    text-align: center; 
 }
 
 .textShadow {
@@ -73,8 +74,9 @@
 .podium {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
 
     margin-top: -60px; 
     margin-bottom: 3vh;
@@ -83,24 +85,15 @@
 #podiumBoxes {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0px 20px 20px 20px; 
     background-color: var(--textcolor);
     border-radius: 20px;
-    width: 25vw;
+    width: clamp(300px, 25vw, 30vw);
     padding: 20px;
 }
 
 .first {
     height: 55vh;
-}
-
-.second {
-    height: 50vh;
-}
-
-.third {
-    height: 45vh;
 }
 
 .smaller {

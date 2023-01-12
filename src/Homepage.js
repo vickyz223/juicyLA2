@@ -12,14 +12,12 @@ const getMealPeriod = (name) => {
     if (
       !(time < 10 &&
       time >= 7 &&
-      name != "Epicuria") ||
-      !(time < 15 && time >= 11) ||
+      name != "Epicuria") &&
+      !(time < 15 && time >= 11 && name != "Epicuria") &&
       !(time >= 17 && time < 21)
     ) {
-      console.log("false")
       return false;
     }
-    console.log("true")
     return true;
 }
 
@@ -28,7 +26,6 @@ const getRating = async (diningId) => {
 
     if (getMealPeriod("a")) {
         const num = (await get(child(ref(db), 'ratings' + '/' + diningId))).val().rating;
-        console.log("getRating?")
         return num;
     } else {
         set(ref(db, 'ratings' + '/' + diningId), {
@@ -65,7 +62,6 @@ const Homepage = () => {
                 const name = places[i];
                 const item = new diningHall(name, await getRating(name), mealperiod);
                 restaurantTemp.push(item);
-                console.log(item)
             }
             if (mealperiod) {
                 restaurantTemp.sort((a, b) => {
@@ -84,13 +80,13 @@ const Homepage = () => {
                     var mealPeriod;
                     switch(now.getHours()) {
                         case 9:
-                            mealPeriod = 'Breakfast';
+                            mealPeriod = 'BREAKFAST';
                             break;
                         case 14:
-                            mealPeriod = 'Lunch';
+                            mealPeriod = 'LUNCH';
                             break;
                         case 20:
-                            mealPeriod = 'Dinner';
+                            mealPeriod = 'DINNER';
                             break;
                     }
                     const hist_dbRef = ref(getDatabase(), 'historic_ratings/' + mealPeriod + '/' + high_rank);
@@ -142,13 +138,13 @@ const Homepage = () => {
             {show ? (
               <div className="podium">
                 <div className="smaller" id="podiumBoxes">
-                  <Leaderboard mealperiod={"Breakfast"} />
+                  <Leaderboard mealperiod={"BREAKFAST"} />
                 </div>
                 <div className="smaller" id="podiumBoxes">
-                  <Leaderboard mealperiod={"Lunch"} />
+                  <Leaderboard mealperiod={"LUNCH"} />
                 </div>
                 <div className="smaller" id="podiumBoxes">
-                  <Leaderboard mealperiod={"Dinner"} />
+                  <Leaderboard mealperiod={"DINNER"} />
                 </div>
               </div>
             ) : (

@@ -42,13 +42,8 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="buttonRight">
-          {/* { console.log(auth.currentUser) } */}
-          {/* { auth.currentUser ? console.log("logged in") : console.log("logged out")} */}
           {auth.currentUser ? (
             <div>
-              <span className="mr-4 textShadow rightSpace10">
-                {auth.currentUser.email}{" "}
-              </span>
               <Button id="backButton"
               variant="contained"
               onClick={handleLogout}
@@ -71,27 +66,6 @@ const NavBar = () => {
 
             
             <div className="rightSpace5">
-              <Button id="backButton"
-              variant="contained"
-              onClick={
-                () => { navigate('/Signup') }
-              }
-
-              sx={{
-                fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                fontWeight: 'bold',
-                fontSize: 15,
-                right: 20,
-                color: '#F2F2F0',
-                backgroundColor: "#EA4033",
-                '&:hover': {
-                  backgroundColor: '#EA4033',
-                }
-              }}
-            >
-              {" "}
-              Register{" "}
-            </Button>
             <Button id="backButton"
               variant="contained"
               onClick={
