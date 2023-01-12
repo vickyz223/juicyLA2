@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
-import "../RestaurantPage.css";
+import "../../RestaurantPage.css";
 
 const styles = {
     historical: {

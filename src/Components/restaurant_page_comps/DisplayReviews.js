@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
-import "../RestaurantPage.css";
+import "../../RestaurantPage.css";
 
 function DisplayReviews({ userArr }) {
     return (
@@ -11,7 +11,7 @@ function DisplayReviews({ userArr }) {
                     <div key={i} className="review">
                         <div id="reviewHeader">
                             <img
-                                src={require("../images/bqmfbsn2fpw51.jpeg")}
+                                src={require("../../images/bqmfbsn2fpw51.jpeg")}
                                 alt="profilePicture"
                                 className="pp"
                             ></img>

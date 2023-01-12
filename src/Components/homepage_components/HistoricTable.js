@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { get, getDatabase, child, ref, set } from "firebase/database";
-import "./component_styles/HistoricTable.css"
+import "../component_styles/HistoricTable.css"
 
 async function getData(period) {
     let data = [];
