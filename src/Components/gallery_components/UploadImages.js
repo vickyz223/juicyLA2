@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Button from '@mui/material/Button';
 import ProgressBar from "./ProgressBar";
 import { PropTypes } from "prop-types";
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 
 
 const types = ['image/png', 'image/jpeg'];

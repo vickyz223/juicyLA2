@@ -1,8 +1,8 @@
 import React from "react";
-import "./component_styles/ImageGrid.css";
-
-import useFirestore from "../hooks/useFirestore";
+import "../component_styles/ImageGrid.css";
+import useFirestore from "../../hooks/useFirestore";
 import PropTypes from "prop-types";
+
 const ImageGrid = ({ setSelectedImage, RestName }) => {
     const collName = 'images' + RestName;
     console.log(collName)

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./component_styles/Modal.css";
+import "../component_styles/Modal.css";
 
 const Modal = ({ selectedImage, setSelectedImage }) => {
     const handleClick = (e) => {
