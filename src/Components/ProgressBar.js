@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import useStorage from "../hooks/useStorage";
 import PropTypes from "prop-types";
-import "./ProgressBar.css"
+import "./component_styles/ProgressBar.css"
 
 const ProgressBar = ({ file, setFile, restName }) => {
     const { url, progress } = useStorage(file, restName);

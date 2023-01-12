@@ -3,8 +3,7 @@ import { getDatabase, ref, onValue, set } from "firebase/database";
 import { PropTypes } from 'prop-types';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
-import "./StarRating.css"
-// import { NoteTwoTone } from '@material-ui/icons';
+import "./component_styles/StarRating.css";
 
 function StarRating({ hallName, isMealPeriod }) {
     const [rating, setRating] = React.useState(0);

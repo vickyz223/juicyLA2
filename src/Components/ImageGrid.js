@@ -1,5 +1,5 @@
 import React from "react";
-import "./ImageGrid.css"
+import "./component_styles/ImageGrid.css";
 
 import useFirestore from "../hooks/useFirestore";
 import PropTypes from "prop-types";

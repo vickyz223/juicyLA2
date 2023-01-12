@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { get, getDatabase, child, ref, set } from "firebase/database";
-import "./MenuComponent.css"
+import "./component_styles/MenuComponent.css";
 
 const now = new Date();
 const d = now.toString();

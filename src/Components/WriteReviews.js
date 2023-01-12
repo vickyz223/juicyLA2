@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
-import './WriteReviews.css';
+import "./component_styles/WriteReviews.css";
 import app from "../firebase"
 import { getDatabase, ref, set } from "firebase/database";
 
