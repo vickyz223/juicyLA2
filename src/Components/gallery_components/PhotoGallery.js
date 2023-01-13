@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../component_styles/PhotoGallery.css";
-import app from '../../firebase';
+import app from '../../Services/firebase';
 import UploadImages from "../gallery_components/UploadImages.js";
 import ImageGrid from "../gallery_components/ImageGrid";
 import Modal from "../common_components/Modal";

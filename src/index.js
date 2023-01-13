@@ -8,9 +8,9 @@ import WriteReviews from "./Components/restaurant_page_comps/WriteReviews";
 import Login from "./Components/navbar_components/LoginPage";
 import Signup from "./Components/navbar_components/SignupPage";
 import Profile from "./Components/navbar_components/ProfilePage";
-import app from './firebase';
+import app from './Services/firebase';
 import RestaurantPage from './Components/restaurant_page_comps/RestaurantPage';
-import { UserAuthContextProvider } from './UserAuthContext'
+import { UserAuthContextProvider } from './Services/UserAuthContext'
 import PhotoGallery from './Components/gallery_components/PhotoGallery';
 
 

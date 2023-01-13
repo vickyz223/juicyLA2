@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useUserAuth } from "../../UserAuthContext";
+import { useUserAuth } from "../../Services/UserAuthContext";
 import { useNavigate } from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../component_styles/ProfilePage.css";

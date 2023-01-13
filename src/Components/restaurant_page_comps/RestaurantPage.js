@@ -8,7 +8,7 @@ import WriteReviews from "../restaurant_page_comps/WriteReviews";
 import MenuComponent from "../common_components/MenuComponent.js";
 import ActivityLevel from "../common_components/ActivityLevel.js";
 import DisplayReviews from '../restaurant_page_comps/DisplayReviews';
-import { auth } from '../../firebase';
+import { auth } from "../../Services/firebase";
 import "../component_styles/RestaurantPage.css";
 import { onValue, getDatabase, ref } from "firebase/database";
 

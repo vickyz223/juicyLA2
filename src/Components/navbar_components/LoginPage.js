@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Alert, Button } from "react-bootstrap";
 import GoogleButton from "react-google-button";
-import { useUserAuth } from "../../UserAuthContext";
+import { useUserAuth } from "../../Services/UserAuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../component_styles/LoginPage.css";
 

@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { projectStorage, projectFirestore, timestamp } from '../firebase';
+import {
+  projectStorage,
+  projectFirestore,
+  timestamp,
+} from "../Services/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc } from "firebase/firestore";
 // import PropTypes from "prop-types";
