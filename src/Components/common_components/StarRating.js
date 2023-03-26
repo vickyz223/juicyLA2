@@ -45,7 +45,7 @@ function StarRating({ hallName, isMealPeriod }) {
         <div id="holder">
             <p>Rate your meal for this dining period:</p>
 
-            <div>
+            <div className='vote'>
                 <Rating
                 name="simple-controlled"
                 value={rating}

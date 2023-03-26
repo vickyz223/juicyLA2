@@ -34,7 +34,7 @@ function ReviewRating({ userArr }) {
 
     return (
         <div style={styles.historical}>
-            <p style={styles.title}>Historical Rating: </p>
+            <p style={styles.title}>Historical: </p>
             <Rating
                 value={rating}
                 readOnly

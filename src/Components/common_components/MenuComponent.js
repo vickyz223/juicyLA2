@@ -157,6 +157,7 @@ function MenuData(rest) {
         return (ds + '/' + period + '/' + rest);
     } catch {
         console.log("Failed to get menu.");
+        return -1
     }
 }
 
@@ -173,10 +174,14 @@ const MenuComponent = ({ restaurant }) => {
                 }
             }).catch(() => {
                 console.log("Failed to get menu.");
+                return -1
             });
         }
         getMenu();
     }, [])
+    if (menu == null || menu == -1) {
+        return <div><h3>Restaurant is currently closed.</h3></div>
+    }
     return (
         menu && (<div dangerouslySetInnerHTML={{ __html: menu }} />)
     );

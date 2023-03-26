@@ -105,63 +105,58 @@ export default function Restaurant() {
   return (
     <div id="all">
       <div id="header">
-        <div id="headerInfo">
-          <h1 id="name"><b>{diningHallName}</b></h1>
-          <div id="header2">
-            <div className='restRating'>
-              {isMealPeriod ?
-                <div className='live'>
-                  <p className='liveTitle'>Live Rating: </p>
-                  <Rating
-                    value={liveRating}
-                    readOnly
-                  />
+          <div id="headerInfo">
+            <h1 id="name">
+              <b>{diningHallName}</b>
+            </h1>
+            <div className="restRating">
+              {isMealPeriod ? (
+                <div className="live">
+                  <p className="liveTitle">Live: </p>
+                  <Rating value={liveRating} readOnly />
                 </div>
-                :
-                <></>}
-
+              ) : (
+                <></>
+              )}
               <ReviewRating userArr={userArr} />
             </div>
             <div id="activity">
-            {isMealPeriod ? <>
-              <p>ACTIVITY:</p>
-                <ActivityLevel restaurant={diningHallName} />
-              </>
-              :
-              <p>No activity level: not a meal period</p>
-            }
+              {isMealPeriod ? (
+                <>
+                  <p>Activity:</p>
+                  <ActivityLevel restaurant={diningHallName} />
+                </>
+              ) : (
+                <p>No activity level: not a meal period</p>
+              )}
             </div>
           </div>
-          <div className='times'>
-            <p>BREAKFAST:<br /> 7:00am - 10:00am </p>
-            <p> LUNCH:<br /> 11:00am - 3:00pm </p>
-            <p> DINNER: <br />5:00pm - 9:00pm</p>
-          </div>
 
-        </div>
-
-
-        <Button id="photoAdd" variant="contained"
+        <Button
+          id="photoAdd"
+          variant="contained"
           sx={{
-            fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-            fontWeight: 'bold',
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs",
+            fontWeight: "bold",
             fontSize: 15,
             width: 150,
-            color: '#F2F2F0',
+            color: "#F2F2F0",
             backgroundColor: "transparent",
             border: 1,
             borderColor: "white",
-            marginLeft: '2%',
+            marginLeft: "2%",
 
-            '&:hover': {
-              backgroundColor: '#868686',
-            }
+            "&:hover": {
+              backgroundColor: "#868686",
+            },
           }}
-          onClick={
-            () => { navigate('/PhotoGallery ', { state: { name: location.state.name } }) }
-          }
+          onClick={() => {
+            navigate("/PhotoGallery ", {
+              state: { name: location.state.name },
+            });
+          }}
         >
-
           PHOTOS
         </Button>
       </div>
@@ -175,48 +170,55 @@ export default function Restaurant() {
           <div id="reviews">
             <div id="reviewTop">
               <div>
-                {auth.currentUser ? <Button
-                  variant="contained"
-                  onClick={() => handleShow()}
-                  sx={{
-                    fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                    color: '#F2F2F0',
-                    backgroundColor: "transparent",
-                    border: 1,
-                    borderColor: "white",
-
-                    '&:hover': {
-                      backgroundColor: '#868686',
-                    }
-                  }}
-                >{show ? "Back to Menu" : "Add Review"}</Button>
-                  : <Button
+                {auth.currentUser ? (
+                  <Button
                     variant="contained"
-                    disabled
+                    onClick={() => handleShow()}
                     sx={{
-                      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-                      fontWeight: 'bold',
+                      fontFamily:
+                        "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs",
+                      fontWeight: "bold",
                       fontSize: 15,
-                      color: '#F2F2F0',
+                      color: "#F2F2F0",
                       backgroundColor: "transparent",
                       border: 1,
                       borderColor: "white",
 
-                      '&:hover': {
-                        backgroundColor: '#868686',
-                      }
+                      "&:hover": {
+                        backgroundColor: "#868686",
+                      },
                     }}
-                  >Login to leave a Review</Button>}
+                  >
+                    {show ? "Back to Menu" : "Add Review"}
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    disabled
+                    sx={{
+                      fontFamily:
+                        "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs",
+                      fontWeight: "bold",
+                      fontSize: 15,
+                      color: "#F2F2F0",
+                      backgroundColor: "transparent",
+                      border: 1,
+                      borderColor: "white",
 
+                      "&:hover": {
+                        backgroundColor: "#868686",
+                      },
+                    }}
+                  >
+                    Login to leave a Review
+                  </Button>
+                )}
               </div>
               <h1>
                 <b>REVIEWS</b>
               </h1>
             </div>
             <div id="reviewHolder">
-
               <DisplayReviews userArr={userArr} />
             </div>
             <div id="reviewFooter"></div>
@@ -224,21 +226,22 @@ export default function Restaurant() {
         </div>
 
         <div id="footer">
-          <Button id="backButton"
+          <Button
+            id="backButton"
             variant="contained"
-            onClick={
-              () => { navigate('/') }
-            }
-
+            onClick={() => {
+              navigate("/");
+            }}
             sx={{
-              fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs',
-              fontWeight: 'bold',
+              fontFamily:
+                "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serifs",
+              fontWeight: "bold",
               fontSize: 15,
-              color: '#F2F2F0',
+              color: "#F2F2F0",
               backgroundColor: "#EA4033",
-              '&:hover': {
-                backgroundColor: '#EA4033',
-              }
+              "&:hover": {
+                backgroundColor: "#EA4033",
+              },
             }}
           >
             Back to ratings

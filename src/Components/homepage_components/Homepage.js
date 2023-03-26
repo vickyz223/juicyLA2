@@ -8,17 +8,12 @@ import { getDatabase, ref, get, child, set, onValue} from "firebase/database";
 
 const getMealPeriod = (name) => {
     const now = new Date();
-    let time = now.getHours();
-    if (
-      !(time < 10 &&
-      time >= 7 &&
-      name != "Epicuria") &&
-      !(time < 15 && time >= 11 && name != "Epicuria") &&
-      !(time >= 17 && time < 21)
-    ) {
-      return false;
-    }
-    return true;
+    const hours = now.getHours();
+    const isMorning = hours >= 7 && hours <= 10;
+    const isAfternoon = hours >= 11 && hours <= 15;
+    const isEvening = hours >= 17 && hours <= 21;
+    const isE = name == "Epicuria"
+    return (isMorning && !isE) || (isAfternoon && !isE) || isEvening;
 }
 
 const getRating = async (diningId) => {
@@ -98,11 +93,20 @@ const Homepage = () => {
                         count: updated_count
                     })
                 }
-            }
+            } 
           setRestaurants(restaurantTemp);
         }
         getRestaurantData();
     }, [])
+    console.log("bruh", getMealPeriod("as"));
+    if (!getMealPeriod("as")) {
+      console.log("here");
+      return (
+        <div>
+          <h2>Not a meal period.</h2>
+        </div>
+      );
+    }
 
     return (
       restaurants && (
